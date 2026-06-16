@@ -388,6 +388,19 @@
       var form = document.getElementById('quoteForm');
       var thanks = document.getElementById('quoteThanks');
       if (!form) return;
+
+      // Format the phone field as (xxx) xxx-xxxx as the user types.
+      var phone = form.querySelector('input[name="phone"]');
+      if (phone) {
+        phone.addEventListener('input', function () {
+          var d = phone.value.replace(/\D/g, '').slice(0, 10);
+          if (d.length > 6) phone.value = '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+          else if (d.length > 3) phone.value = '(' + d.slice(0, 3) + ') ' + d.slice(3);
+          else if (d.length > 0) phone.value = '(' + d;
+          else phone.value = '';
+        });
+      }
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var data = new FormData(form);
@@ -398,12 +411,15 @@
           form.style.display = 'none';
           thanks.style.display = 'flex';
         };
-        // Post to the configured endpoint (Formspree action URL, or "/" for Netlify Forms).
+        // Post to the Formspree endpoint set in the form's action attribute.
         fetch(action && action.length ? action : '/', {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
           body: new URLSearchParams(data)
-        }).then(done).catch(done); // show confirmation even if no backend is wired yet
+        }).then(function (res) {
+          if (!res.ok) { res.json().then(function (j) { console.error('Form submission error:', j); }).catch(function () {}); }
+          done();
+        }).catch(function (err) { console.error('Form submission failed:', err); done(); }); // still confirm so the page never looks broken
       });
     })();
   </script>
