@@ -7,10 +7,10 @@ import Icon from "./Icon.astro";
     <div style="text-align:center;max-width:640px;margin:0 auto 46px">
       <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#15919b;margin-bottom:12px">What We Do</div>
       <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#0e3a43;margin-bottom:14px;text-wrap:balance">Better Water, Done Right</h2>
-      <p style="font:400 17px/1.6 var(--font-body);color:#5e7177">Three core services, every sub-service you need, and one crew that treats your property like its own.</p>
+      <p style="font:400 17px/1.6 var(--font-body);color:#5e7177">Four ways we make your water better, from whole-home systems to the water you drink, each sized to your home and installed to last.</p>
     </div>
 
-    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start">
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(2,1fr);gap:26px;align-items:start">
       {services.map((s) => (
         <div class="card card-hover" style="overflow:hidden;display:flex;flex-direction:column">
           <img src={s.image} alt={s.imageAlt} width="690" height="380" loading="lazy"
@@ -21,6 +21,7 @@ import Icon from "./Icon.astro";
               <h3 style="font:700 23px/1 var(--font-display);letter-spacing:.01em;color:#0e3a43">{s.name}</h3>
             </div>
             <p style="font:400 15px/1.6 var(--font-body);color:#5e7177">{s.short}</p>
+            <span style="align-self:flex-start;font:700 13px/1 var(--font-body);color:#15919b;background:#cde6e8;padding:7px 12px;border-radius:100px">{s.price}</span>
             <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px">
               {s.subservices.map((sub) => (
                 <li>

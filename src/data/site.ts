@@ -55,6 +55,7 @@ export type Service = {
   slug: string;
   name: string;
   short: string; // one-line for cards / menus
+  price: string; // "From $X installed" (sourced from the Price Sheet)
   icon: string; // Icon component name
   image: string;
   imageAlt: string;
@@ -72,6 +73,7 @@ export const services: Service[] = [
     slug: "whole-home-filtration",
     name: "Whole-Home Filtration",
     short: "Clean, great-tasting water from every tap in the house.",
+    price: "From $2,400 installed",
     icon: "spray",
     image: "/images/svc-filtration.svg",
     imageAlt:
@@ -117,6 +119,7 @@ export const services: Service[] = [
     slug: "water-softening",
     name: "Water Softening & Conditioning",
     short: "End hard-water scale and protect your plumbing and appliances.",
+    price: "From $2,200 installed",
     icon: "shield",
     image: "/images/svc-softener.svg",
     imageAlt:
@@ -161,6 +164,7 @@ export const services: Service[] = [
     slug: "drinking-water",
     name: "Drinking Water Systems",
     short: "Bottled-water quality at your kitchen tap with reverse osmosis.",
+    price: "From $700 installed",
     icon: "window",
     image: "/images/svc-ro.svg",
     imageAlt:
@@ -205,6 +209,7 @@ export const services: Service[] = [
     slug: "service-plan",
     name: "Care Plan & Water Testing",
     short: "We test your water and change your filters for life, automatically.",
+    price: "From $49/month",
     icon: "repeat",
     image: "/images/svc-care.svg",
     imageAlt:
@@ -324,6 +329,124 @@ export const testimonials: Testimonial[] = [
 export const nav = [
   { label: "Services", href: "/#services", mega: true },
   { label: "Service Areas", href: "/service-areas" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "Learn", href: "/learn" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+// ============================================================
+// FLAGSHIP SYSTEM (the featured bundle on the home page)
+// Pricing sourced from "Aquveda - Price Sheet.xlsx":
+// filtration + softener combo $5,400; whole-home + RO bundle 10% off.
+// ============================================================
+export const flagship = {
+  eyebrow: "The Aquveda Flagship",
+  name: "The Complete Home Water System",
+  tagline:
+    "Whole-home filtration, a water softener, and reverse-osmosis drinking water, sized to your home and installed in one trip.",
+  price: "From $5,400 installed",
+  priceNote: "Bundle filtration, softening, and RO and save 10%.",
+  image: "/images/flagship-system.svg",
+  imageAlt:
+    "The complete Aquveda home water system: whole-home filter, softener, and under-sink reverse osmosis",
+  features: [
+    "Chlorine, taste, odor, and sediment removed from every tap",
+    "Hard-water scale stopped, protecting your plumbing and appliances",
+    "Bottled-water quality at the kitchen tap with reverse osmosis",
+    "Sized to your home after a free in-home water test",
+    "Installed by a licensed, insured installer in one visit",
+    "Backed by our workmanship warranty and the optional Care plan",
+  ],
+};
+
+// ============================================================
+// HOW IT WORKS (3-step flow on the home page)
+// ============================================================
+export type Step = { title: string; body: string };
+export const steps: Step[] = [
+  { title: "Free in-home water test", body: "We test your water in your home and show you exactly what is in it, no pressure, no obligation." },
+  { title: "Review and quote", body: "We explain the results in plain language and quote the right-sized system on the spot, with upfront pricing." },
+  { title: "Install and enjoy", body: "A licensed installer fits your system cleanly in one visit, then we retest the water with you and back it with our warranty." },
+];
+
+// ============================================================
+// COMPARISON TABLE (generic, no named competitors)
+// ============================================================
+export type CompareRow = { feature: string; aquveda: boolean; typical: boolean; diy: boolean };
+export const comparison = {
+  columns: ["Aquveda", "Typical providers", "Big-box DIY"],
+  rows: [
+    { feature: "Free in-home water test before you buy", aquveda: true, typical: false, diy: false },
+    { feature: "Licensed, insured installer", aquveda: true, typical: true, diy: false },
+    { feature: "System sized to your home and water", aquveda: true, typical: true, diy: false },
+    { feature: "Upfront pricing, no high-pressure sales", aquveda: true, typical: false, diy: true },
+    { feature: "No long-term contracts or rentals", aquveda: true, typical: false, diy: true },
+    { feature: "Workmanship warranty on the install", aquveda: true, typical: false, diy: false },
+    { feature: "Local, owner-operated service", aquveda: true, typical: false, diy: false },
+    { feature: "Care plan: testing and filters handled for life", aquveda: true, typical: false, diy: false },
+  ] as CompareRow[],
+};
+
+// ============================================================
+// LEARN (water-education articles; starter set, expand anytime)
+// Add an entry to generate a page at /learn/<slug>.
+// ============================================================
+export type Article = {
+  slug: string;
+  title: string;
+  tag: string;
+  excerpt: string;
+  metaDescription: string;
+  body: string[]; // paragraphs
+};
+export const articles: Article[] = [
+  {
+    slug: "is-montgomery-chester-county-water-hard",
+    title: "Is the water hard in Montgomery and Chester County?",
+    tag: "Local water",
+    excerpt: "Most of the western Philadelphia suburbs run moderately hard to hard. Here is what that means for your home, and how to know your number.",
+    metaDescription: "Is water hard in Montgomery & Chester County, PA? What hardness means for your home and how a free water test gives you the exact number. Aquveda explains.",
+    body: [
+      "If you see spots on your glassware, crusty buildup on faucets and showerheads, or your soap never seems to lather, you are almost certainly dealing with hard water. Across Montgomery and Chester County, most homes, whether on municipal supply or a private well, see water that runs moderately hard to hard.",
+      "Hardness is simply dissolved calcium and magnesium. It is not a health hazard, but it is a quiet tax on your home: it scales the inside of your water heater and pipes, shortens the life of dishwashers and washing machines, and leaves skin and hair feeling dry. The harder the water, the faster the damage adds up.",
+      "The only way to know your real number is to test. A free in-home water test measures your hardness in minutes and shows you whether a softener or a salt-free conditioner is the right fix. From there, the decision is based on your actual water, not a guess or a sales pitch.",
+    ],
+  },
+  {
+    slug: "what-a-water-test-reveals",
+    title: "What a free water test actually reveals",
+    tag: "Getting started",
+    excerpt: "A good test takes minutes and tells you far more than hardness. Here is what we measure and why it matters before you spend a dollar.",
+    metaDescription: "What does a home water test reveal? Hardness, chlorine, sediment, and more, and why Aquveda starts every job with a free in-home test before recommending anything.",
+    body: [
+      "Every Aquveda job starts with a free in-home water test, because the right system depends entirely on what is in your water. Guessing leads to oversized equipment you do not need, or undersized equipment that cannot keep up.",
+      "We check hardness, chlorine and the taste and odor that come with it, sediment and clarity, and, for well homes, signs of iron, sulfur, and pH issues. Where testing calls for it, we can target specific contaminants like PFAS. You see the results in plain language, right at your kitchen table.",
+      "From there we recommend only what your water needs. Sometimes that is a full system, sometimes it is a single softener or a drinking-water unit. Either way, you make the call with real data in front of you, and the test costs you nothing.",
+    ],
+  },
+  {
+    slug: "softener-vs-salt-free-conditioner",
+    title: "Softener vs. salt-free conditioner: which is right?",
+    tag: "Softening",
+    excerpt: "Both fight scale, but they work differently. Here is how to choose between a traditional softener and a salt-free conditioner.",
+    metaDescription: "Water softener vs. salt-free conditioner: how they differ, the pros and cons of each, and how to choose the right one for your Montgomery or Chester County home.",
+    body: [
+      "A traditional softener uses ion exchange to actually remove the calcium and magnesium that cause hardness. It is the most complete fix: no scale, easier lathering, softer laundry, and longer appliance life. It uses salt and a small amount of water to regenerate, and a metered head only regenerates when needed, which keeps both in check.",
+      "A salt-free conditioner does not remove the minerals; it changes their structure so they do not stick and form scale. It uses no salt and no backwash, which suits homes that want low maintenance or have drainage or sodium concerns. You will not get the slippery softened-water feel, but you will get strong scale control.",
+      "Which is right comes down to your hardness level, your household, and your preferences. A free in-home test gives us the number, and we recommend the option that fits your home rather than the one that is easiest to sell.",
+    ],
+  },
+  {
+    slug: "why-reverse-osmosis-for-drinking-water",
+    title: "Why reverse osmosis for the water you drink",
+    tag: "Drinking water",
+    excerpt: "Whole-home filtration cleans every tap. For the water you actually drink and cook with, reverse osmosis takes it one step further.",
+    metaDescription: "Why use reverse osmosis for drinking water? How RO differs from whole-home filtration, what it removes, and whether remineralization is worth it. Aquveda explains.",
+    body: [
+      "Whole-home filtration does a lot: it strips chlorine, taste, odor, and sediment from every tap in the house. For most uses, that is exactly what you want. But for the water you drink and cook with, reverse osmosis is the gold standard.",
+      "RO pushes water through a very fine membrane that removes dissolved solids and many contaminants that carbon filtration alone leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated faucet, with no more buying or hauling cases of bottled water.",
+      "Pure RO water can taste very clean; if you prefer a fuller taste, a remineralization stage adds beneficial minerals back. We can also run a line to your refrigerator and ice maker so they get the same water. It is the simplest upgrade with the most noticeable daily payoff.",
+    ],
+  },
 ]; 

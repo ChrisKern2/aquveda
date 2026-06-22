@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TopBar from "../../components/TopBar.astro";
+import Header from "../../components/Header.astro";
+import PageHero from "../../components/PageHero.astro";
+import CTABand from "../../components/CTABand.astro";
+import Footer from "../../components/Footer.astro";
+import Icon from "../../components/Icon.astro";
+import { articles } from "../../data/site";
+---
+<Layout
+  title="Learn About Your Water | Aquveda, Montgomery & Chester County, PA"
+  description="Plain-English guides on hard water, filtration, softening, and reverse osmosis for Montgomery & Chester County homes. Water education from Aquveda."
+  path="/learn"
+>
+  <TopBar />
+  <Header />
+  <PageHero
+    eyebrow="Learn"
+    title="Notes on Your Water"
+    subtitle="Plain-English answers about hard water, filtration, softening, and what is actually in your tap."
+    crumbs={[{ label: "Home", href: "/" }, { label: "Learn" }]}
+  />
+  <section style="background:#fff">
+    <div class="wrap" style="padding-top:64px;padding-bottom:74px">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        {articles.map((p) => (
+          <a href={`/learn/${p.slug}`} class="card card-hover" style="padding:28px;display:flex;flex-direction:column;gap:12px;text-decoration:none">
+            <span style="align-self:flex-start;font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#15919b;background:#cde6e8;padding:6px 10px;border-radius:100px">{p.tag}</span>
+            <h2 style="font:700 19px/1.25 var(--font-display);color:#0e3a43;letter-spacing:.01em">{p.title}</h2>
+            <p style="font:400 14.5px/1.6 var(--font-body);color:#5e7177;flex:1">{p.excerpt}</p>
+            <span style="font:700 14px/1 var(--font-body);color:#15919b;display:flex;align-items:center;gap:6px">Read article <Icon name="arrow" size={15} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTABand tone="red" title="Have a Question About Your Water?" subtitle="The fastest answer is a free in-home water test. Call us or request one today." />
+  <Footer />
+  <style>
+    @media (max-width:880px){ section div[style*="repeat(3"]{grid-template-columns:1fr 1fr !important} }
+    @media (max-width:560px){ section div[style*="repeat(3"]{grid-template-columns:1fr !important} }
+  </style>
+</Layout>

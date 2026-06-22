@@ -1,0 +1,72 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TopBar from "../../components/TopBar.astro";
+import Header from "../../components/Header.astro";
+import PageHero from "../../components/PageHero.astro";
+import CTABand from "../../components/CTABand.astro";
+import Footer from "../../components/Footer.astro";
+import Icon from "../../components/Icon.astro";
+import { articles, business } from "../../data/site";
+
+export function getStaticPaths() {
+  return articles.map((a) => ({ params: { slug: a.slug }, props: { article: a } }));
+}
+
+const { article } = Astro.props;
+const path = `/learn/${article.slug}`;
+const site = business.domain;
+
+const related = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: article.title,
+  description: article.metaDescription,
+  url: new URL(path, site).href,
+  author: { "@type": "Organization", name: business.name },
+  publisher: { "@id": `${site}/#business` },
+};
+---
+<Layout title={`${article.title} | Aquveda`} description={article.metaDescription} path={path} schema={[blogSchema]}>
+  <TopBar />
+  <Header />
+  <PageHero
+    eyebrow={article.tag}
+    title={article.title}
+    crumbs={[{ label: "Home", href: "/" }, { label: "Learn", href: "/learn" }, { label: article.tag }]}
+  />
+
+  <section style="background:#fff">
+    <div class="wrap prose" style="padding-top:60px;padding-bottom:56px;max-width:740px">
+      {article.body.map((p) => <p>{p}</p>)}
+      <div style="margin-top:30px;padding:24px;background:#e9e1d2;border-radius:14px;display:flex;flex-direction:column;gap:12px">
+        <h2 style="font:700 20px/1.15 var(--font-display);color:#0e3a43">Want to know what is in your water?</h2>
+        <p style="font:400 15px/1.6 var(--font-body);color:#42505f;margin:0">Every Aquveda job starts with a free in-home water test, no pressure, no obligation.</p>
+        <a class="btn btn-primary" href="/contact" style="font:700 14px/1 var(--font-body);padding:14px 22px;align-self:flex-start;margin-top:4px">Get a Free Water Test <Icon name="arrow" size={15} /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section style="background:#f7f4ec">
+    <div class="wrap" style="padding-top:56px;padding-bottom:64px">
+      <h2 style="font:700 26px/1.1 var(--font-display);color:#0e3a43;margin-bottom:26px;letter-spacing:.01em">Keep Reading</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        {related.map((p) => (
+          <a href={`/learn/${p.slug}`} class="card card-hover" style="padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none">
+            <span style="align-self:flex-start;font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#15919b;background:#cde6e8;padding:6px 10px;border-radius:100px">{p.tag}</span>
+            <h3 style="font:700 16px/1.25 var(--font-body);color:#0e3a43">{p.title}</h3>
+            <span style="font:700 13.5px/1 var(--font-body);color:#15919b;display:flex;align-items:center;gap:6px;margin-top:2px">Read <Icon name="arrow" size={14} /></span>
+          </a>
+        ))}
+      </div>
+    </div>
+    <style>
+      @media (max-width:880px){ section[style*="#f7f4ec"] div[style*="repeat(3"]{grid-template-columns:1fr !important} }
+    </style>
+  </section>
+
+  <CTABand tone="red" />
+  <Footer />
+</Layout>

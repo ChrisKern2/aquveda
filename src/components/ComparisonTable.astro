@@ -1,0 +1,43 @@
+---
+import { comparison } from "../data/site";
+import Icon from "./Icon.astro";
+---
+<section style="background:#0e3a43">
+  <div class="wrap" style="padding-top:74px;padding-bottom:74px">
+    <div style="text-align:center;max-width:680px;margin:0 auto 44px">
+      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc;margin-bottom:12px">The Honest Comparison</div>
+      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;margin-bottom:14px;text-wrap:balance">Why Homeowners Choose Aquveda</h2>
+      <p style="font:400 17px/1.6 var(--font-body);color:#cde6e8">How we stack up against typical providers and big-box DIY kits.</p>
+    </div>
+
+    <div style="overflow-x:auto;border-radius:16px;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,.25)">
+      <table style="width:100%;border-collapse:collapse;min-width:560px">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:20px 24px;font:700 14px/1.2 var(--font-body);color:#0e3a43;background:#e9e1d2"></th>
+            {comparison.columns.map((c, i) => (
+              <th style={`text-align:center;padding:20px 18px;font:700 ${i === 0 ? "16" : "13.5"}px/1.2 var(--font-${i === 0 ? "display" : "body"});color:${i === 0 ? "#15919b" : "#5e7177"};background:${i === 0 ? "#fff" : "#e9e1d2"};letter-spacing:.01em`}>{c}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {comparison.rows.map((row, r) => (
+            <tr style={r % 2 === 1 ? "background:#f7f4ec" : "background:#fff"}>
+              <td style="text-align:left;padding:16px 24px;font:500 14.5px/1.4 var(--font-body);color:#0e3a43">{row.feature}</td>
+              <td style="text-align:center;padding:16px 18px;background:rgba(21,145,155,.06)">
+                {row.aquveda ? <span style="color:#1f8a5b;display:inline-flex"><Icon name="check" size={22} /></span> : <span style="color:#b9c2c4;display:inline-flex"><Icon name="x" size={20} /></span>}
+              </td>
+              <td style="text-align:center;padding:16px 18px">
+                {row.typical ? <span style="color:#1f8a5b;display:inline-flex"><Icon name="check" size={22} /></span> : <span style="color:#b9c2c4;display:inline-flex"><Icon name="x" size={20} /></span>}
+              </td>
+              <td style="text-align:center;padding:16px 18px">
+                {row.diy ? <span style="color:#1f8a5b;display:inline-flex"><Icon name="check" size={22} /></span> : <span style="color:#b9c2c4;display:inline-flex"><Icon name="x" size={20} /></span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;font:400 13px/1.5 var(--font-body);color:#8aa0a6;margin-top:18px">Comparison reflects typical industry practices; individual providers vary.</p>
+  </div>
+</section>
