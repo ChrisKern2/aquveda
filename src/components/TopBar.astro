@@ -2,17 +2,17 @@
 import { business } from "../data/site";
 import Icon from "./Icon.astro";
 ---
-<div style="background:#0f1a30">
+<div style="background:#0b2a31">
   <div class="wrap" style="padding-top:9px;padding-bottom:9px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
-    <div style="display:flex;align-items:center;gap:10px;color:#cf6a6f">
+    <div style="display:flex;align-items:center;gap:10px;color:#3db8c6">
       <Icon name="shield" size={15} />
       <span style="font:600 12px/1 var(--font-body);color:#c9d0db;letter-spacing:.01em">Locally owned &middot; Licensed &amp; fully insured</span>
     </div>
     <div style="display:flex;align-items:center;gap:18px">
-      <span style="font:600 12px/1 var(--font-body);color:#9aa6b5">Free same-day quotes</span>
+      <span style="font:600 12px/1 var(--font-body);color:#8aa0a6">Free in-home water tests</span>
       <div style="width:1px;height:14px;background:rgba(255,255,255,.18)"></div>
       <a class="util-phone" href={business.phoneHref} style="font:700 12.5px/1 var(--font-body);color:#fff;text-decoration:none;display:flex;align-items:center;gap:7px">
-        <span style="color:#cf6a6f;display:flex"><Icon name="phone" size={14} /></span>
+        <span style="color:#3db8c6;display:flex"><Icon name="phone" size={14} /></span>
         {business.phoneDisplay}
       </a>
     </div>

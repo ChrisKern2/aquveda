@@ -19,7 +19,7 @@ const site = business.domain;
 const townSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
-  name: `${business.name} — ${town.name}, PA`,
+  name: `${business.name}, ${town.name}, PA`,
   url: new URL(path, site).href,
   telephone: business.phoneDisplay,
   email: business.email,
@@ -30,26 +30,26 @@ const townSchema = {
   address: { "@type": "PostalAddress", addressLocality: town.name, addressRegion: "PA", addressCountry: "US" },
 };
 
-const title = `Exterior Cleaning in ${town.name}, PA | Liberty Exterior Co.`;
-const description = `Window cleaning, pressure washing & gutter care in ${town.name}, ${town.county}. Locally owned, licensed & insured. Free same-day quotes from Liberty Exterior Co.`;
+const title = `Water Treatment in ${town.name}, PA | Aquveda`;
+const description = `Whole-home water filtration, softening & drinking water in ${town.name}, ${town.county}. Locally owned, licensed & insured. Free in-home water tests from Aquveda`;
 ---
 <Layout title={title} description={description} path={path} schema={[townSchema]}>
   <TopBar />
   <Header />
   <PageHero
     eyebrow={town.region}
-    title={`Exterior Cleaning in ${town.name}, PA`}
-    subtitle={`Window cleaning, pressure washing, and gutter care for homes and businesses in ${town.name}.`}
+    title={`Water Treatment in ${town.name}, PA`}
+    subtitle={`Whole-home filtration, softening, and drinking-water systems for homes and businesses in ${town.name}.`}
     crumbs={[{ label: "Home", href: "/" }, { label: "Service Areas", href: "/service-areas" }, { label: town.name }]}
   />
 
   <section style="background:#fff">
     <div class="wrap" style="padding-top:64px;padding-bottom:50px;max-width:820px">
       <div class="prose">
-        <h2 style="font:700 30px/1.1 var(--font-display);color:#16243d;margin-bottom:18px;letter-spacing:.01em">Your Local Exterior Cleaning Team in {town.name}</h2>
-        <p>{town.blurb} As a locally owned company serving {town.county}, Liberty Exterior Co. brings professional window cleaning, pressure washing, and gutter care right to your door — with the same upfront pricing, careful insured crews, and 100% satisfaction guarantee we bring to every neighborhood we serve.</p>
-        <p>Whether you need streak-free windows before guests arrive, a soft wash to strip algae off your siding, or gutters cleared before the next big storm, we handle it start to finish. We match the right method to every surface so nothing gets damaged, protect your landscaping while we work, and walk the job with you before we leave. No pressure, no surprises — just a clean home and a price you agreed to up front.</p>
-        <p>Ready to see what a professional clean looks like in {town.name}? Request a free, same-day quote or call us at <a href="tel:2159789719" style="color:#b3303a;font-weight:600;text-decoration:none">{business.phoneDisplay}</a>.</p>
+        <h2 style="font:700 30px/1.1 var(--font-display);color:#0e3a43;margin-bottom:18px;letter-spacing:.01em">Your Local Water Treatment Team in {town.name}</h2>
+        <p>{town.blurb} As a locally owned company serving {town.county}, Aquveda brings whole-home filtration, water softening, and drinking-water systems right to your door, with the same upfront pricing, careful insured crews, and workmanship warranty we bring to every neighborhood we serve.</p>
+        <p>Whether you want cleaner, better-tasting water from every tap, an end to hard-water scale, or bottled-water quality at the kitchen sink, we handle it start to finish. We start with a free in-home water test, size the right system for your home, install it cleanly with a licensed installer, and walk the result with you before we leave. No pressure, no surprises, just better water and a price you agreed to up front.</p>
+        <p>Ready to see what a professional clean looks like in {town.name}? Request a free, in-home water test or call us at <a href="tel:2159789719" style="color:#15919b;font-weight:600;text-decoration:none">{business.phoneDisplay}</a>.</p>
       </div>
     </div>
   </section>
@@ -57,20 +57,20 @@ const description = `Window cleaning, pressure washing & gutter care in ${town.n
   <!-- Services available in this town -->
   <section style="background:#f7f4ec">
     <div class="wrap" style="padding-top:56px;padding-bottom:64px">
-      <h2 style="font:700 30px/1.1 var(--font-display);color:#16243d;margin-bottom:28px;letter-spacing:.01em;text-align:center">Our Services in {town.name}</h2>
+      <h2 style="font:700 30px/1.1 var(--font-display);color:#0e3a43;margin-bottom:28px;letter-spacing:.01em;text-align:center">Our Services in {town.name}</h2>
       <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         {services.map((s) => (
           <a href={`/services/${s.slug}`} class="card card-hover" style="padding:26px;display:flex;flex-direction:column;gap:12px;text-decoration:none">
-            <span style="width:46px;height:46px;border-radius:11px;background:#f4eee1;display:flex;align-items:center;justify-content:center;color:#b3303a"><Icon name={s.icon} size={24} /></span>
-            <h3 style="font:700 20px/1.1 var(--font-display);color:#16243d;letter-spacing:.01em">{s.name} in {town.name}</h3>
-            <p style="font:400 14.5px/1.6 var(--font-body);color:#5b6675">{s.short}</p>
-            <span style="font:700 14px/1 var(--font-body);color:#b3303a;display:flex;align-items:center;gap:7px;margin-top:auto">Learn more <Icon name="arrow" size={15} /></span>
+            <span style="width:46px;height:46px;border-radius:11px;background:#e9e1d2;display:flex;align-items:center;justify-content:center;color:#15919b"><Icon name={s.icon} size={24} /></span>
+            <h3 style="font:700 20px/1.1 var(--font-display);color:#0e3a43;letter-spacing:.01em">{s.name} in {town.name}</h3>
+            <p style="font:400 14.5px/1.6 var(--font-body);color:#5e7177">{s.short}</p>
+            <span style="font:700 14px/1 var(--font-body);color:#15919b;display:flex;align-items:center;gap:7px;margin-top:auto">Learn more <Icon name="arrow" size={15} /></span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <CTABand tone="red" title={`Get a Free Quote in ${town.name}`} subtitle="Call us today or send a message — we'll get you a same-day, no-obligation price." />
+  <CTABand tone="red" title={`Get a Free Quote in ${town.name}`} subtitle="Call us today or send a message, we'll get you a same-day, no-obligation price." />
   <Footer />
 </Layout>

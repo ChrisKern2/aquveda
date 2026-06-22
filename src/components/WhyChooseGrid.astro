@@ -2,20 +2,20 @@
 import { whyChoose } from "../data/site";
 import Icon from "./Icon.astro";
 ---
-<section id="why" style="background:#16243d">
+<section id="why" style="background:#0e3a43">
   <div class="wrap" style="padding-top:74px;padding-bottom:74px">
     <div style="text-align:center;max-width:640px;margin:0 auto 46px">
-      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#e07a80;margin-bottom:12px">Why Liberty</div>
+      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc;margin-bottom:12px">Why Aquveda</div>
       <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;margin-bottom:14px;text-wrap:balance">Why Homeowners Choose Us</h2>
-      <p style="font:400 17px/1.6 var(--font-body);color:#c2cad6">No gimmicks — just careful work, honest pricing, and a guarantee we actually stand behind.</p>
+      <p style="font:400 17px/1.6 var(--font-body);color:#cde6e8">No gimmicks, just careful work, honest pricing, and a guarantee we actually stand behind.</p>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
       {whyChoose.map((w) => (
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px">
-          <span style="width:44px;height:44px;border-radius:11px;background:rgba(207,106,111,.16);display:flex;align-items:center;justify-content:center;color:#e07a80"><Icon name={w.icon} size={22} /></span>
+          <span style="width:44px;height:44px;border-radius:11px;background:rgba(207,106,111,.16);display:flex;align-items:center;justify-content:center;color:#7fd3dc"><Icon name={w.icon} size={22} /></span>
           <h3 style="font:700 16.5px/1.2 var(--font-body);color:#fff">{w.title}</h3>
-          <p style="font:400 14px/1.6 var(--font-body);color:#9aa6b5">{w.body}</p>
+          <p style="font:400 14px/1.6 var(--font-body);color:#8aa0a6">{w.body}</p>
         </div>
       ))}
     </div>

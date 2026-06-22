@@ -6,17 +6,17 @@ import PageHero from "../components/PageHero.astro";
 import Footer from "../components/Footer.astro";
 import { business } from "../data/site";
 ---
-<Layout title="Terms of Service | Liberty Exterior Co." description="The terms that apply when you use the Liberty Exterior Co. website and services." path="/terms">
+<Layout title="Terms of Service | Aquveda" description="The terms that apply when you use the Aquveda website and services." path="/terms">
   <TopBar />
   <Header />
   <PageHero eyebrow="Legal" title="Terms of Service" crumbs={[{ label: "Home", href: "/" }, { label: "Terms" }]} />
   <section style="background:#fff">
     <div class="wrap prose" style="padding-top:56px;padding-bottom:70px;max-width:760px">
       <p><strong>Last updated:</strong> {`{{LAST_UPDATED_DATE}}`}</p>
-      <p>{`{{REVIEW_WITH_COUNSEL — replace this placeholder with your finalized terms of service.}}`}</p>
+      <p>{`{{REVIEW_WITH_COUNSEL, replace this placeholder with your finalized terms of service.}}`}</p>
       <p><strong>Quotes &amp; estimates.</strong> Quotes provided through this site or by phone are estimates based on the information you provide and may be adjusted after an on-site assessment.</p>
-      <p><strong>Satisfaction guarantee.</strong> We stand behind our work with a 100% satisfaction guarantee. If you're not satisfied, contact us promptly and we'll make it right.</p>
-      <p><strong>Contact.</strong> Questions? Email <a href={`mailto:${business.email}`} style="color:#b3303a;font-weight:600;text-decoration:none">{business.email}</a> or call {business.phoneDisplay}.</p>
+      <p><strong>Satisfaction guarantee.</strong> We stand behind our work with a workmanship warranty. If you're not satisfied, contact us promptly and we'll make it right.</p>
+      <p><strong>Contact.</strong> Questions? Email <a href={`mailto:${business.email}`} style="color:#15919b;font-weight:600;text-decoration:none">{business.email}</a> or call {business.phoneDisplay}.</p>
     </div>
   </section>
   <Footer />

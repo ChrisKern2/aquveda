@@ -5,7 +5,7 @@ import { business, services, towns } from "../data/site";
 interface Props {
   title: string;
   description: string;
-  /** Path only, e.g. "/services/window-cleaning". Canonical + OG URL are built from site. */
+  /** Path only, e.g. "/services/whole-home-filtration". Canonical + OG URL are built from site. */
   path?: string;
   image?: string;
   /** Extra JSON-LD objects (Service, FAQPage, town LocalBusiness, etc.). */
@@ -43,7 +43,7 @@ const localBusiness: Record<string, unknown> = {
     "@type": "PostalAddress",
     addressRegion: "PA",
     addressCountry: "US",
-    // {{ADDRESS}} — add streetAddress / addressLocality / postalCode when known.
+    // {{ADDRESS}}, add streetAddress / addressLocality / postalCode when known.
   },
   areaServed,
   knowsAbout: services.map((s) => s.name),
@@ -62,7 +62,7 @@ if (ENABLE_AGGREGATE_RATING) {
 
 const jsonLd = [localBusiness, ...schema];
 const favicon =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2316243D'/%3E%3Cpath d='M12 4 L13.9 9.4 L19.6 9.6 L15.1 13.2 L16.7 18.8 L12 15.4 L7.3 18.8 L8.9 13.2 L4.4 9.6 L10.1 9.4 Z' fill='%23B3303A'/%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 6 C 50 6 18 46 18 72 A 32 32 0 1 0 82 72 C 82 46 50 6 50 6 Z' fill='%2315919b'/%3E%3C/svg%3E";
 ---
 
 <!doctype html>
@@ -74,7 +74,7 @@ const favicon =
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href={favicon} />
-    <meta name="theme-color" content="#16243D" />
+    <meta name="theme-color" content="#0E3A43" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -94,7 +94,7 @@ const favicon =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Libre+Franklin:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 

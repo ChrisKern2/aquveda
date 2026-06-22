@@ -1,25 +1,26 @@
 // ============================================================
-// SINGLE SOURCE OF TRUTH for Liberty Exterior Co.
-// Edit business facts, services, and towns here — pages, the
+// SINGLE SOURCE OF TRUTH for Aquveda.
+// Edit business facts, services, and towns here, pages, the
 // mega-menu, the service grid, schema, and the sitemap all read
 // from this file. To add a town, add one entry to `towns`.
 // {{ }} markers are placeholders YOU must fill in (see README).
 // ============================================================
 
 export const business = {
-  name: "Liberty Exterior Co.",
-  legalName: "Liberty Exterior Co.",
-  domain: "https://libertyexteriorco.com",
+  name: "Aquveda",
+  legalName: "Aquveda",
+  domain: "https://aquveda.com",
   phoneDisplay: "(215) 978-9719",
   phoneHref: "tel:2159789719",
-  email: "chris@libertyexteriorco.com",
+  email: "chris@aquveda.com",
   foundedYear: 2026,
-  priceRange: "$$",
-  // Placeholders — do not invent. Fill in when known (see README checklist).
+  priceRange: "$$$",
+  tagline: "Water, perfected.",
+  // Placeholders, do not invent. Fill in when known (see README checklist).
   hicNumber: "{{HIC_NUMBER}}",
   address: "{{ADDRESS}}",
   reviewCount: "{{REVIEW_COUNT}}",
-  // Office hours — edit to your real availability.
+  // Office hours, edit to your real availability.
   hours: [
     { day: "Mon–Fri", time: "8:00 AM – 6:00 PM" },
     { day: "Saturday", time: "9:00 AM – 3:00 PM" },
@@ -35,7 +36,7 @@ export const business = {
   state: "PA",
 } as const;
 
-// The Jobber embed — preserved exactly from the original site.
+// The Jobber embed, preserved exactly from the original site.
 // Rendered raw inside the QuoteForm component.
 export const jobber = {
   clienthubId: "20e4967a-d1b4-4256-b3e1-75265d5650c0-4888609",
@@ -68,136 +69,180 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "window-cleaning",
-    name: "Window Cleaning",
-    short: "Streak-free glass inside and out, screens, tracks, and skylights.",
-    icon: "window",
-    image: "/images/svc-windows.png",
-    imageAlt:
-      "Professional window cleaner squeegeeing a streak-free residential window in the Philadelphia suburbs",
-    metaTitle: "Window Cleaning in Montgomery & Chester County | Liberty Exterior Co.",
-    metaDescription:
-      "Professional interior & exterior window cleaning in Blue Bell, Malvern, Exton & nearby. Streak-free glass, screens, tracks, and skylights. Free same-day quotes.",
-    intro: [
-      "Clean windows change how your whole home feels — more daylight, a sharper view, and a first impression that says the place is cared for. Liberty Exterior Co. delivers streak-free glass for homes and businesses across Montgomery and Chester County, using purified water and professional squeegee work rather than the soapy smears a quick DIY pass leaves behind.",
-      "We treat the full window, not just the pane. That means the interior and exterior glass, the screens, and the tracks and sills where dirt and dead bugs collect. For second-story and hard-to-reach glass we use pure-water-fed poles that rinse spotless and keep our crew safely on the ground. The result is glass that genuinely disappears — no haze in the morning sun, no streaks at sunset.",
-      "Every visit is handled by careful, fully insured crews who treat your home like their own: shoes off where it matters, furniture moved back exactly where it was, and a walkthrough before we leave so you only sign off when it's right. Whether it's a one-time spring refresh or a recurring schedule, you get the same upfront pricing and the same 100% satisfaction guarantee.",
-    ],
-    included: [
-      "Interior and exterior glass, hand-detailed and squeegee-finished",
-      "Screen cleaning and reset",
-      "Window track and sill detailing",
-      "Spot-free purified-water rinse on exterior glass",
-      "Sills wiped and frames touched up",
-      "Full walkthrough before we pack up",
-    ],
-    subservices: [
-      { name: "Interior & Exterior Glass", desc: "Both sides hand-detailed for a true streak-free finish." },
-      { name: "Screen Cleaning", desc: "Screens removed, washed, dried, and reset so airflow and views stay clear." },
-      { name: "Track & Sill Detailing", desc: "We vacuum and wipe the grime, grit, and debris that build up in tracks." },
-      { name: "Hard-Water Stain Removal", desc: "Mineral spotting from sprinklers and runoff buffed off the glass." },
-      { name: "Storefront / Commercial Glass", desc: "Entry doors and display glass kept spotless on a schedule that fits your hours." },
-      { name: "Skylights", desc: "Overhead and angled glass cleaned safely to bring the daylight back." },
-    ],
-    process: [
-      { title: "Free quote", body: "Tell us your window count and we send a clear, no-obligation price the same day." },
-      { title: "We schedule you in", body: "Pick a window that works. We confirm and show up on time." },
-      { title: "Detailed, careful clean", body: "Glass, screens, tracks, and sills — done right and tidied up." },
-      { title: "Walkthrough & guarantee", body: "We check every pane with you. Not happy? We make it right." },
-    ],
-    faqs: [
-      { q: "Do you clean both the inside and outside of the windows?", a: "Yes. Our standard window cleaning covers interior and exterior glass, plus screens, tracks, and sills. If you only want exterior, just let us know and we'll price it accordingly." },
-      { q: "How often should I have my windows cleaned?", a: "Most homeowners in Montgomery and Chester County do it once or twice a year — typically spring and fall. Homes near trees, pollen, or busy roads, and most storefronts, benefit from a recurring quarterly schedule." },
-      { q: "Can you reach second-story and hard-to-access windows?", a: "Yes. We use pure-water-fed poles and the right ladders to safely clean upper-floor windows and skylights, so you get spotless glass without anyone climbing where they shouldn't." },
-      { q: "Will you remove hard-water stains?", a: "In most cases, yes. Mineral spotting from sprinklers and runoff can usually be buffed out. Severe, long-set staining sometimes needs a dedicated restoration step, which we'll flag in your quote." },
-    ],
-  },
-  {
-    slug: "pressure-washing",
-    name: "Pressure Washing",
-    short: "Soft-wash house exteriors plus driveways, patios, decks, and more.",
+    slug: "whole-home-filtration",
+    name: "Whole-Home Filtration",
+    short: "Clean, great-tasting water from every tap in the house.",
     icon: "spray",
-    image: "/images/svc-wash.png",
+    image: "/images/svc-filtration.png",
     imageAlt:
-      "Soft-wash house washing removing dirt and algae from siding on a suburban Pennsylvania home",
-    metaTitle: "Pressure Washing in Montgomery & Chester County | Liberty Exterior Co.",
+      "Whole-home water filtration system installed on the main line in a Philadelphia-area home",
+    metaTitle: "Whole-Home Water Filtration in Montgomery & Chester County | Aquveda",
     metaDescription:
-      "Soft-wash house washing, driveways, patios, decks, siding & roofs in Blue Bell, Malvern, West Chester & nearby. Licensed, insured, free same-day quotes.",
+      "Whole-home water filtration in Blue Bell, Malvern, Exton & nearby. Remove chlorine, taste, odor, and emerging contaminants from every tap. Free in-home water test.",
     intro: [
-      "Green algae on the siding, black streaks on the roof, a driveway gone gray — exterior grime builds so slowly you stop seeing it, until a fresh wash reminds you what the house is supposed to look like. Liberty Exterior Co. brings that curb appeal back for homes and businesses throughout Montgomery and Chester County.",
-      "We match the method to the surface. Siding, soft roofs, and painted wood get a low-pressure soft wash with professional cleaning solutions that kill algae and mildew at the root instead of just blasting the surface. Hard surfaces like concrete driveways, walkways, and pavers get controlled high-pressure cleaning that lifts out ground-in dirt and stains. Using the wrong pressure is how DIY jobs etch concrete and strip paint — getting it right is the whole job.",
-      "Our crews are fully insured and trained to protect what's around the work zone: plants are rinsed and watered, fixtures are covered, and we keep runoff in check. You get upfront pricing, a same-day quote, and our 100% satisfaction guarantee on every wash — one-time or on a recurring plan that keeps the algae from ever coming back.",
+      "What comes out of the tap is not what most homeowners think it is. Even water that meets municipal standards carries chlorine, the taste and smell that come with it, fine sediment, and a growing list of contaminants that treatment plants were never built to remove. Aquveda installs whole-home filtration that cleans the water for the entire house, not just one faucet.",
+      "We start with a free in-home water test so you see exactly what is in your water before you spend a dollar. Then we size and install a filtration system on the main line, matched to your home, your water, and your flow. The result is water that tastes better, smells like nothing, and is gentler on your skin, your hair, your fixtures, and your appliances.",
+      "Every install is performed by a licensed, insured installer, tested on completion, and backed by our workmanship warranty. Pair it with our Care plan and we test the water and change the filters for the life of the system, so it stays perfect without you thinking about it.",
     ],
     included: [
-      "Surface-appropriate soft wash or high-pressure cleaning",
-      "Algae, mildew, and mold treatment that prevents fast regrowth",
-      "Pre-wash plant protection and post-wash rinse",
-      "Detailed edges, corners, and trouble spots",
-      "Careful, fully insured crews",
-      "Walkthrough and satisfaction check before we leave",
+      "Free in-home water test and contaminant report",
+      "System sized to your home, water, and flow rate",
+      "Licensed, insured installation on the main line",
+      "Carbon and sediment filtration for chlorine, taste, odor, and particulates",
+      "Post-install water test to confirm results",
+      "Workmanship warranty and optional Care plan",
     ],
     subservices: [
-      { name: "House Washing (Soft Wash)", desc: "Low-pressure cleaning that safely strips algae and dirt from siding." },
-      { name: "Driveways & Walkways", desc: "High-pressure cleaning that lifts years of grime, oil, and stains from concrete." },
-      { name: "Patios & Decks", desc: "Gentle, wood- and stone-safe washing that brings outdoor living space back." },
-      { name: "Siding Cleaning", desc: "Vinyl, fiber-cement, and stucco brightened without damaging the surface." },
-      { name: "Roof Washing", desc: "Soft-wash treatment that removes black streaks and roof algae at the root." },
-      { name: "Fence Cleaning", desc: "Wood and vinyl fencing cleaned to match a freshly washed home." },
+      { name: "Carbon Filtration", desc: "Removes chlorine, taste, and odor across the whole house." },
+      { name: "Sediment Filtration", desc: "Captures sand, rust, and fine particulates before they reach your fixtures." },
+      { name: "Emerging-Contaminant Media", desc: "Targeted media for concerns like PFAS where testing calls for it." },
+      { name: "High-Flow Systems", desc: "Larger media tanks sized for homes with four or more bathrooms." },
+      { name: "UV Disinfection", desc: "Inactivates bacteria, commonly added on well-water homes." },
+      { name: "Well-Water Treatment", desc: "Iron, sulfur, and pH correction, quoted on your water-test result." },
     ],
     process: [
-      { title: "Free quote", body: "Send us the surfaces and square footage; we price it the same day." },
-      { title: "We schedule you in", body: "We confirm a date and arrive on time, ready to work." },
-      { title: "Right method, right pressure", body: "Soft wash for delicate surfaces, high pressure for hard ones." },
-      { title: "Walkthrough & guarantee", body: "We review the results with you and stand behind every wash." },
+      { title: "Free water test", body: "We test your water in your home and show you exactly what is in it." },
+      { title: "Right-sized recommendation", body: "We size the system to your home and water, and quote it on the spot." },
+      { title: "Clean, licensed install", body: "A licensed installer fits the system on the main line and tidies up." },
+      { title: "Test & guarantee", body: "We retest the water with you and back the work with our warranty." },
     ],
     faqs: [
-      { q: "What's the difference between soft washing and pressure washing?", a: "Soft washing uses low pressure plus cleaning solutions to safely treat siding, roofs, and painted surfaces — it kills algae and mildew rather than just blasting it. Pressure washing uses higher pressure for hard surfaces like concrete. We choose the method that won't damage your surface." },
-      { q: "Will pressure washing damage my siding or roof?", a: "Not when it's done correctly. That's exactly why we soft wash delicate surfaces. High pressure on the wrong surface is how DIY jobs etch concrete or strip paint — matching pressure to material is the core of professional washing." },
-      { q: "How often should I wash my home's exterior?", a: "Most homes in our area benefit from a house wash every 1–2 years, and concrete every year or two. Shaded, tree-lined, and north-facing surfaces grow algae faster and may need annual attention. Recurring plans keep it from ever building up." },
-      { q: "Do you protect landscaping during the wash?", a: "Yes. We pre-rinse and water plants before and after, cover sensitive fixtures, and manage runoff so your landscaping is protected throughout the job." },
+      { q: "Do I really need filtration if my water is treated by the city?", a: "Municipal treatment makes water safe to the legal standard, but it still arrives with chlorine, taste and odor, sediment from aging pipes, and contaminants that plants are not required to remove. A free water test shows you exactly what is in yours, so the decision is based on data, not a sales pitch." },
+      { q: "What does whole-home filtration remove?", a: "A properly sized system removes chlorine, taste, and odor across the whole house, captures sediment, and can target specific contaminants like PFAS when your test calls for it. We size the media to your actual water." },
+      { q: "How long does an install take?", a: "Most whole-home filtration installs are completed in a single visit of a few hours by a licensed installer, with the water tested before and after." },
+      { q: "Do the filters need maintenance?", a: "Yes, media and filters are serviced on a schedule. Our Care plan handles the testing and filter changes for you so the system stays at full performance for its life." },
     ],
   },
   {
-    slug: "gutter-cleaning",
-    name: "Gutter Cleaning",
-    short: "Cleared, flushed gutters and downspouts — plus guards and brightening.",
-    icon: "gutter",
-    image: "/images/svc-gutter.png",
+    slug: "water-softening",
+    name: "Water Softening & Conditioning",
+    short: "End hard-water scale and protect your plumbing and appliances.",
+    icon: "shield",
+    image: "/images/svc-softener.png",
     imageAlt:
-      "Technician clearing leaves and debris from a home's gutters to restore proper drainage",
-    metaTitle: "Gutter Cleaning in Montgomery & Chester County | Liberty Exterior Co.",
+      "Water softener system protecting a suburban Pennsylvania home from hard-water scale",
+    metaTitle: "Water Softeners & Conditioners in Montgomery & Chester County | Aquveda",
     metaDescription:
-      "Gutter clearing, downspout flushing, brightening & guard installation in Ambler, Blue Bell, Exton & nearby. Protect your home. Free same-day quotes.",
+      "Water softening and salt-free conditioning in Blue Bell, Malvern, West Chester & nearby. Stop scale, protect appliances, softer skin and laundry. Free water test.",
     intro: [
-      "Clogged gutters are quiet until they're expensive. When leaves and grit dam up the channel, water spills over the edge and finds your fascia, your foundation, and your basement instead of the downspout. Liberty Exterior Co. keeps that water moving where it should — protecting homes across Montgomery and Chester County one cleaning at a time.",
-      "We don't just scoop the top layer and leave. We clear the full run of debris by hand, bag it, then flush the gutters and downspouts with water to confirm everything actually drains. If a downspout is blocked, we clear it. If we spot a loose hanger, a separated seam, or early fascia damage while we're up there, we tell you — so a five-dollar problem doesn't become a five-thousand-dollar one.",
-      "For homeowners tired of the twice-a-year climb, we install quality gutter guards that keep leaves out while letting water through, and we offer gutter brightening to strip the black tiger-stripe stains off the gutter faces. Every job is handled by careful, fully insured crews, backed by upfront pricing and our 100% satisfaction guarantee.",
+      "Hard water is the quiet tax on a home. It scales your fixtures, shortens the life of your water heater and appliances, leaves spots on glassware, and makes skin and hair feel dry and laundry feel stiff. Most of the Philadelphia suburbs run hard, and the damage adds up long before anyone connects it to the water.",
+      "Aquveda installs metered water softeners and salt-free conditioners sized to your home and your hardness level, measured during a free in-home water test. A softener removes the minerals that cause scale; a salt-free conditioner controls scale without salt or backwash where that fits better. You feel the difference within a day, in the shower and at the sink.",
+      "Each system is installed by a licensed, insured installer, plumbed with a clean loop and bypass, and backed by our workmanship warranty. Add the Care plan and we keep it dialed in and stocked with salt so it simply works.",
     ],
     included: [
-      "Full hand-clearing of leaves and debris from every run",
-      "Debris bagged and hauled away — not left in your beds",
-      "Downspouts flushed and confirmed flowing",
-      "Visual check of hangers, seams, and fascia",
-      "Ground-level cleanup before we leave",
-      "Careful, fully insured crews",
+      "Free in-home hardness test and recommendation",
+      "Softener or salt-free conditioner sized to your home",
+      "Clean loop-and-bypass installation by a licensed installer",
+      "Protection for your water heater, fixtures, and appliances",
+      "Post-install verification",
+      "Workmanship warranty and optional Care plan",
     ],
     subservices: [
-      { name: "Gutter Clearing & Flush", desc: "Full hand-clearing followed by a water flush to confirm proper drainage." },
-      { name: "Downspout Clearing", desc: "Blocked downspouts cleared so water reaches the ground, not your foundation." },
-      { name: "Gutter Brightening", desc: "Black tiger-stripe stains scrubbed off the exterior gutter faces." },
-      { name: "Gutter Guard Installation", desc: "Quality guards that keep leaves out and end the twice-a-year climb." },
+      { name: "Metered Softener", desc: "Removes hardness on demand and regenerates only when needed, saving salt and water." },
+      { name: "Salt-Free Conditioner", desc: "Controls scale with no salt and no backwash where it suits the home." },
+      { name: "Loop & Bypass Install", desc: "A clean plumbing loop so the system is easy to service and bypass." },
+      { name: "Appliance Protection", desc: "Less scale means longer life for heaters, dishwashers, and washing machines." },
+      { name: "Salt Delivery", desc: "Optional recurring salt delivery and fill as part of the Care plan." },
     ],
     process: [
-      { title: "Free quote", body: "Tell us your home's size and gutter run; we price it the same day." },
-      { title: "We schedule you in", body: "We confirm a date and arrive ready, with the right ladders and gear." },
-      { title: "Clear, flush, inspect", body: "Hand-clear the debris, flush the system, and flag anything we see." },
-      { title: "Walkthrough & guarantee", body: "We confirm everything drains and stand behind the work." },
+      { title: "Free water test", body: "We measure your hardness and walk you through what it is costing you." },
+      { title: "Right system, right size", body: "Softener or conditioner, sized to your home and water use." },
+      { title: "Clean, licensed install", body: "A licensed installer plumbs a tidy loop and bypass." },
+      { title: "Verify & guarantee", body: "We confirm the result and back the work with our warranty." },
     ],
     faqs: [
-      { q: "How often should gutters be cleaned?", a: "For most homes in our area, twice a year — late spring and late fall — keeps them flowing. Homes surrounded by mature trees, especially oaks and pines, often need more frequent attention. Gutter guards can stretch that interval considerably." },
-      { q: "Do you flush the downspouts too?", a: "Always. Clearing the gutters without confirming the downspouts flow is only half the job. We flush the full system with water and clear any blockages so you know it actually drains." },
-      { q: "Do you haul away the debris?", a: "Yes. We bag the leaves and debris and take them with us — we don't leave piles in your flower beds or on the lawn." },
-      { q: "Are gutter guards worth it?", a: "For tree-heavy properties, usually yes. Quality guards dramatically cut how often the gutters need clearing and reduce the risk of clogs and overflow. We'll give you an honest read on whether they make sense for your home." },
+      { q: "How do I know if I have hard water?", a: "Spots on glassware, scale on faucets and shower doors, dry skin, stiff laundry, and a water heater that wears out early are all signs. A free in-home test gives you the exact hardness number in minutes." },
+      { q: "What's the difference between a softener and a salt-free conditioner?", a: "A softener uses ion exchange to remove the hardness minerals entirely, which is the most complete fix. A salt-free conditioner changes the minerals so they don't form scale, with no salt and no backwash. We recommend the right one for your home and water." },
+      { q: "Will a softener make my water feel slippery?", a: "Softened water lathers more easily and rinses cleaner, which some people describe as a silky feel. It also means you use less soap and detergent." },
+      { q: "Do I have to keep buying salt?", a: "A metered softener uses salt efficiently, regenerating only when needed. Our Care plan can include scheduled salt delivery and fill so you never have to handle it." },
+    ],
+  },
+  {
+    slug: "drinking-water",
+    name: "Drinking Water Systems",
+    short: "Bottled-water quality at your kitchen tap with reverse osmosis.",
+    icon: "window",
+    image: "/images/svc-ro.png",
+    imageAlt:
+      "Under-sink reverse osmosis drinking water system installed at a kitchen tap",
+    metaTitle: "Reverse Osmosis Drinking Water in Montgomery & Chester County | Aquveda",
+    metaDescription:
+      "Under-sink reverse osmosis drinking water systems in Blue Bell, Malvern, Exton & nearby. Bottled-water quality at the tap. Free in-home water test and quote.",
+    intro: [
+      "For the water you actually drink and cook with, reverse osmosis is the gold standard. Aquveda installs under-sink RO systems that push your water through a fine membrane and a series of filters, stripping out the dissolved solids, taste, and contaminants that even good whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated tap.",
+      "It is the simplest upgrade with the most noticeable daily payoff: better coffee and tea, clearer ice, better-tasting cooking, and the end of buying and hauling bottled water. We can add a remineralization stage that puts beneficial minerals back for taste, and a designer faucet that matches your kitchen.",
+      "Every system is installed cleanly under the sink by a licensed installer, with the drinking water tested on completion. With the Care plan, we change the filters and the membrane on schedule so the water stays pure.",
+    ],
+    included: [
+      "Multi-stage reverse osmosis at the kitchen tap",
+      "Dedicated drinking-water faucet",
+      "Optional remineralization for taste",
+      "Clean under-sink installation by a licensed installer",
+      "Post-install water quality check",
+      "Workmanship warranty and optional Care plan",
+    ],
+    subservices: [
+      { name: "4-Stage Reverse Osmosis", desc: "Membrane and carbon stages for bottled-water quality at the tap." },
+      { name: "Remineralization", desc: "Adds beneficial minerals back for a crisp, balanced taste." },
+      { name: "Designer Faucet Upgrade", desc: "A dedicated faucet that matches your kitchen finish." },
+      { name: "Fridge & Ice Line", desc: "Optional connection so your fridge and ice maker get RO water too." },
+      { name: "Filter & Membrane Service", desc: "Scheduled changes through the Care plan keep it pure." },
+    ],
+    process: [
+      { title: "Free water test", body: "We test your tap water and show you what RO will remove." },
+      { title: "Choose your setup", body: "Standard, remineralized, designer faucet, fridge line, your call." },
+      { title: "Clean under-sink install", body: "A licensed installer fits it tidily and routes the drain and lines." },
+      { title: "Taste the difference", body: "We test the finished water with you and back it with our warranty." },
+    ],
+    faqs: [
+      { q: "What does reverse osmosis remove that filtration doesn't?", a: "RO pushes water through a fine membrane that removes dissolved solids, many contaminants, and the last of the taste that carbon filtration alone leaves behind. It is the highest level of treatment for drinking and cooking water." },
+      { q: "Does RO water taste flat?", a: "Pure RO water can taste very clean. If you prefer a fuller taste, we add a remineralization stage that puts beneficial minerals back, which most people prefer." },
+      { q: "Can it connect to my fridge and ice maker?", a: "Yes. We can run an RO line to your refrigerator and ice maker so they get the same clean water as the tap." },
+      { q: "How often do the filters need changing?", a: "Pre- and post-filters are typically changed annually and the membrane every few years. Our Care plan handles it on schedule so you never have to track it." },
+    ],
+  },
+  {
+    slug: "service-plan",
+    name: "Care Plan & Water Testing",
+    short: "We test your water and change your filters for life, automatically.",
+    icon: "repeat",
+    image: "/images/svc-care.png",
+    imageAlt:
+      "Aquveda technician testing home water quality during a scheduled Care plan visit",
+    metaTitle: "Water Testing & Filter Service Plan in Montgomery & Chester County | Aquveda",
+    metaDescription:
+      "The Aquveda Care plan: annual water testing, scheduled filter changes, priority service, and member pricing. Keep your water perfect for the life of the system.",
+    intro: [
+      "A water system is only as good as its upkeep. Filters load up, membranes age, and softeners drift out of adjustment, and most homeowners never notice until performance drops. The Aquveda Care plan takes that off your plate entirely.",
+      "Members get an annual in-home water test, scheduled filter and membrane changes, priority service if anything ever needs attention, and member pricing on parts and any future systems. We track your system, show up on schedule, and keep your water exactly where it should be, for the life of the equipment.",
+      "It is the difference between owning a water system and never thinking about your water again. Available on any Aquveda install, and on most existing systems we did not install after an initial assessment.",
+    ],
+    included: [
+      "Annual in-home water test and report",
+      "Scheduled filter and membrane changes",
+      "Priority scheduling for any service need",
+      "Member pricing on parts and future systems",
+      "Optional softener salt delivery and fill",
+      "System tracking so nothing is ever overdue",
+    ],
+    subservices: [
+      { name: "Annual Water Test", desc: "We retest your water every year and confirm the system is performing." },
+      { name: "Scheduled Filter Changes", desc: "Filters and membranes changed on time, included in the plan." },
+      { name: "Priority Service", desc: "Members move to the front of the schedule whenever something is needed." },
+      { name: "Member Pricing", desc: "Discounted parts and preferred pricing on any future systems." },
+      { name: "Salt Delivery", desc: "Optional recurring softener salt delivery and fill." },
+    ],
+    process: [
+      { title: "Enroll", body: "Add the Care plan to a new install or after an assessment of your current system." },
+      { title: "We track it", body: "Your system and service dates live in our system, not your memory." },
+      { title: "We show up", body: "Scheduled visits for testing and filter changes, on time." },
+      { title: "Water stays perfect", body: "You never think about your water again. That's the point." },
+    ],
+    faqs: [
+      { q: "What does the Care plan cost?", a: "Plans start around $49 a month, or an annual option that saves versus monthly. The exact price depends on your systems and whether salt delivery is included. We quote it with your install." },
+      { q: "Can I get the plan if Aquveda didn't install my system?", a: "Usually yes. We do an initial assessment of your existing equipment, and if it is in good shape we can put it on the Care plan." },
+      { q: "What's included versus extra?", a: "The plan includes the annual test, scheduled filter and membrane changes, priority service, and member pricing. Major repairs or new equipment are quoted separately at member pricing." },
+      { q: "Can I cancel?", a: "Yes. The plan is a convenience, not a trap. You can cancel anytime; you simply return to paying per visit." },
     ],
   },
 ];
@@ -214,27 +259,27 @@ export type Town = {
 // and service-area link are generated automatically.
 export const towns: Town[] = [
   { slug: "blue-bell", name: "Blue Bell", county: "Montgomery County", region: "Montgomery County",
-    blurb: "From the neighborhoods off Skippack Pike to the homes around Normandy Farms, Blue Bell properties show off when the glass, siding, and gutters are kept clean." },
+    blurb: "From the neighborhoods off Skippack Pike to the homes around Normandy Farms, Blue Bell runs hard on municipal water, ideal for whole-home softening and filtration." },
   { slug: "whitpain", name: "Whitpain", county: "Montgomery County", region: "Montgomery County",
-    blurb: "Whitpain Township homes sit on wooded lots that look their best with regular exterior care — and fill gutters fast every fall." },
+    blurb: "Whitpain Township mixes municipal and well-water homes, both of which benefit from testing and the right treatment system." },
   { slug: "ambler", name: "Ambler", county: "Montgomery County", region: "Montgomery County",
-    blurb: "Ambler's mix of historic borough homes and newer construction all benefit from careful, surface-appropriate exterior cleaning." },
+    blurb: "Ambler's historic borough homes and newer construction alike see hard-water scale that a softener puts an end to." },
   { slug: "malvern", name: "Malvern", county: "Chester County", region: "Chester County",
-    blurb: "From the borough to the Great Valley corporate corridor, Malvern homes and businesses count on clean glass and bright exteriors." },
+    blurb: "From the borough to the surrounding townships, Malvern has real well-water pockets where filtration and disinfection are a need, not a luxury." },
   { slug: "exton", name: "Exton", county: "Chester County", region: "Chester County",
-    blurb: "Exton's busy mix of residential developments and commercial frontage means exteriors take a beating — and shine after a professional wash." },
+    blurb: "Exton's mix of municipal-hard and private-well homes makes a free water test the right first step for nearly every household." },
   { slug: "west-chester", name: "West Chester", county: "Chester County", region: "Chester County",
-    blurb: "West Chester's historic homes and storefronts deserve glass and surfaces cleaned with the right method for each material." },
+    blurb: "West Chester's historic homes and newer developments both benefit from softening, filtration, and clean drinking water at the tap." },
   { slug: "great-valley", name: "Great Valley", county: "Chester County", region: "Chester County",
-    blurb: "Homes and offices across the Great Valley benefit from recurring exterior cleaning that keeps curb appeal high year-round." },
+    blurb: "Homes across the Great Valley see hard water and aging service lines, exactly what whole-home treatment is built for." },
   { slug: "wayne", name: "Wayne", county: "Delaware County", region: "Main Line",
-    blurb: "Main Line homes in Wayne set a high bar for curb appeal — spotless windows and clean exteriors are part of the standard." },
+    blurb: "Main Line homes in Wayne set a high bar, premium whole-home filtration and drinking water fit right in." },
   { slug: "media", name: "Media", county: "Delaware County", region: "Delaware County",
-    blurb: "From borough rowhomes to leafy side streets, Media properties look their best with regular window, wash, and gutter care." },
+    blurb: "From borough rowhomes to leafy side streets, Media households improve their water with testing and the right system." },
   { slug: "doylestown", name: "Doylestown", county: "Bucks County", region: "Bucks County",
-    blurb: "Doylestown's historic charm shows brightest when the glass is streak-free and the exterior is clean." },
+    blurb: "Doylestown has significant well-water acreage where filtration, softening, and UV disinfection make a real difference." },
   { slug: "newtown", name: "Newtown", county: "Bucks County", region: "Bucks County",
-    blurb: "Newtown homes and businesses rely on careful exterior cleaning to protect and brighten their properties." },
+    blurb: "Newtown's well and municipal homes alike rely on testing and treatment for clean, soft, great-tasting water." },
 ];
 
 // Towns featured in the hero service-area band (a readable subset).
@@ -243,23 +288,23 @@ export const featuredTownNames = ["Blue Bell", "Malvern", "Exton", "West Chester
 export type WhyItem = { icon: string; title: string; body: string };
 
 export const whyChoose: WhyItem[] = [
-  { icon: "bolt", title: "Free Same-Day Quotes", body: "Reach out and get a clear, no-obligation price the same day — no waiting around." },
-  { icon: "shield", title: "Licensed & Fully Insured", body: "Every job is covered. You're protected from the moment we arrive to the moment we leave." },
-  { icon: "badge", title: "100% Satisfaction Guarantee", body: "If it's not right, we make it right. You sign off only when you're happy." },
-  { icon: "home", title: "Locally Owned & Operated", body: "We live and work in Montgomery and Chester County — your neighbors, not a franchise." },
-  { icon: "users", title: "Careful, Insured Crews", body: "Trained teams who protect your landscaping, fixtures, and floors like their own." },
-  { icon: "tag", title: "Upfront, Honest Pricing", body: "The number we quote is the number you pay. No surprises, no pressure." },
-  { icon: "repeat", title: "Recurring Plans Available", body: "Set it and forget it. Keep your home spotless year-round on a schedule that suits you." },
-  { icon: "star", title: "Five-Star Service", body: "We're building our reputation one meticulous job at a time — and it shows." },
+  { icon: "bolt", title: "Free In-Home Water Test", body: "We test your water in your home and show you exactly what is in it before you spend a dollar." },
+  { icon: "shield", title: "Licensed & Insured", body: "Every system is installed by a licensed, insured installer. You're protected start to finish." },
+  { icon: "badge", title: "Workmanship Warranty", body: "If your water isn't right, we make it right. We stand behind every install." },
+  { icon: "home", title: "Locally Owned & Operated", body: "We live and work in Montgomery and Chester County, your neighbors, not a franchise." },
+  { icon: "repeat", title: "Care Plan for Life", body: "We test your water and change your filters on schedule, so the system stays perfect." },
+  { icon: "tag", title: "Upfront, Honest Pricing", body: "The number we quote is the number you pay. No pressure, no surprises." },
+  { icon: "star", title: "Premium Equipment", body: "Systems sized to your home and your water, not a one-size box off a shelf." },
+  { icon: "users", title: "Clean, Careful Installs", body: "Tidy, professional work that protects your home and leaves the space better than we found it." },
 ];
 
 export type Stat = { value: string; label: string };
 
-// HONEST credibility band — no fabricated history or job counts.
+// HONEST credibility band, no fabricated history or job counts.
 export const stats: Stat[] = [
-  { value: "100%", label: "Satisfaction Guarantee" },
+  { value: "Free", label: "In-Home Water Test" },
   { value: "Licensed", label: "& Fully Insured" },
-  { value: "Free", label: "Same-Day Quotes" },
+  { value: "Warranty", label: "On Every Install" },
   { value: "Local", label: "Montgomery & Chester County" },
 ];
 
@@ -268,11 +313,11 @@ export const reviewPlatforms = ["Google", "Yelp", "Facebook", "Nextdoor"];
 
 export type Testimonial = { quote: string; name: string; town: string };
 
-// Editable placeholders — replace with real reviews once you have them.
+// Editable placeholders, replace with real reviews once you have them.
 export const testimonials: Testimonial[] = [
-  { quote: "{{TESTIMONIAL_1 — paste a real customer review here once you have one.}}", name: "{{Customer name}}", town: "{{Town}}" },
-  { quote: "{{TESTIMONIAL_2 — paste a real customer review here once you have one.}}", name: "{{Customer name}}", town: "{{Town}}" },
-  { quote: "{{TESTIMONIAL_3 — paste a real customer review here once you have one.}}", name: "{{Customer name}}", town: "{{Town}}" },
+  { quote: "{{TESTIMONIAL_1, paste a real customer review here once you have one.}}", name: "{{Customer name}}", town: "{{Town}}" },
+  { quote: "{{TESTIMONIAL_2, paste a real customer review here once you have one.}}", name: "{{Customer name}}", town: "{{Town}}" },
+  { quote: "{{TESTIMONIAL_3, paste a real customer review here once you have one.}}", name: "{{Customer name}}", town: "{{Town}}" },
 ];
 
 // Primary navigation (the mega-menu is built from `services`).
@@ -281,4 +326,4 @@ export const nav = [
   { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
-];
+]; 

@@ -1,23 +1,23 @@
-# Claude Code Prompt — SEO Upgrade for Liberty Exterior Co. (Mercurio's-style)
+# Claude Code Prompt, SEO Upgrade for Aquveda (Mercurio's-style)
 
 How to use: open a terminal in this `liberty-website` folder, run `claude`, then paste
 everything in the code block below as your first message.
 
 Design reference for "feel": https://www.mercurios.com/ (a high-trust, conversion-focused
 home-services site). Match its STRUCTURE and trust-signal density, NOT its colors. Keep
-Liberty's existing navy + flag-red brand.
+Aquveda's existing navy + flag-red brand.
 
 ---
 
 You are upgrading my existing website. The current site is a single-page static HTML
-file at ./index.html for "Liberty Exterior Co.", an exterior cleaning company,
+file at ./index.html for "Aquveda", an water treatment company,
 deployed on Vercel. Keep my brand (colors, fonts, logo, voice) and keep the Jobber
 lead form. Rebuild it as a multi-page, SEO-optimized Astro site whose look and feel
-matches the reference site https://www.mercurios.com/ — a professional, trust-heavy,
-conversion-focused home-services site — adapted to exterior cleaning.
+matches the reference site https://www.mercurios.com/, a professional, trust-heavy,
+conversion-focused home-services site, adapted to water treatment.
 
 ============================================================
-DESIGN DIRECTION — make it FEEL like mercurios.com
+DESIGN DIRECTION, make it FEEL like mercurios.com
 ============================================================
 Reproduce this structure and trust-signal density (this is what makes that site work):
 
@@ -26,33 +26,33 @@ Reproduce this structure and trust-signal density (this is what makes that site 
 2. STICKY HEADER with a real MEGA-MENU. Each top service has a dropdown of
    sub-services (see SERVICES tree below). Right side: prominent phone + a solid
    "Get a Free Quote" button (this is our version of their "Schedule Online").
-3. HERO: full-width with a real exterior-cleaning home PHOTO background (use a
+3. HERO: full-width with a real water-treatment home PHOTO background (use a
    placeholder image now, /images/hero-home.jpg, that I will swap). Big headline
    with the location in it, a one-line subhead, dual CTA ("Get a Free Quote" +
    "or call us today (215) 978-9719"), and a small review/rating badge.
 4. SERVICE-AREA HEADLINE band right under the hero: "Serving Blue Bell, Malvern,
    Exton, West Chester, Ambler, Wayne and More," with a short paragraph.
-5. SERVICE GRID: icon tiles per top service (Window Cleaning, Pressure Washing,
+5. SERVICE GRID: icon tiles per top service (Whole-Home Filtration, Pressure Washing,
    Gutter Cleaning), each with a description and a bulleted list of sub-services
-   that link to their pages — exactly like Mercurio's 4-column service section.
+   that link to their pages, exactly like Mercurio's 4-column service section.
 6. MID-PAGE CONTACT BAND: "Get the Help You Need" with Call + Get a Free Quote.
 7. "WHY CHOOSE US" GRID of 6-8 icon tiles. Use HONEST signals: Free Same-Day
    Quotes, Licensed & Fully Insured, 100% Satisfaction Guarantee, Locally Owned,
    Careful Insured Crews, Upfront Pricing, Recurring Plans Available, 5-Star Service.
-8. STAT / CREDIBILITY BAND (counters like their "30+ years"). IMPORTANT: Liberty
+8. STAT / CREDIBILITY BAND (counters like their "30+ years"). IMPORTANT: Aquveda
    was founded in 2026, so DO NOT invent history or job counts. Use honest, editable
    placeholders such as "100%__ Satisfaction Guarantee", "Licensed & Insured",
-   "Free__ Quotes", "Local__ Montgomery & Chester County" — and leave a clearly
+   "Free__ Quotes", "Local__ Montgomery & Chester County", and leave a clearly
    marked {{REVIEW_COUNT}} placeholder I can fill in once reviews exist. Never
    fabricate numbers.
 9. TESTIMONIALS section with review-platform logos (Google, Yelp, Facebook,
    Nextdoor) as placeholders, plus 3 editable {{TESTIMONIAL}} placeholders.
-10. BIG CTA BAND before the footer: "Get the Help You Need — Call Us Today or Send
+10. BIG CTA BAND before the footer: "Get the Help You Need, Call Us Today or Send
     Us a Message."
 11. SERVICE AREAS multi-column list of all towns, each linking to its town page.
 12. RICH FOOTER like theirs: logo, short blurb, "License / Insured" line (leave
     {{HIC_NUMBER}} placeholder), Quick Menu, contact block (phone, email,
-    {{ADDRESS}} placeholder), OFFICE HOURS (Mon-Fri, Sat, Sun — editable), legal
+    {{ADDRESS}} placeholder), OFFICE HOURS (Mon-Fri, Sat, Sun, editable), legal
     links (Privacy, Terms, Sitemap), and social icons (Facebook, Instagram, Google).
 
 ============================================================
@@ -74,9 +74,9 @@ TECH
 ============================================================
 BUSINESS FACTS (use everywhere)
 ============================================================
-- Name: Liberty Exterior Co.   Domain: https://libertyexteriorco.com
+- Name: Aquveda   Domain: https://aquveda.com
 - Phone: (215) 978-9719  (tel:2159789719)
-- Email: chris@libertyexteriorco.com
+- Email: chris@aquveda.com
 - Founded: 2026, locally owned. Licensed & fully insured. 100% satisfaction
   guarantee. Free same-day quotes. Residential & commercial.
 - Service area (western Philadelphia suburbs): Blue Bell, Whitpain, Ambler
@@ -86,7 +86,7 @@ BUSINESS FACTS (use everywhere)
 ============================================================
 SERVICES TREE (drives mega-menu, service grid, and pages)
 ============================================================
-- Window Cleaning  -> Interior & Exterior Glass, Screen Cleaning, Track & Sill
+- Whole-Home Filtration  -> Carbon Filtration, Sediment Filtration, UV Disinfection
   Detailing, Hard-Water Stain Removal, Storefront / Commercial Glass, Skylights
 - Pressure Washing  -> House Washing (Soft Wash), Driveways & Walkways, Patios &
   Decks, Siding Cleaning, Roof Washing, Fence Cleaning
@@ -111,7 +111,7 @@ PAGES (each its own URL, internally linked)
 SEO REQUIREMENTS (per page)
 ============================================================
 - Unique <title> (~55-60 chars) and meta description (~150 chars), e.g.
-  "Pressure Washing in Malvern, PA | Liberty Exterior Co." Service/town H1s must
+  "Pressure Washing in Malvern, PA | Aquveda" Service/town H1s must
   include service + location.
 - Canonical URL, Open Graph, and Twitter Card on every page.
 - JSON-LD:
@@ -129,7 +129,7 @@ SEO REQUIREMENTS (per page)
 CONTENT
 ============================================================
 - Write genuinely useful 300-500 word body copy per service and town page in
-  Liberty's brand voice (confident, plain, local, no fluff). Replace every generic
+  Aquveda's brand voice (confident, plain, local, no fluff). Replace every generic
   "greater metro area" with the real towns.
 - Mark every claim I must verify with {{ }} placeholders (review counts, testimonials,
   license/HIC number, physical address, office hours). Do not fabricate them.
@@ -157,8 +157,8 @@ lead submissions or require inventing a fact.
    are live, then submit the sitemap in Google Search Console.
 
 ## Placeholders you'll need to fill in
-- {{REVIEW_COUNT}} / {{TESTIMONIAL}} x3 — once you have reviews
-- {{HIC_NUMBER}} — PA Home Improvement Contractor # if you register one
-- {{ADDRESS}} — business address to display (or remove if home-based)
-- Office hours — your real availability
-- Real photos — hero-home.jpg + service photos in /images
+- {{REVIEW_COUNT}} / {{TESTIMONIAL}} x3, once you have reviews
+- {{HIC_NUMBER}}, PA Home Improvement Contractor # if you register one
+- {{ADDRESS}}, business address to display (or remove if home-based)
+- Office hours, your real availability
+- Real photos, hero-home.jpg + service photos in /images

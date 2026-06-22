@@ -8,18 +8,18 @@ const { heading = true } = Astro.props;
   <div class="wrap" style="padding-top:70px;padding-bottom:70px">
     {heading && (
       <div style="text-align:center;max-width:640px;margin:0 auto 40px">
-        <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#b3303a;margin-bottom:12px">Service Areas</div>
-        <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#16243d;margin-bottom:14px;text-wrap:balance">Proudly Serving the Western Suburbs</h2>
-        <p style="font:400 17px/1.6 var(--font-body);color:#5b6675">Click your town for local exterior cleaning details, or call us to confirm coverage.</p>
+        <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#15919b;margin-bottom:12px">Service Areas</div>
+        <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#0e3a43;margin-bottom:14px;text-wrap:balance">Proudly Serving the Western Suburbs</h2>
+        <p style="font:400 17px/1.6 var(--font-body);color:#5e7177">Click your town for local water-treatment details, or call us to confirm coverage.</p>
       </div>
     )}
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
       {towns.map((t) => (
         <a href={`/service-areas/${t.slug}`} class="nav-link" style="display:flex;align-items:center;gap:10px;padding:15px 18px;border:1px solid rgba(20,30,50,.1);border-radius:11px;text-decoration:none;background:#fff;transition:border-color .15s,background .15s">
-          <span style="color:#b3303a;display:flex;flex:none"><Icon name="pin" size={18} /></span>
+          <span style="color:#15919b;display:flex;flex:none"><Icon name="pin" size={18} /></span>
           <span style="display:flex;flex-direction:column">
-            <span style="font:700 15px/1.2 var(--font-body);color:#16243d">{t.name}</span>
-            <span style="font:500 11.5px/1.2 var(--font-body);color:#8a92a0">{t.region}</span>
+            <span style="font:700 15px/1.2 var(--font-body);color:#0e3a43">{t.name}</span>
+            <span style="font:500 11.5px/1.2 var(--font-body);color:#7c9197">{t.region}</span>
           </span>
         </a>
       ))}

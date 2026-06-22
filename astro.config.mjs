@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Static output deploys to Vercel with zero config (serves /dist).
 export default defineConfig({
-  site: 'https://libertyexteriorco.com',
+  site: 'https://aquveda.com',
   output: 'static',
   trailingSlash: 'ignore',
   integrations: [sitemap()],

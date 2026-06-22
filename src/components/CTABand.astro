@@ -9,16 +9,16 @@ interface Props {
 }
 const {
   title = "Get the Help You Need",
-  subtitle = "Call us today or send us a message — we'll get you a free, no-obligation quote the same day.",
+  subtitle = "Call us today or send us a message, we'll get you a free, no-obligation quote the same day.",
   tone = "red",
 } = Astro.props;
 
 const isRed = tone === "red";
 const bg = isRed
-  ? "linear-gradient(120% 130% at 80% 20%, #c2434c 0%, #b3303a 55%, #9a2932 100%)"
-  : "#f4eee1";
-const titleColor = isRed ? "#fff" : "#16243d";
-const subColor = isRed ? "rgba(255,255,255,.85)" : "#5b6675";
+  ? "linear-gradient(120% 130% at 80% 20%, #1aa7b0 0%, #15919b 55%, #107880 100%)"
+  : "#e9e1d2";
+const titleColor = isRed ? "#fff" : "#0e3a43";
+const subColor = isRed ? "rgba(255,255,255,.85)" : "#5e7177";
 ---
 <section style={`background:${bg}`}>
   <div class="wrap" style="padding-top:56px;padding-bottom:56px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap">
