@@ -23,7 +23,7 @@ const townSchema = {
   url: new URL(path, site).href,
   telephone: business.phoneDisplay,
   email: business.email,
-  image: new URL("/images/hero-home.jpg", site).href,
+  image: new URL("/images/hero-home.svg", site).href,
   priceRange: business.priceRange,
   parentOrganization: { "@id": `${site}/#business` },
   areaServed: { "@type": "City", name: `${town.name}, PA` },

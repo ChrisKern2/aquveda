@@ -12,7 +12,7 @@ interface Props {
   schema?: object[];
 }
 
-const { title, description, path = "/", image = "/images/hero-home.jpg", schema = [] } = Astro.props;
+const { title, description, path = "/", image = "/images/hero-home.svg", schema = [] } = Astro.props;
 
 const site = business.domain;
 const canonical = new URL(path, site).href;
@@ -36,7 +36,7 @@ const localBusiness: Record<string, unknown> = {
   telephone: business.phoneDisplay,
   email: business.email,
   image: ogImage,
-  logo: new URL("/images/hero-home.jpg", site).href,
+  logo: new URL("/images/hero-home.svg", site).href,
   priceRange: business.priceRange,
   foundingDate: String(business.foundedYear),
   address: {

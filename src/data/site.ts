@@ -73,7 +73,7 @@ export const services: Service[] = [
     name: "Whole-Home Filtration",
     short: "Clean, great-tasting water from every tap in the house.",
     icon: "spray",
-    image: "/images/svc-filtration.png",
+    image: "/images/svc-filtration.svg",
     imageAlt:
       "Whole-home water filtration system installed on the main line in a Philadelphia-area home",
     metaTitle: "Whole-Home Water Filtration in Montgomery & Chester County | Aquveda",
@@ -118,7 +118,7 @@ export const services: Service[] = [
     name: "Water Softening & Conditioning",
     short: "End hard-water scale and protect your plumbing and appliances.",
     icon: "shield",
-    image: "/images/svc-softener.png",
+    image: "/images/svc-softener.svg",
     imageAlt:
       "Water softener system protecting a suburban Pennsylvania home from hard-water scale",
     metaTitle: "Water Softeners & Conditioners in Montgomery & Chester County | Aquveda",
@@ -162,7 +162,7 @@ export const services: Service[] = [
     name: "Drinking Water Systems",
     short: "Bottled-water quality at your kitchen tap with reverse osmosis.",
     icon: "window",
-    image: "/images/svc-ro.png",
+    image: "/images/svc-ro.svg",
     imageAlt:
       "Under-sink reverse osmosis drinking water system installed at a kitchen tap",
     metaTitle: "Reverse Osmosis Drinking Water in Montgomery & Chester County | Aquveda",
@@ -206,7 +206,7 @@ export const services: Service[] = [
     name: "Care Plan & Water Testing",
     short: "We test your water and change your filters for life, automatically.",
     icon: "repeat",
-    image: "/images/svc-care.png",
+    image: "/images/svc-care.svg",
     imageAlt:
       "Aquveda technician testing home water quality during a scheduled Care plan visit",
     metaTitle: "Water Testing & Filter Service Plan in Montgomery & Chester County | Aquveda",
