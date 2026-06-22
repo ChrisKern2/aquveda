@@ -109,7 +109,7 @@ export const services: Service[] = [
       { title: "Test & guarantee", body: "We retest the water with you and back the work with our warranty." },
     ],
     faqs: [
-      { q: "Do I really need filtration if my water is treated by the city?", a: "Municipal treatment makes water safe to the legal standard, but it still arrives with chlorine, taste and odor, sediment from aging pipes, and contaminants that plants are not required to remove. A free water test shows you exactly what is in yours, so the decision is based on data, not a sales pitch." },
+      { q: "Do I really need filtration if my water is treated by the city?", a: "Municipal treatment makes water safe to the legal standard, but it still arrives with chlorine, taste and odor, sediment from aging pipes, and contaminants that plants are not required to remove. A free water test shows you exactly what is in yours, so you can decide from real data." },
       { q: "What does whole-home filtration remove?", a: "A properly sized system removes chlorine, taste, and odor across the whole house, captures sediment, and can target specific contaminants like PFAS when your test calls for it. We size the media to your actual water." },
       { q: "How long does an install take?", a: "Most whole-home filtration installs are completed in a single visit of a few hours by a licensed installer, with the water tested before and after." },
       { q: "Do the filters need maintenance?", a: "Yes, media and filters are serviced on a schedule. Our Care plan handles the testing and filter changes for you so the system stays at full performance for its life." },
@@ -128,7 +128,7 @@ export const services: Service[] = [
     metaDescription:
       "Water softening and salt-free conditioning in Blue Bell, Malvern, West Chester & nearby. Stop scale, protect appliances, softer skin and laundry. Free water test.",
     intro: [
-      "Hard water is the quiet tax on a home. It scales your fixtures, shortens the life of your water heater and appliances, leaves spots on glassware, and makes skin and hair feel dry and laundry feel stiff. Most of the Philadelphia suburbs run hard, and the damage adds up long before anyone connects it to the water.",
+      "Hard water does slow, steady damage. It scales your fixtures, shortens the life of your water heater and appliances, leaves spots on glassware, and makes skin and hair feel dry and laundry feel stiff. Most of the Philadelphia suburbs run hard, and the cost adds up long before anyone connects it to the water.",
       "Aquveda installs metered water softeners and salt-free conditioners sized to your home and your hardness level, measured during a free in-home water test. A softener removes the minerals that cause scale; a salt-free conditioner controls scale without salt or backwash where that fits better. You feel the difference within a day, in the shower and at the sink.",
       "Each system is installed by a licensed, insured installer, plumbed with a clean loop and bypass, and backed by our workmanship warranty. Add the Care plan and we keep it dialed in and stocked with salt so it simply works.",
     ],
@@ -173,7 +173,7 @@ export const services: Service[] = [
     metaDescription:
       "Under-sink reverse osmosis drinking water systems in Blue Bell, Malvern, Exton & nearby. Bottled-water quality at the tap. Free in-home water test and quote.",
     intro: [
-      "For the water you actually drink and cook with, reverse osmosis is the gold standard. Aquveda installs under-sink RO systems that push your water through a fine membrane and a series of filters, stripping out the dissolved solids, taste, and contaminants that even good whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated tap.",
+      "For the water you actually drink and cook with, reverse osmosis is the most thorough treatment. Aquveda installs under-sink RO systems that push your water through a fine membrane and a series of filters, stripping out the dissolved solids, taste, and contaminants that even good whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated tap.",
       "It is the simplest upgrade with the most noticeable daily payoff: better coffee and tea, clearer ice, better-tasting cooking, and the end of buying and hauling bottled water. We can add a remineralization stage that puts beneficial minerals back for taste, and a designer faucet that matches your kitchen.",
       "Every system is installed cleanly under the sink by a licensed installer, with the drinking water tested on completion. With the Care plan, we change the filters and the membrane on schedule so the water stays pure.",
     ],
@@ -220,7 +220,7 @@ export const services: Service[] = [
     intro: [
       "A water system is only as good as its upkeep. Filters load up, membranes age, and softeners drift out of adjustment, and most homeowners never notice until performance drops. The Aquveda Care plan takes that off your plate entirely.",
       "Members get an annual in-home water test, scheduled filter and membrane changes, priority service if anything ever needs attention, and member pricing on parts and any future systems. We track your system, show up on schedule, and keep your water exactly where it should be, for the life of the equipment.",
-      "It is the difference between owning a water system and never thinking about your water again. Available on any Aquveda install, and on most existing systems we did not install after an initial assessment.",
+      "With the plan, you never have to track your water system yourself. It is available on any Aquveda install, and on most existing systems we did not install, after an initial assessment.",
     ],
     included: [
       "Annual in-home water test and report",
@@ -247,7 +247,7 @@ export const services: Service[] = [
       { q: "What does the Care plan cost?", a: "Plans start around $49 a month, or an annual option that saves versus monthly. The exact price depends on your systems and whether salt delivery is included. We quote it with your install." },
       { q: "Can I get the plan if Aquveda didn't install my system?", a: "Usually yes. We do an initial assessment of your existing equipment, and if it is in good shape we can put it on the Care plan." },
       { q: "What's included versus extra?", a: "The plan includes the annual test, scheduled filter and membrane changes, priority service, and member pricing. Major repairs or new equipment are quoted separately at member pricing." },
-      { q: "Can I cancel?", a: "Yes. The plan is a convenience, not a trap. You can cancel anytime; you simply return to paying per visit." },
+      { q: "Can I cancel?", a: "Yes. You can cancel anytime, and you return to paying per visit." },
     ],
   },
 ];
@@ -270,7 +270,7 @@ export const towns: Town[] = [
   { slug: "ambler", name: "Ambler", county: "Montgomery County", region: "Montgomery County",
     blurb: "Ambler's historic borough homes and newer construction alike see hard-water scale that a softener puts an end to." },
   { slug: "malvern", name: "Malvern", county: "Chester County", region: "Chester County",
-    blurb: "From the borough to the surrounding townships, Malvern has real well-water pockets where filtration and disinfection are a need, not a luxury." },
+    blurb: "From the borough to the surrounding townships, Malvern has real well-water pockets where filtration and disinfection are often genuinely needed." },
   { slug: "exton", name: "Exton", county: "Chester County", region: "Chester County",
     blurb: "Exton's mix of municipal-hard and private-well homes makes a free water test the right first step for nearly every household." },
   { slug: "west-chester", name: "West Chester", county: "Chester County", region: "Chester County",
@@ -409,8 +409,8 @@ export const articles: Article[] = [
     metaDescription: "Is water hard in Montgomery & Chester County, PA? What hardness means for your home and how a free water test gives you the exact number. Aquveda explains.",
     body: [
       "If you see spots on your glassware, crusty buildup on faucets and showerheads, or your soap never seems to lather, you are almost certainly dealing with hard water. Across Montgomery and Chester County, most homes, whether on municipal supply or a private well, see water that runs moderately hard to hard.",
-      "Hardness is simply dissolved calcium and magnesium. It is not a health hazard, but it is a quiet tax on your home: it scales the inside of your water heater and pipes, shortens the life of dishwashers and washing machines, and leaves skin and hair feeling dry. The harder the water, the faster the damage adds up.",
-      "The only way to know your real number is to test. A free in-home water test measures your hardness in minutes and shows you whether a softener or a salt-free conditioner is the right fix. From there, the decision is based on your actual water, not a guess or a sales pitch.",
+      "Hardness is dissolved calcium and magnesium. It scales the inside of your water heater and pipes, shortens the life of dishwashers and washing machines, and leaves skin and hair feeling dry. It will not harm your health, and the costs add up quietly. The harder the water, the faster the damage adds up.",
+      "The only way to know your real number is to test. A free in-home water test measures your hardness in minutes and shows you whether a softener or a salt-free conditioner is the right fix. From there, you decide based on your actual water.",
     ],
   },
   {
@@ -429,12 +429,12 @@ export const articles: Article[] = [
     slug: "softener-vs-salt-free-conditioner",
     title: "Softener vs. salt-free conditioner: which is right?",
     tag: "Softening",
-    excerpt: "Both fight scale, but they work differently. Here is how to choose between a traditional softener and a salt-free conditioner.",
+    excerpt: "Both control scale, but they work differently. Here is how to choose between a traditional softener and a salt-free conditioner.",
     metaDescription: "Water softener vs. salt-free conditioner: how they differ, the pros and cons of each, and how to choose the right one for your Montgomery or Chester County home.",
     body: [
       "A traditional softener uses ion exchange to actually remove the calcium and magnesium that cause hardness. It is the most complete fix: no scale, easier lathering, softer laundry, and longer appliance life. It uses salt and a small amount of water to regenerate, and a metered head only regenerates when needed, which keeps both in check.",
       "A salt-free conditioner does not remove the minerals; it changes their structure so they do not stick and form scale. It uses no salt and no backwash, which suits homes that want low maintenance or have drainage or sodium concerns. You will not get the slippery softened-water feel, but you will get strong scale control.",
-      "Which is right comes down to your hardness level, your household, and your preferences. A free in-home test gives us the number, and we recommend the option that fits your home rather than the one that is easiest to sell.",
+      "Which is right comes down to your hardness level, your household, and your preferences. A free in-home test gives us the number, and we recommend the option that fits your home and water.",
     ],
   },
   {
@@ -444,7 +444,7 @@ export const articles: Article[] = [
     excerpt: "Whole-home filtration cleans every tap. For the water you actually drink and cook with, reverse osmosis takes it one step further.",
     metaDescription: "Why use reverse osmosis for drinking water? How RO differs from whole-home filtration, what it removes, and whether remineralization is worth it. Aquveda explains.",
     body: [
-      "Whole-home filtration does a lot: it strips chlorine, taste, odor, and sediment from every tap in the house. For most uses, that is exactly what you want. But for the water you drink and cook with, reverse osmosis is the gold standard.",
+      "Whole-home filtration strips chlorine, taste, odor, and sediment from every tap in the house. For most uses, that is exactly what you want. For the water you drink and cook with, reverse osmosis goes further.",
       "RO pushes water through a very fine membrane that removes dissolved solids and many contaminants that carbon filtration alone leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated faucet, with no more buying or hauling cases of bottled water.",
       "Pure RO water can taste very clean; if you prefer a fuller taste, a remineralization stage adds beneficial minerals back. We can also run a line to your refrigerator and ice maker so they get the same water. It is the simplest upgrade with the most noticeable daily payoff.",
     ],
