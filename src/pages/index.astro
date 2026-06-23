@@ -30,9 +30,10 @@ const productSchema = {
   image: new URL(flagship.image, site).href,
   offers: {
     "@type": "Offer",
-    price: "5400",
+    price: "2699",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-07-31",
     url: site,
   },
 };
@@ -48,7 +49,7 @@ const faqSchema = {
 ---
 <Layout
   title="Aquveda | Whole-Home Water Filtration & Softening in Montgomery & Chester County"
-  description="The Complete Home Water System: whole-home filtration, softening, and reverse-osmosis drinking water from $5,400 installed. Free in-home water test in Montgomery & Chester County, PA."
+  description="The Complete Home Water System: whole-home softening and filtration plus reverse-osmosis drinking water, $2,699 installed during founder pricing (regularly $5,998). Free in-home water test in Montgomery & Chester County, PA."
   path="/"
   schema={[productSchema, faqSchema]}
 >
@@ -74,7 +75,7 @@ const faqSchema = {
         <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance">See what is in your water</h2>
         <p style="font:400 17px/1.65 var(--font-body);color:#cde6e8;max-width:440px">Tell us about your home and we will schedule a free in-home water test, then quote the right system the same day. Prefer to talk? Call us at <a href="tel:2159789719" style="color:#7fd3dc;font-weight:600;text-decoration:none">(215) 978-9719</a>.</p>
         <div style="display:flex;flex-direction:column;gap:13px;margin-top:6px">
-          {["Free in-home water test", "No-obligation, upfront pricing", "Licensed & fully insured", "Workmanship warranty"].map((t) => (
+          {["Free in-home water test", "No-obligation, upfront pricing", "Licensed & fully insured", "Lifetime workmanship warranty"].map((t) => (
             <div style="display:flex;align-items:center;gap:11px;color:#5fcf97"><Icon name="check" size={19} /><span style="font:500 15px/1 var(--font-body);color:#e3e8ef">{t}</span></div>
           ))}
         </div>

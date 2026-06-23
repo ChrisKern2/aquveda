@@ -55,7 +55,7 @@ export type Service = {
   slug: string;
   name: string;
   short: string; // one-line for cards / menus
-  price: string; // "From $X installed" (sourced from the Price Sheet)
+  price?: string; // optional; Raleigh-style cards show no per-service price
   icon: string; // Icon component name
   image: string;
   imageAlt: string;
@@ -72,8 +72,7 @@ export const services: Service[] = [
   {
     slug: "whole-home-filtration",
     name: "Whole-Home Filtration",
-    short: "Clean, great-tasting water from every tap in the house.",
-    price: "From $2,400 installed",
+    short: "Removes hardness, chlorine, and 75+ contaminants from every tap.",
     icon: "spray",
     image: "/images/svc-filtration.svg",
     imageAlt:
@@ -84,15 +83,15 @@ export const services: Service[] = [
     intro: [
       "What comes out of the tap is not what most homeowners think it is. Even water that meets municipal standards carries chlorine, the taste and smell that come with it, fine sediment, and a growing list of contaminants that treatment plants were never built to remove. Aquveda installs whole-home filtration that cleans the water for the entire house, not just one faucet.",
       "We start with a free in-home water test so you see exactly what is in your water before you spend a dollar. Then we size and install a filtration system on the main line, matched to your home, your water, and your flow. The result is water that tastes better, smells like nothing, and is gentler on your skin, your hair, your fixtures, and your appliances.",
-      "Every install is performed by a licensed, insured installer, tested on completion, and backed by our workmanship warranty. Pair it with our Care plan and we test the water and change the filters for the life of the system, so it stays perfect without you thinking about it.",
+      "Every install is performed by a licensed, insured installer, tested on completion, and backed by our lifetime workmanship warranty and the manufacturer equipment warranty.",
     ],
     included: [
       "Free in-home water test and contaminant report",
       "System sized to your home, water, and flow rate",
       "Licensed, insured installation on the main line",
-      "Carbon and sediment filtration for chlorine, taste, odor, and particulates",
+      "Hardness, chlorine, taste, odor, sediment, and 75+ contaminants addressed",
       "Post-install water test to confirm results",
-      "Workmanship warranty and optional Care plan",
+      "Lifetime workmanship warranty and manufacturer equipment warranty",
     ],
     subservices: [
       { name: "Carbon Filtration", desc: "Removes chlorine, taste, and odor across the whole house." },
@@ -112,142 +111,141 @@ export const services: Service[] = [
       { q: "Do I really need filtration if my water is treated by the city?", a: "Municipal treatment makes water safe to the legal standard, but it still arrives with chlorine, taste and odor, sediment from aging pipes, and contaminants that plants are not required to remove. A free water test shows you exactly what is in yours, so you can decide from real data." },
       { q: "What does whole-home filtration remove?", a: "A properly sized system removes chlorine, taste, and odor across the whole house, captures sediment, and can target specific contaminants like PFAS when your test calls for it. We size the media to your actual water." },
       { q: "How long does an install take?", a: "Most whole-home filtration installs are completed in a single visit of a few hours by a licensed installer, with the water tested before and after." },
-      { q: "Do the filters need maintenance?", a: "Yes, media and filters are serviced on a schedule. Our Care plan handles the testing and filter changes for you so the system stays at full performance for its life." },
+      { q: "Do the filters need maintenance?", a: "Yes, media and filters are serviced on a schedule. We can handle the testing and filter changes for you so the system stays at full performance for its life." },
     ],
   },
   {
-    slug: "water-softening",
-    name: "Water Softening & Conditioning",
-    short: "End hard-water scale and protect your plumbing and appliances.",
-    price: "From $2,200 installed",
-    icon: "shield",
-    image: "/images/svc-softener.svg",
-    imageAlt:
-      "Water softener system protecting a suburban Pennsylvania home from hard-water scale",
-    metaTitle: "Water Softeners & Conditioners in Montgomery & Chester County | Aquveda",
-    metaDescription:
-      "Water softening and salt-free conditioning in Blue Bell, Malvern, West Chester & nearby. Stop scale, protect appliances, softer skin and laundry. Free water test.",
-    intro: [
-      "Hard water does slow, steady damage. It scales your fixtures, shortens the life of your water heater and appliances, leaves spots on glassware, and makes skin and hair feel dry and laundry feel stiff. Most of the Philadelphia suburbs run hard, and the cost adds up long before anyone connects it to the water.",
-      "Aquveda installs metered water softeners and salt-free conditioners sized to your home and your hardness level, measured during a free in-home water test. A softener removes the minerals that cause scale; a salt-free conditioner controls scale without salt or backwash where that fits better. You feel the difference within a day, in the shower and at the sink.",
-      "Each system is installed by a licensed, insured installer, plumbed with a clean loop and bypass, and backed by our workmanship warranty. Add the Care plan and we keep it dialed in and stocked with salt so it simply works.",
-    ],
-    included: [
-      "Free in-home hardness test and recommendation",
-      "Softener or salt-free conditioner sized to your home",
-      "Clean loop-and-bypass installation by a licensed installer",
-      "Protection for your water heater, fixtures, and appliances",
-      "Post-install verification",
-      "Workmanship warranty and optional Care plan",
-    ],
-    subservices: [
-      { name: "Metered Softener", desc: "Removes hardness on demand and regenerates only when needed, saving salt and water." },
-      { name: "Salt-Free Conditioner", desc: "Controls scale with no salt and no backwash where it suits the home." },
-      { name: "Loop & Bypass Install", desc: "A clean plumbing loop so the system is easy to service and bypass." },
-      { name: "Appliance Protection", desc: "Less scale means longer life for heaters, dishwashers, and washing machines." },
-      { name: "Salt Delivery", desc: "Optional recurring salt delivery and fill as part of the Care plan." },
-    ],
-    process: [
-      { title: "Free water test", body: "We measure your hardness and walk you through what it is costing you." },
-      { title: "Right system, right size", body: "Softener or conditioner, sized to your home and water use." },
-      { title: "Clean, licensed install", body: "A licensed installer plumbs a tidy loop and bypass." },
-      { title: "Verify & guarantee", body: "We confirm the result and back the work with our warranty." },
-    ],
-    faqs: [
-      { q: "How do I know if I have hard water?", a: "Spots on glassware, scale on faucets and shower doors, dry skin, stiff laundry, and a water heater that wears out early are all signs. A free in-home test gives you the exact hardness number in minutes." },
-      { q: "What's the difference between a softener and a salt-free conditioner?", a: "A softener uses ion exchange to remove the hardness minerals entirely, which is the most complete fix. A salt-free conditioner changes the minerals so they don't form scale, with no salt and no backwash. We recommend the right one for your home and water." },
-      { q: "Will a softener make my water feel slippery?", a: "Softened water lathers more easily and rinses cleaner, which some people describe as a silky feel. It also means you use less soap and detergent." },
-      { q: "Do I have to keep buying salt?", a: "A metered softener uses salt efficiently, regenerating only when needed. Our Care plan can include scheduled salt delivery and fill so you never have to handle it." },
-    ],
-  },
-  {
-    slug: "drinking-water",
-    name: "Drinking Water Systems",
-    short: "Bottled-water quality at your kitchen tap with reverse osmosis.",
-    price: "From $700 installed",
-    icon: "window",
+    slug: "reverse-osmosis",
+    name: "Reverse Osmosis",
+    short: "Drinking water for your kitchen. 7-stage filtration with alkaline post-filter.",
+    icon: "drop",
     image: "/images/svc-ro.svg",
     imageAlt:
       "Under-sink reverse osmosis drinking water system installed at a kitchen tap",
     metaTitle: "Reverse Osmosis Drinking Water in Montgomery & Chester County | Aquveda",
     metaDescription:
-      "Under-sink reverse osmosis drinking water systems in Blue Bell, Malvern, Exton & nearby. Bottled-water quality at the tap. Free in-home water test and quote.",
+      "Under-sink reverse osmosis drinking water in Blue Bell, Malvern, Exton & nearby. 7-stage filtration with alkaline post-filter. Free in-home water test and quote.",
     intro: [
-      "For the water you actually drink and cook with, reverse osmosis is the most thorough treatment. Aquveda installs under-sink RO systems that push your water through a fine membrane and a series of filters, stripping out the dissolved solids, taste, and contaminants that even good whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated tap.",
-      "It is the simplest upgrade with the most noticeable daily payoff: better coffee and tea, clearer ice, better-tasting cooking, and the end of buying and hauling bottled water. We can add a remineralization stage that puts beneficial minerals back for taste, and a designer faucet that matches your kitchen.",
-      "Every system is installed cleanly under the sink by a licensed installer, with the drinking water tested on completion. With the Care plan, we change the filters and the membrane on schedule so the water stays pure.",
+      "For the water you drink and cook with, reverse osmosis is the most thorough treatment. Aquveda installs under-sink RO systems that push your water through a multi-stage process and a fine membrane, removing dissolved solids, taste, and contaminants that whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality from a dedicated tap.",
+      "Our system uses 7-stage filtration with an alkaline post-filter that adds beneficial minerals back for a balanced taste. You get better coffee and tea, clearer ice, better-tasting cooking, and the end of buying and hauling bottled water. We can run a line to your refrigerator and ice maker so they get the same water.",
+      "Every system is installed cleanly under the sink by a licensed installer, with the drinking water tested on completion and backed by our lifetime workmanship warranty.",
     ],
     included: [
-      "Multi-stage reverse osmosis at the kitchen tap",
+      "7-stage under-sink reverse osmosis",
+      "Alkaline post-filter that remineralizes for taste",
       "Dedicated drinking-water faucet",
-      "Optional remineralization for taste",
       "Clean under-sink installation by a licensed installer",
-      "Post-install water quality check",
-      "Workmanship warranty and optional Care plan",
+      "Optional refrigerator and ice-maker line",
+      "Lifetime workmanship warranty and manufacturer equipment warranty",
     ],
     subservices: [
-      { name: "4-Stage Reverse Osmosis", desc: "Membrane and carbon stages for bottled-water quality at the tap." },
-      { name: "Remineralization", desc: "Adds beneficial minerals back for a crisp, balanced taste." },
-      { name: "Designer Faucet Upgrade", desc: "A dedicated faucet that matches your kitchen finish." },
+      { name: "7-Stage Reverse Osmosis", desc: "Multi-stage filtration and a fine membrane for bottled-water quality." },
+      { name: "Alkaline Post-Filter", desc: "Adds beneficial minerals back for a crisp, balanced taste." },
+      { name: "Dedicated Faucet", desc: "A separate drinking-water faucet at the kitchen sink." },
       { name: "Fridge & Ice Line", desc: "Optional connection so your fridge and ice maker get RO water too." },
-      { name: "Filter & Membrane Service", desc: "Scheduled changes through the Care plan keep it pure." },
+      { name: "Filter & Membrane Service", desc: "Scheduled changes keep the water pure." },
     ],
     process: [
       { title: "Free water test", body: "We test your tap water and show you what RO will remove." },
-      { title: "Choose your setup", body: "Standard, remineralized, designer faucet, fridge line, your call." },
+      { title: "Choose your setup", body: "Standard, with a fridge line or other options, your call." },
       { title: "Clean under-sink install", body: "A licensed installer fits it tidily and routes the drain and lines." },
       { title: "Taste the difference", body: "We test the finished water with you and back it with our warranty." },
     ],
     faqs: [
       { q: "What does reverse osmosis remove that filtration doesn't?", a: "RO pushes water through a fine membrane that removes dissolved solids, many contaminants, and the last of the taste that carbon filtration alone leaves behind. It is the highest level of treatment for drinking and cooking water." },
-      { q: "Does RO water taste flat?", a: "Pure RO water can taste very clean. If you prefer a fuller taste, we add a remineralization stage that puts beneficial minerals back, which most people prefer." },
+      { q: "What is the alkaline post-filter for?", a: "Pure RO water can taste very clean. The alkaline post-filter adds beneficial minerals back for a fuller, balanced taste, which most people prefer." },
       { q: "Can it connect to my fridge and ice maker?", a: "Yes. We can run an RO line to your refrigerator and ice maker so they get the same clean water as the tap." },
-      { q: "How often do the filters need changing?", a: "Pre- and post-filters are typically changed annually and the membrane every few years. Our Care plan handles it on schedule so you never have to track it." },
+      { q: "How often do the filters need changing?", a: "Pre- and post-filters are typically changed annually and the membrane every few years. We can handle it on a schedule so you never have to track it." },
     ],
   },
   {
-    slug: "service-plan",
-    name: "Care Plan & Water Testing",
-    short: "We test your water and change your filters for life, automatically.",
-    price: "From $49/month",
-    icon: "repeat",
-    image: "/images/svc-care.svg",
+    slug: "well-water-treatment",
+    name: "Well Water Treatment",
+    short: "Specialized systems for rural homes with iron, manganese, or sulfur issues.",
+    icon: "wrench",
+    image: "/images/svc-softener.svg",
     imageAlt:
-      "Aquveda technician testing home water quality during a scheduled Care plan visit",
-    metaTitle: "Water Testing & Filter Service Plan in Montgomery & Chester County | Aquveda",
+      "Well water treatment system removing iron, manganese, and sulfur for a rural Pennsylvania home",
+    metaTitle: "Well Water Treatment in Montgomery & Chester County | Aquveda",
     metaDescription:
-      "The Aquveda Care plan: annual water testing, scheduled filter changes, priority service, and member pricing. Keep your water perfect for the life of the system.",
+      "Well water treatment for rural Montgomery & Chester County homes: iron, manganese, sulfur, pH, and bacteria. Free in-home water test, then a system sized to your results.",
     intro: [
-      "A water system is only as good as its upkeep. Filters load up, membranes age, and softeners drift out of adjustment, and most homeowners never notice until performance drops. The Aquveda Care plan takes that off your plate entirely.",
-      "Members get an annual in-home water test, scheduled filter and membrane changes, priority service if anything ever needs attention, and member pricing on parts and any future systems. We track your system, show up on schedule, and keep your water exactly where it should be, for the life of the equipment.",
-      "With the plan, you never have to track your water system yourself. It is available on any Aquveda install, and on most existing systems we did not install, after an initial assessment.",
+      "Well water gives you independence from the municipal supply, and a different set of problems. Iron stains fixtures and laundry rust-orange, manganese leaves black specks, sulfur brings a rotten-egg smell, low pH eats at copper pipes, and bacteria can show up without warning. Aquveda builds well-water systems for rural homes across Montgomery and Chester County, sized to what your water actually contains.",
+      "It starts with a free in-home water test. Well water varies house to house, so the right system depends entirely on your results. We design around them, whether that means an iron and sulfur filter, pH correction, UV disinfection, or a combination, and quote it upfront.",
+      "Every system is installed by a licensed, insured installer and backed by our lifetime workmanship warranty. We retest the water with you on completion so you can see the difference.",
     ],
     included: [
-      "Annual in-home water test and report",
-      "Scheduled filter and membrane changes",
-      "Priority scheduling for any service need",
-      "Member pricing on parts and future systems",
-      "Optional softener salt delivery and fill",
-      "System tracking so nothing is ever overdue",
+      "Free in-home well-water test and full report",
+      "System designed around your specific results",
+      "Iron, manganese, and sulfur removal as needed",
+      "pH correction and UV disinfection where called for",
+      "Licensed, insured installation",
+      "Lifetime workmanship warranty and manufacturer equipment warranty",
     ],
     subservices: [
-      { name: "Annual Water Test", desc: "We retest your water every year and confirm the system is performing." },
-      { name: "Scheduled Filter Changes", desc: "Filters and membranes changed on time, included in the plan." },
-      { name: "Priority Service", desc: "Members move to the front of the schedule whenever something is needed." },
-      { name: "Member Pricing", desc: "Discounted parts and preferred pricing on any future systems." },
-      { name: "Salt Delivery", desc: "Optional recurring softener salt delivery and fill." },
+      { name: "Iron & Manganese Removal", desc: "Stops the orange and black staining on fixtures and laundry." },
+      { name: "Sulfur Removal", desc: "Clears the rotten-egg smell from hydrogen sulfide." },
+      { name: "pH Correction", desc: "Neutralizes acidic water that corrodes copper pipes." },
+      { name: "UV Disinfection", desc: "Inactivates bacteria, common on private wells." },
+      { name: "Sediment Filtration", desc: "Captures sand and grit from the well." },
+      { name: "Whole-Home Softening", desc: "Adds hardness removal where the test calls for it." },
     ],
     process: [
-      { title: "Enroll", body: "Add the Care plan to a new install or after an assessment of your current system." },
-      { title: "We track it", body: "Your system and service dates live in our system, not your memory." },
-      { title: "We show up", body: "Scheduled visits for testing and filter changes, on time." },
-      { title: "Water stays perfect", body: "You never think about your water again. That's the point." },
+      { title: "Free water test", body: "We test your well water and show you exactly what is in it." },
+      { title: "System designed to your results", body: "We design around your iron, sulfur, pH, and bacteria readings, and quote it." },
+      { title: "Clean, licensed install", body: "A licensed installer fits the system and tidies up." },
+      { title: "Retest & guarantee", body: "We retest the water with you and back the work with our warranty." },
     ],
     faqs: [
-      { q: "What does the Care plan cost?", a: "Plans start around $49 a month, or an annual option that saves versus monthly. The exact price depends on your systems and whether salt delivery is included. We quote it with your install." },
-      { q: "Can I get the plan if Aquveda didn't install my system?", a: "Usually yes. We do an initial assessment of your existing equipment, and if it is in good shape we can put it on the Care plan." },
-      { q: "What's included versus extra?", a: "The plan includes the annual test, scheduled filter and membrane changes, priority service, and member pricing. Major repairs or new equipment are quoted separately at member pricing." },
-      { q: "Can I cancel?", a: "Yes. You can cancel anytime, and you return to paying per visit." },
+      { q: "Why is well water treated differently than city water?", a: "City water is already disinfected and regulated. Well water is not, so it can carry iron, manganese, sulfur, low pH, sediment, and bacteria that vary house to house. The right system depends on your specific test results." },
+      { q: "What causes the rotten-egg smell?", a: "Usually hydrogen sulfide gas, sometimes with sulfur bacteria. We confirm the source with a test and remove it with the right filter or treatment." },
+      { q: "Do I need UV disinfection?", a: "If your test shows bacteria, UV is a reliable way to inactivate it without chemicals. We recommend it when the results call for it, not by default." },
+      { q: "How often should well water be tested?", a: "At least once a year, and any time the taste, smell, or color changes. We can test it as part of a service visit." },
+    ],
+  },
+  {
+    slug: "specialty-services",
+    name: "Specialty Services",
+    short: "Water softeners, UV purification, iron & sulfur removal, and other niche treatment.",
+    icon: "shield",
+    image: "/images/svc-care.svg",
+    imageAlt:
+      "Specialty water treatment equipment including a water softener and UV purification",
+    metaTitle: "Specialty Water Treatment in Montgomery & Chester County | Aquveda",
+    metaDescription:
+      "Specialty water treatment in Montgomery & Chester County: water softeners, UV purification, iron and sulfur removal, and niche systems sized to your free water test.",
+    intro: [
+      "Some water problems need a targeted fix rather than a full system. Aquveda installs the specialty equipment that solves a specific issue: a water softener for hard-water scale, UV purification for bacteria, iron and sulfur removal for staining and odor, and other niche treatment that matches what your test finds.",
+      "Every recommendation starts with a free in-home water test. We size the equipment to your water and your home, explain the result in plain language, and quote it upfront, so you buy only what your water needs.",
+      "Each install is handled by a licensed, insured installer and backed by our lifetime workmanship warranty.",
+    ],
+    included: [
+      "Free in-home water test and recommendation",
+      "Water softeners, metered or salt-free",
+      "UV purification for bacteria",
+      "Iron and sulfur removal",
+      "Equipment sized to your home and water",
+      "Lifetime workmanship warranty and manufacturer equipment warranty",
+    ],
+    subservices: [
+      { name: "Water Softeners", desc: "Metered softeners and salt-free conditioners that stop hard-water scale." },
+      { name: "UV Purification", desc: "Inactivates bacteria without adding chemicals." },
+      { name: "Iron & Sulfur Removal", desc: "Clears staining and the rotten-egg smell." },
+      { name: "Sediment Filtration", desc: "Captures sand, rust, and grit before it reaches fixtures." },
+      { name: "pH Correction", desc: "Neutralizes acidic water that corrodes pipes." },
+      { name: "Filter & Salt Service", desc: "Scheduled filter changes and softener salt delivery." },
+    ],
+    process: [
+      { title: "Free water test", body: "We test your water and pinpoint the specific issue." },
+      { title: "Targeted recommendation", body: "We size the right equipment for the problem and quote it upfront." },
+      { title: "Clean, licensed install", body: "A licensed installer fits it and tidies up." },
+      { title: "Verify & guarantee", body: "We confirm the result and back the work with our warranty." },
+    ],
+    faqs: [
+      { q: "Do you install just a water softener?", a: "Yes. A softener is one of our most common specialty installs. We size it to your hardness, measured during a free in-home test." },
+      { q: "What is the difference between a softener and a salt-free conditioner?", a: "A softener removes the hardness minerals using ion exchange, the most complete fix. A salt-free conditioner changes the minerals so they don't form scale, with no salt and no backwash. We recommend the right one for your home and water." },
+      { q: "Is UV purification worth it?", a: "If your test shows bacteria, UV is a reliable, chemical-free way to inactivate it. We recommend it when the results call for it." },
+      { q: "Can you service equipment you didn't install?", a: "Usually yes, after an initial assessment. We can handle filter changes, salt delivery, and repairs on most existing systems." },
     ],
   },
 ];
@@ -295,9 +293,9 @@ export type WhyItem = { icon: string; title: string; body: string };
 export const whyChoose: WhyItem[] = [
   { icon: "bolt", title: "Free In-Home Water Test", body: "We test your water in your home and show you exactly what is in it before you spend a dollar." },
   { icon: "shield", title: "Licensed & Insured", body: "Every system is installed by a licensed, insured installer. You're protected start to finish." },
-  { icon: "badge", title: "Workmanship Warranty", body: "If your water isn't right, we make it right. We stand behind every install." },
+  { icon: "badge", title: "Lifetime Workmanship Warranty", body: "We stand behind every install for as long as you own your home." },
   { icon: "home", title: "Locally Owned & Operated", body: "We live and work in Montgomery and Chester County, your neighbors, not a franchise." },
-  { icon: "repeat", title: "Care Plan for Life", body: "We test your water and change your filters on schedule, so the system stays perfect." },
+  { icon: "report", title: "Manufacturer Equipment Warranty", body: "Your system is covered by the manufacturer warranty, on top of our lifetime workmanship guarantee." },
   { icon: "tag", title: "Upfront, Honest Pricing", body: "The number we quote is the number you pay. No pressure, no surprises." },
   { icon: "star", title: "Premium Equipment", body: "Systems sized to your home and your water, not a one-size box off a shelf." },
   { icon: "users", title: "Clean, Careful Installs", body: "Tidy, professional work that protects your home and leaves the space better than we found it." },
@@ -338,27 +336,26 @@ export const nav = [
 // ============================================================
 // FLAGSHIP SYSTEM (the featured bundle on the home page)
 // Pricing sourced from "Aquveda - Price Sheet.xlsx":
-// filtration + softener combo $5,400; whole-home + RO bundle 10% off.
+// Complete Home Water System: founder $2,699, regular $5,998 (matches the reference site).
 // ============================================================
 export const flagship = {
-  eyebrow: "The flagship system",
+  eyebrow: "Founder pricing, through July 31",
   name: "The Complete Home Water System",
   tagline:
-    "Whole-home filtration, a water softener, and reverse-osmosis drinking water, sized to your home and installed in one trip.",
-  priceRegular: "$5,700",
-  price: "$5,400",
+    "Whole-home softening with chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system, installed by a licensed plumber in one trip.",
+  priceRegular: "$5,998",
+  price: "$2,699",
   priceUnit: "installed",
-  priceNote: "Save $300 versus buying the systems separately. Add reverse-osmosis drinking water and save 10% on the bundle.",
+  priceNote: "Founder pricing through July 31. Regular price $5,998.",
   image: "/images/flagship-system.svg",
   imageAlt:
-    "The complete Aquveda home water system: whole-home filter, softener, and under-sink reverse osmosis",
+    "The complete Aquveda home water system: whole-home softening and filtration with under-sink reverse osmosis",
   features: [
-    "Chlorine, taste, odor, and sediment removed from every tap",
-    "Hard-water scale stopped, protecting your plumbing and appliances",
-    "Bottled-water quality at the kitchen tap with reverse osmosis",
-    "Sized to your home after a free in-home water test",
-    "Installed by a licensed, insured installer in one visit",
-    "Backed by our workmanship warranty and the optional Care plan",
+    "Complete home system: softening plus chlorine and chloramine carbon filtration",
+    "Under-sink reverse-osmosis drinking water system with alkaline post-filter",
+    "Licensed plumber installation",
+    "Lifetime workmanship warranty",
+    "Manufacturer equipment warranty",
   ],
 };
 
@@ -384,9 +381,9 @@ export const comparison = {
     { feature: "System sized to your home and water", aquveda: true, typical: true, diy: false },
     { feature: "Upfront pricing, no high-pressure sales", aquveda: true, typical: false, diy: true },
     { feature: "No long-term contracts or rentals", aquveda: true, typical: false, diy: true },
-    { feature: "Workmanship warranty on the install", aquveda: true, typical: false, diy: false },
+    { feature: "Lifetime workmanship warranty on the install", aquveda: true, typical: false, diy: false },
     { feature: "Local, owner-operated service", aquveda: true, typical: false, diy: false },
-    { feature: "Care plan: testing and filters handled for life", aquveda: true, typical: false, diy: false },
+    { feature: "Ongoing filter and service plans available", aquveda: true, typical: false, diy: false },
   ] as CompareRow[],
 };
 
@@ -457,8 +454,8 @@ export const articles: Article[] = [
 // HOME FAQ (answers buyer questions; drives FAQPage schema)
 // ============================================================
 export const homeFaqs: Faq[] = [
-  { q: "What is the Complete Home Water System?", a: "It is our flagship setup: whole-home filtration, a water softener, and reverse-osmosis drinking water, sized to your home and installed in one visit. Filtration cleans every tap, the softener stops hard-water scale, and reverse osmosis gives you bottled-water quality at the kitchen sink." },
-  { q: "How much does the Complete Home Water System cost?", a: "Whole-home filtration and a softener combine from $5,400 installed, which saves $300 versus buying them separately. Add reverse-osmosis drinking water and you save 10% on the bundle. Individual systems start at $2,200. Every quote starts with a free in-home water test, so the price matches what your water actually needs." },
-  { q: "Do I need all three systems?", a: "Not always. We size to your water after a free test. Many homes start with a softener or filtration and add reverse osmosis later. We recommend what your test shows and quote it upfront." },
-  { q: "Is the work guaranteed?", a: "Yes. Every system is installed by a licensed, insured installer and backed by our workmanship warranty. The optional Care plan handles annual testing and filter changes so the system keeps performing." },
+  { q: "What is the Complete Home Water System?", a: "It is our flagship setup: a complete home system with softening and chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system. A licensed plumber installs it in one trip. The whole-home system cleans and softens every tap, and reverse osmosis gives you bottled-water quality at the kitchen sink." },
+  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, through July 31, the Complete Home Water System is $2,699 installed, regularly $5,998. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Every quote still starts with a free in-home water test." },
+  { q: "Do I have to buy the complete system?", a: "No. We also install whole-home filtration, reverse osmosis, well water treatment, and specialty systems on their own. We size to your water after a free test and quote what your results call for." },
+  { q: "Is the work guaranteed?", a: "Yes. Every system is installed by a licensed plumber and backed by our lifetime workmanship warranty, plus the manufacturer equipment warranty." },
 ]; 
