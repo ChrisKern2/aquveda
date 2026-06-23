@@ -20,7 +20,7 @@ const site = business.domain;
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: `${service.name} in Montgomery & Chester County, PA`,
+  name: `${service.name} in Greater Philadelphia, PA`,
   serviceType: service.name,
   description: service.metaDescription,
   url: new URL(path, site).href,
@@ -57,7 +57,7 @@ const faqSchema = {
   <Header />
   <PageHero
     eyebrow="Water Treatment Services"
-    title={`${service.name} in Montgomery & Chester County, PA`}
+    title={`${service.name} in Greater Philadelphia, PA`}
     subtitle={service.short}
     image={service.image}
     imageAlt={service.imageAlt}

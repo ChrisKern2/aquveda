@@ -77,7 +77,7 @@ export const services: Service[] = [
     image: "/images/svc-filtration.svg",
     imageAlt:
       "Whole-home water filtration system installed on the main line in a Philadelphia-area home",
-    metaTitle: "Whole-Home Water Filtration in Montgomery & Chester County | Aquveda",
+    metaTitle: "Whole-Home Water Filtration in Greater Philadelphia | Aquveda",
     metaDescription:
       "Whole-home water filtration in Blue Bell, Malvern, Exton & nearby. Remove chlorine, taste, odor, and emerging contaminants from every tap. Free in-home water test.",
     intro: [
@@ -122,7 +122,7 @@ export const services: Service[] = [
     image: "/images/svc-ro.svg",
     imageAlt:
       "Under-sink reverse osmosis drinking water system installed at a kitchen tap",
-    metaTitle: "Reverse Osmosis Drinking Water in Montgomery & Chester County | Aquveda",
+    metaTitle: "Reverse Osmosis Drinking Water in Greater Philadelphia | Aquveda",
     metaDescription:
       "Under-sink reverse osmosis drinking water in Blue Bell, Malvern, Exton & nearby. 7-stage filtration with alkaline post-filter. Free in-home water test and quote.",
     intro: [
@@ -166,11 +166,11 @@ export const services: Service[] = [
     image: "/images/svc-softener.svg",
     imageAlt:
       "Well water treatment system removing iron, manganese, and sulfur for a rural Pennsylvania home",
-    metaTitle: "Well Water Treatment in Montgomery & Chester County | Aquveda",
+    metaTitle: "Well Water Treatment in Greater Philadelphia | Aquveda",
     metaDescription:
-      "Well water treatment for rural Montgomery & Chester County homes: iron, manganese, sulfur, pH, and bacteria. Free in-home water test, then a system sized to your results.",
+      "Well water treatment for rural Philadelphia-area homes: iron, manganese, sulfur, pH, and bacteria. Free in-home water test, then a system sized to your results.",
     intro: [
-      "Well water gives you independence from the municipal supply, and a different set of problems. Iron stains fixtures and laundry rust-orange, manganese leaves black specks, sulfur brings a rotten-egg smell, low pH eats at copper pipes, and bacteria can show up without warning. Aquveda builds well-water systems for rural homes across Montgomery and Chester County, sized to what your water actually contains.",
+      "Well water gives you independence from the municipal supply, and a different set of problems. Iron stains fixtures and laundry rust-orange, manganese leaves black specks, sulfur brings a rotten-egg smell, low pH eats at copper pipes, and bacteria can show up without warning. Aquveda builds well-water systems for rural homes across the greater Philadelphia area, sized to what your water actually contains.",
       "It starts with a free in-home water test. Well water varies house to house, so the right system depends entirely on your results. We design around them, whether that means an iron and sulfur filter, pH correction, UV disinfection, or a combination, and quote it upfront.",
       "Every system is installed by a licensed, insured installer and backed by our lifetime workmanship warranty. We retest the water with you on completion so you can see the difference.",
     ],
@@ -211,9 +211,9 @@ export const services: Service[] = [
     image: "/images/svc-care.svg",
     imageAlt:
       "Specialty water treatment equipment including a water softener and UV purification",
-    metaTitle: "Specialty Water Treatment in Montgomery & Chester County | Aquveda",
+    metaTitle: "Specialty Water Treatment in Greater Philadelphia | Aquveda",
     metaDescription:
-      "Specialty water treatment in Montgomery & Chester County: water softeners, UV purification, iron and sulfur removal, and niche systems sized to your free water test.",
+      "Specialty water treatment across Greater Philadelphia: water softeners, UV purification, iron and sulfur removal, and niche systems sized to your free water test.",
     intro: [
       "Some water problems need a targeted fix rather than a full system. Aquveda installs the specialty equipment that solves a specific issue: a water softener for hard-water scale, UV purification for bacteria, iron and sulfur removal for staining and odor, and other niche treatment that matches what your test finds.",
       "Every recommendation starts with a free in-home water test. We size the equipment to your water and your home, explain the result in plain language, and quote it upfront, so you buy only what your water needs.",
@@ -294,7 +294,7 @@ export const whyChoose: WhyItem[] = [
   { icon: "bolt", title: "Free In-Home Water Test", body: "We test your water in your home and show you exactly what is in it before you spend a dollar." },
   { icon: "shield", title: "Licensed & Insured", body: "Every system is installed by a licensed, insured installer. You're protected start to finish." },
   { icon: "badge", title: "Lifetime Workmanship Warranty", body: "We stand behind every install for as long as you own your home." },
-  { icon: "home", title: "Locally Owned & Operated", body: "We live and work in Montgomery and Chester County, your neighbors, not a franchise." },
+  { icon: "home", title: "Locally Owned & Operated", body: "We live and work in the western Philadelphia suburbs, your neighbors, not a franchise." },
   { icon: "report", title: "Manufacturer Equipment Warranty", body: "Your system is covered by the manufacturer warranty, on top of our lifetime workmanship guarantee." },
   { icon: "tag", title: "Upfront, Honest Pricing", body: "The number we quote is the number you pay. No pressure, no surprises." },
   { icon: "star", title: "Premium Equipment", body: "Systems sized to your home and your water, not a one-size box off a shelf." },
@@ -308,7 +308,7 @@ export const stats: Stat[] = [
   { value: "Free", label: "In-Home Water Test" },
   { value: "Licensed", label: "& Fully Insured" },
   { value: "Warranty", label: "On Every Install" },
-  { value: "Local", label: "Montgomery & Chester County" },
+  { value: "Local", label: "Greater Philadelphia" },
 ];
 
 // Review-platform placeholders for the testimonials section.
@@ -402,12 +402,12 @@ export type Article = {
 export const articles: Article[] = [
   {
     slug: "is-montgomery-chester-county-water-hard",
-    title: "Is the water hard in Montgomery and Chester County?",
+    title: "Is the water hard in the Philadelphia suburbs?",
     tag: "Local water",
     excerpt: "Most of the western Philadelphia suburbs run moderately hard to hard. Here is what that means for your home, and how to know your number.",
-    metaDescription: "Is water hard in Montgomery & Chester County, PA? What hardness means for your home and how a free water test gives you the exact number. Aquveda explains.",
+    metaDescription: "Is water hard in the Philadelphia suburbs? What hardness means for your home and how a free water test gives you the exact number. Aquveda explains.",
     body: [
-      "If you see spots on your glassware, crusty buildup on faucets and showerheads, or your soap never seems to lather, you are almost certainly dealing with hard water. Across Montgomery and Chester County, most homes, whether on municipal supply or a private well, see water that runs moderately hard to hard.",
+      "If you see spots on your glassware, crusty buildup on faucets and showerheads, or your soap never seems to lather, you are almost certainly dealing with hard water. Across the Philadelphia suburbs, most homes, whether on municipal supply or a private well, see water that runs moderately hard to hard.",
       "Hardness is dissolved calcium and magnesium. It scales the inside of your water heater and pipes, shortens the life of dishwashers and washing machines, and leaves skin and hair feeling dry. It will not harm your health, and the costs add up quietly. The harder the water, the faster the damage adds up.",
       "The only way to know your real number is to test. A free in-home water test measures your hardness in minutes and shows you whether a softener or a salt-free conditioner is the right fix. From there, you decide based on your actual water.",
     ],
@@ -429,7 +429,7 @@ export const articles: Article[] = [
     title: "Softener vs. salt-free conditioner: which is right?",
     tag: "Softening",
     excerpt: "Both control scale, but they work differently. Here is how to choose between a traditional softener and a salt-free conditioner.",
-    metaDescription: "Water softener vs. salt-free conditioner: how they differ, the pros and cons of each, and how to choose the right one for your Montgomery or Chester County home.",
+    metaDescription: "Water softener vs. salt-free conditioner: how they differ, the pros and cons of each, and how to choose the right one for your Philadelphia-area home.",
     body: [
       "A traditional softener uses ion exchange to actually remove the calcium and magnesium that cause hardness. It is the most complete fix: no scale, easier lathering, softer laundry, and longer appliance life. It uses salt and a small amount of water to regenerate, and a metered head only regenerates when needed, which keeps both in check.",
       "A salt-free conditioner does not remove the minerals; it changes their structure so they do not stick and form scale. It uses no salt and no backwash, which suits homes that want low maintenance or have drainage or sodium concerns. You will not get the slippery softened-water feel, but you will get strong scale control.",
