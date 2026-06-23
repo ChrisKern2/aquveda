@@ -36,7 +36,7 @@ const localBusiness: Record<string, unknown> = {
   telephone: business.phoneDisplay,
   email: business.email,
   image: ogImage,
-  logo: new URL("/images/hero-home.svg", site).href,
+  logo: new URL("/aquveda-mark.png", site).href,
   priceRange: business.priceRange,
   foundingDate: String(business.foundedYear),
   address: {
@@ -61,8 +61,6 @@ if (ENABLE_AGGREGATE_RATING) {
 }
 
 const jsonLd = [localBusiness, ...schema];
-const favicon =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 6 C 50 6 18 46 18 72 A 32 32 0 1 0 82 72 C 82 46 50 6 50 6 Z' fill='%2315919b'/%3E%3C/svg%3E";
 ---
 
 <!doctype html>
@@ -73,7 +71,9 @@ const favicon =
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={favicon} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0E3A43" />
 
     <!-- Open Graph -->
@@ -94,7 +94,7 @@ const favicon =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 

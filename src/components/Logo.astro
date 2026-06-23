@@ -1,32 +1,28 @@
 ---
-// The Aquveda logo lockup: droplet mark + wordmark. `variant` flips colors
-// for light vs. dark backgrounds. `size` scales the wordmark.
+// Aquveda "The Crest" logo: a water droplet filling with a rising wave, plus the
+// Newsreader wordmark. `variant` flips colors for light vs. dark backgrounds.
+// Each instance gets a unique clipPath id so inlined defs never collide.
 interface Props { variant?: "dark" | "light"; size?: number; href?: string; }
 const { variant = "dark", size = 26, href = "/" } = Astro.props;
-const text = variant === "light" ? "#ffffff" : "#0e3a43";
-const dropTop = variant === "light" ? "#ffffff" : "#3db8c6";
-const dropBot = variant === "light" ? "#ffffff" : "#15919b";
-const wave = variant === "light" ? "#0e3a43" : "#ffffff";
-const sub = variant === "light" ? "#bfe6ea" : "#5e7177";
-const gid = `lg-${variant}`;
-const ds = Math.round(size * 1.35);
+
+const reversed = variant === "light";
+const drop = reversed ? "#15919B" : "#0E3A43";
+const wave1 = "#3DB8C6";
+const wave2 = reversed ? "#7FCDE0" : "#15919B";
+const text = reversed ? "#FBFAF7" : "#0E3A43";
+
+const cid = `aq-${variant}`;
+const h = Math.round(size * 1.32);
+const w = Math.round(h * 0.83);
 ---
 <a href={href} aria-label="Aquveda home" style="text-decoration:none;display:flex;align-items:center;gap:10px">
-  <svg width={ds * 0.83} height={ds} viewBox="0 0 100 120" aria-hidden="true">
-    <defs>
-      <linearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color={dropTop}></stop><stop offset="1" stop-color={dropBot}></stop>
-      </linearGradient>
-      <clipPath id={`${gid}-c`}><path d="M50 6 C 50 6 18 46 18 72 A 32 32 0 1 0 82 72 C 82 46 50 6 50 6 Z"></path></clipPath>
-    </defs>
-    <path d="M50 6 C 50 6 18 46 18 72 A 32 32 0 1 0 82 72 C 82 46 50 6 50 6 Z" fill={`url(#${gid})`}></path>
-    <g clip-path={`url(#${gid}-c)`}>
-      <path d="M14 78 q 9 -10 18 0 t 18 0 t 18 0 t 18 0 V112 H14 Z" fill={wave} opacity="0.30"></path>
-      <path d="M12 76 q 9 -9 18 0 t 18 0 t 18 0 t 18 0" fill="none" stroke={wave} stroke-width="4.5" stroke-linecap="round"></path>
+  <svg width={w} height={h} viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs><clipPath id={cid}><path d="M50 6C50 6 18 46 18 72a32 32 0 1 0 64 0C82 46 50 6 50 6Z"></path></clipPath></defs>
+    <path d="M50 6C50 6 18 46 18 72a32 32 0 1 0 64 0C82 46 50 6 50 6Z" fill={drop}></path>
+    <g clip-path={`url(#${cid})`}>
+      <path d="M8 74q14-16 28-4t28-2 28-6V120H8Z" fill={wave1}></path>
+      <path d="M8 88q14-14 28-2t28 2 28-6V120H8Z" fill={wave2}></path>
     </g>
   </svg>
-  <span style="display:flex;flex-direction:column;line-height:1">
-    <span style={`font:600 ${size}px/1 var(--font-display);letter-spacing:-.01em;color:${text}`}>Aquveda</span>
-    <span style={`font:600 ${Math.round(size*0.3)}px/1 var(--font-body);letter-spacing:.28em;color:${sub};margin-top:3px`}>WATER, PERFECTED</span>
-  </span>
+  <span style={`font:500 ${size}px/1 var(--font-display);letter-spacing:-.01em;color:${text}`}>Aquveda</span>
 </a>

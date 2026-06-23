@@ -5,19 +5,21 @@
    Exposed to Tailwind as utilities: bg-navy, text-flag, font-display, etc.
    ============================================================ */
 @theme {
-  --color-navy: #0e3a43;
-  --color-ink: #0b2a31;
-  --color-flag: #15919b;
+  /* Aquveda v2 (The Crest). Legacy keys kept; values are the brand palette. */
+  --color-navy: #0e3a43;   /* Deep Marine */
+  --color-ink: #11272c;    /* Ink */
+  --color-flag: #15919b;   /* Hydro Teal */
   --color-flag-dark: #107880;
-  --color-parchment: #e9e1d2;
-  --color-slate: #5e7177;
+  --color-parchment: #e9e1d2; /* Mineral Sand */
+  --color-slate: #5e7177;  /* Slate */
   --color-success: #1f8a5b;
-  --color-accent: #3db8c6;
-  --color-accent2: #7fd3dc;
-  --color-mist: #cde6e8;
+  --color-accent: #3db8c6; /* Aqua */
+  --color-accent2: #7fcde0;
+  --color-mist: #eaf4f4;   /* Mist */
+  --color-ivory: #fbfaf7;  /* Ivory (page background) */
 
-  --font-display: "Fraunces", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 /* ============================================================
@@ -29,7 +31,7 @@ body{
   margin:0;
   font-family:var(--font-body);
   color:#0e3a43;
-  background:#fff;
+  background:#fbfaf7;
   overflow-x:hidden;
 }
 img{display:block;max-width:100%}
