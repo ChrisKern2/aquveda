@@ -11,7 +11,21 @@ interface Props {
   crumbs?: { label: string; href?: string }[];
 }
 const { eyebrow, title, subtitle, image, imageAlt = "", crumbs = [] } = Astro.props;
+
+// BreadcrumbList JSON-LD, built from the visible crumbs.
+const site = business.domain;
+const breadcrumbLd = crumbs.length > 1 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.label,
+    ...(c.href ? { item: new URL(c.href, site).href } : {}),
+  })),
+} : null;
 ---
+{breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />}
 <section style="position:relative;overflow:hidden;background:radial-gradient(120% 130% at 80% 10%, #144a55 0%, #0e3a43 50%, #0a2128 100%)">
   {image && (
     <img src={image} alt={imageAlt} width="1600" height="700" loading="eager"

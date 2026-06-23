@@ -23,17 +23,16 @@ import Icon from "./Icon.astro";
       CLEANER, SOFTER, BETTER-TASTING WATER ACROSS <span style="color:#7fd3dc">MONTGOMERY &amp; CHESTER COUNTY</span>
     </h1>
 
-    <p style="font:400 19px/1.65 var(--font-body);color:#cde6e8;max-width:560px;margin-bottom:30px">
+    <p style="font:400 19px/1.65 var(--font-body);color:#cde6e8;max-width:560px;margin-bottom:14px">
       Whole-home filtration, water softening, and drinking-water systems for the western Philadelphia suburbs, licensed, fully insured, and backed by our workmanship warranty.
     </p>
+    <p style="font:600 16px/1.5 var(--font-body);color:#fff;max-width:560px;margin-bottom:28px">Our Complete Home Water System covers all three, from <span style="color:#7fd3dc">$5,400 installed</span>.</p>
 
-    <div class="stack-sm" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px">
-      <a class="btn btn-primary" href="/contact" style="font:700 16px/1 var(--font-body);padding:18px 32px;letter-spacing:.02em">Get a Free Quote <Icon name="arrow" size={18} /></a>
-      <a class="btn btn-ghost" href={business.phoneHref} style="font:700 16px/1 var(--font-body);padding:18px 28px">
-        <span style="color:#7fd3dc;display:flex"><Icon name="phone" size={17} /></span>
-        or call us today {business.phoneDisplay}
-      </a>
+    <div class="stack-sm" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <a class="btn btn-primary" href="/contact" style="font:700 16px/1 var(--font-body);padding:18px 32px;letter-spacing:.02em">Get a Free Water Test <Icon name="arrow" size={18} /></a>
+      <a class="btn btn-ghost" href="#flagship" style="font:700 16px/1 var(--font-body);padding:18px 28px">See the Complete System</a>
     </div>
+    <div style="margin-bottom:26px;font:600 15px/1 var(--font-body);color:#cde6e8">or call <a href={business.phoneHref} style="color:#fff;text-decoration:none">{business.phoneDisplay}</a></div>
 
     <!-- Rating badge -->
     <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:11px 18px;border-radius:12px">

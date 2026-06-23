@@ -341,12 +341,14 @@ export const nav = [
 // filtration + softener combo $5,400; whole-home + RO bundle 10% off.
 // ============================================================
 export const flagship = {
-  eyebrow: "The Aquveda Flagship",
+  eyebrow: "The flagship system",
   name: "The Complete Home Water System",
   tagline:
     "Whole-home filtration, a water softener, and reverse-osmosis drinking water, sized to your home and installed in one trip.",
-  price: "From $5,400 installed",
-  priceNote: "Bundle filtration, softening, and RO and save 10%.",
+  priceRegular: "$5,700",
+  price: "$5,400",
+  priceUnit: "installed",
+  priceNote: "Save $300 versus buying the systems separately. Add reverse-osmosis drinking water and save 10% on the bundle.",
   image: "/images/flagship-system.svg",
   imageAlt:
     "The complete Aquveda home water system: whole-home filter, softener, and under-sink reverse osmosis",
@@ -449,4 +451,14 @@ export const articles: Article[] = [
       "Pure RO water can taste very clean; if you prefer a fuller taste, a remineralization stage adds beneficial minerals back. We can also run a line to your refrigerator and ice maker so they get the same water. It is the simplest upgrade with the most noticeable daily payoff.",
     ],
   },
+];
+
+// ============================================================
+// HOME FAQ (answers buyer questions; drives FAQPage schema)
+// ============================================================
+export const homeFaqs: Faq[] = [
+  { q: "What is the Complete Home Water System?", a: "It is our flagship setup: whole-home filtration, a water softener, and reverse-osmosis drinking water, sized to your home and installed in one visit. Filtration cleans every tap, the softener stops hard-water scale, and reverse osmosis gives you bottled-water quality at the kitchen sink." },
+  { q: "How much does the Complete Home Water System cost?", a: "Whole-home filtration and a softener combine from $5,400 installed, which saves $300 versus buying them separately. Add reverse-osmosis drinking water and you save 10% on the bundle. Individual systems start at $2,200. Every quote starts with a free in-home water test, so the price matches what your water actually needs." },
+  { q: "Do I need all three systems?", a: "Not always. We size to your water after a free test. Many homes start with a softener or filtration and add reverse osmosis later. We recommend what your test shows and quote it upfront." },
+  { q: "Is the work guaranteed?", a: "Yes. Every system is installed by a licensed, insured installer and backed by our workmanship warranty. The optional Care plan handles annual testing and filter changes so the system keeps performing." },
 ]; 

@@ -4,44 +4,74 @@ import TopBar from "../components/TopBar.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import ReviewLogos from "../components/ReviewLogos.astro";
+import CredentialBar from "../components/CredentialBar.astro";
 import FlagshipSystem from "../components/FlagshipSystem.astro";
 import ServiceGrid from "../components/ServiceGrid.astro";
 import CTABand from "../components/CTABand.astro";
 import HowItWorks from "../components/HowItWorks.astro";
 import ComparisonTable from "../components/ComparisonTable.astro";
-import WhyChooseGrid from "../components/WhyChooseGrid.astro";
 import StatBand from "../components/StatBand.astro";
 import Testimonials from "../components/Testimonials.astro";
 import LearnPreview from "../components/LearnPreview.astro";
+import HomeFaq from "../components/HomeFaq.astro";
 import ServiceAreaList from "../components/ServiceAreaList.astro";
 import QuoteForm from "../components/QuoteForm.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/Icon.astro";
+import { business, flagship, homeFaqs } from "../data/site";
+
+const site = business.domain;
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: flagship.name,
+  description: flagship.tagline,
+  brand: { "@type": "Brand", name: "Aquveda" },
+  image: new URL(flagship.image, site).href,
+  offers: {
+    "@type": "Offer",
+    price: "5400",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: site,
+  },
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 ---
 <Layout
   title="Aquveda | Whole-Home Water Filtration & Softening in Montgomery & Chester County"
-  description="Professional whole-home filtration, softening & drinking water across Blue Bell, Malvern, Exton, West Chester & nearby. Licensed, insured, free in-home water tests."
+  description="The Complete Home Water System: whole-home filtration, softening, and reverse-osmosis drinking water from $5,400 installed. Free in-home water test in Montgomery & Chester County, PA."
   path="/"
+  schema={[productSchema, faqSchema]}
 >
   <TopBar />
   <Header />
   <Hero />
   <ReviewLogos />
+  <CredentialBar />
   <FlagshipSystem />
   <ServiceGrid />
   <HowItWorks />
   <ComparisonTable />
-  <WhyChooseGrid />
   <StatBand />
   <Testimonials />
   <LearnPreview />
+  <HomeFaq />
 
   <!-- QUOTE / JOBBER FORM -->
   <section id="quote" style="background:#0e3a43">
     <div class="wrap hero-grid" style="padding-top:74px;padding-bottom:74px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
       <div style="display:flex;flex-direction:column;gap:18px">
         <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc">Free In-Home Water Test</div>
-        <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance">See What Is In Your Water</h2>
+        <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance">See what is in your water</h2>
         <p style="font:400 17px/1.65 var(--font-body);color:#cde6e8;max-width:440px">Tell us about your home and we will schedule a free in-home water test, then quote the right system the same day. Prefer to talk? Call us at <a href="tel:2159789719" style="color:#7fd3dc;font-weight:600;text-decoration:none">(215) 978-9719</a>.</p>
         <div style="display:flex;flex-direction:column;gap:13px;margin-top:6px">
           {["Free in-home water test", "No-obligation, upfront pricing", "Licensed & fully insured", "Workmanship warranty"].map((t) => (
@@ -54,6 +84,6 @@ import Icon from "../components/Icon.astro";
   </section>
 
   <ServiceAreaList />
-  <CTABand tone="red" title="See What Is In Your Water Before You Commit" subtitle="Start with a free in-home water test. Call us now or send a message, we respond the same day." />
+  <CTABand tone="red" title="See what is in your water before you commit" subtitle="Start with a free in-home water test. Call us now or send a message, we respond the same day." />
   <Footer />
 </Layout>
