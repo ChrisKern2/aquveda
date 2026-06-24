@@ -49,7 +49,7 @@ const faqSchema = {
 ---
 <Layout
   title="Aquveda | Whole-Home Water Filtration & Softening in Greater Philadelphia"
-  description="The Complete Home Water System: whole-home softening and filtration plus reverse-osmosis drinking water, $2,699 installed during founder pricing (regularly $5,998). Free in-home water test across Greater Philadelphia, focused on the western suburbs."
+  description="The Complete Home Water System: whole-home softening and filtration plus reverse-osmosis drinking water, $2,699 installed during founder pricing (regularly $5,998). Free water report across Greater Philadelphia, focused on the western suburbs."
   path="/"
   schema={[productSchema, faqSchema]}
 >
@@ -71,11 +71,11 @@ const faqSchema = {
   <section id="quote" style="background:#0e3a43">
     <div class="wrap hero-grid" style="padding-top:74px;padding-bottom:74px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
       <div style="display:flex;flex-direction:column;gap:18px">
-        <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc">Free In-Home Water Test</div>
+        <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc">Free Water Report</div>
         <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance">See what is in your water</h2>
-        <p style="font:400 17px/1.65 var(--font-body);color:#cde6e8;max-width:440px">Tell us about your home and we will schedule a free in-home water test, then quote the right system the same day. Prefer to talk? Call us at <a href="tel:2159789719" style="color:#7fd3dc;font-weight:600;text-decoration:none">(215) 978-9719</a>.</p>
+        <p style="font:400 17px/1.65 var(--font-body);color:#cde6e8;max-width:440px">Tell us about your home and we'll send a free water report on what's in your water, then quote the right system. Prefer to talk? Call us at <a href="tel:2159789719" style="color:#7fd3dc;font-weight:600;text-decoration:none">(215) 978-9719</a>.</p>
         <div style="display:flex;flex-direction:column;gap:13px;margin-top:6px">
-          {["Free in-home water test", "No-obligation, upfront pricing", "Licensed & fully insured", "Lifetime workmanship warranty"].map((t) => (
+          {["Free water report", "No-obligation, upfront pricing", "Licensed & fully insured", "Lifetime workmanship warranty"].map((t) => (
             <div style="display:flex;align-items:center;gap:11px;color:#5fcf97"><Icon name="check" size={19} /><span style="font:500 15px/1 var(--font-body);color:#e3e8ef">{t}</span></div>
           ))}
         </div>
@@ -85,6 +85,6 @@ const faqSchema = {
   </section>
 
   <ServiceAreaList />
-  <CTABand tone="red" title="See what is in your water before you commit" subtitle="Start with a free in-home water test. Call us now or send a message, we respond the same day." />
+  <CTABand tone="red" title="See what is in your water before you commit" subtitle="Start with a free water report. Call us now or send a message, we respond the same day." />
   <Footer />
 </Layout>

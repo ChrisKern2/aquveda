@@ -31,7 +31,7 @@ const townSchema = {
 };
 
 const title = `Water Treatment in ${town.name}, PA | Aquveda`;
-const description = `Whole-home water filtration, softening & drinking water in ${town.name}, ${town.county}. Locally owned, licensed & insured. Free in-home water tests from Aquveda`;
+const description = `Whole-home water filtration, softening & drinking water in ${town.name}, ${town.county}. Locally owned, licensed & insured. Free water report from Aquveda`;
 ---
 <Layout title={title} description={description} path={path} schema={[townSchema]}>
   <TopBar />
@@ -48,8 +48,8 @@ const description = `Whole-home water filtration, softening & drinking water in 
       <div class="prose">
         <h2 style="font:700 30px/1.1 var(--font-display);color:#0e3a43;margin-bottom:18px;letter-spacing:.01em">Your Local Water Treatment Team in {town.name}</h2>
         <p>{town.blurb} As a locally owned company serving {town.county}, Aquveda brings whole-home filtration, reverse osmosis, well water treatment, and specialty systems right to your door, with the same upfront pricing, careful insured crews, and lifetime workmanship warranty we bring to every neighborhood we serve.</p>
-        <p>Whether you want cleaner, better-tasting water from every tap, an end to hard-water scale, or bottled-water quality at the kitchen sink, we handle it start to finish. We start with a free in-home water test, size the right system for your home, install it cleanly with a licensed installer, and walk the result with you before we leave. You get better water and a price you agreed to up front, with no surprises.</p>
-        <p>Ready to see what a professional clean looks like in {town.name}? Request a free, in-home water test or call us at <a href="tel:2159789719" style="color:#15919b;font-weight:600;text-decoration:none">{business.phoneDisplay}</a>.</p>
+        <p>Whether you want cleaner, better-tasting water from every tap, an end to hard-water scale, or bottled-water quality at the kitchen sink, we handle it start to finish. We start with a free water report, size the right system for your home, install it cleanly with a licensed installer, and walk the result with you before we leave. You get better water and a price you agreed to up front, with no surprises.</p>
+        <p>Ready for better water in {town.name}? Request a free water report or call us at <a href="tel:2159789719" style="color:#15919b;font-weight:600;text-decoration:none">{business.phoneDisplay}</a>.</p>
       </div>
     </div>
   </section>

@@ -79,14 +79,14 @@ export const services: Service[] = [
       "Whole-home water filtration system installed on the main line in a Philadelphia-area home",
     metaTitle: "Whole-Home Water Filtration in Greater Philadelphia | Aquveda",
     metaDescription:
-      "Whole-home water filtration in Blue Bell, Malvern, Exton & nearby. Remove chlorine, taste, odor, and emerging contaminants from every tap. Free in-home water test.",
+      "Whole-home water filtration in Blue Bell, Malvern, Exton & nearby. Remove chlorine, taste, odor, and emerging contaminants from every tap. Free water report.",
     intro: [
       "What comes out of the tap is not what most homeowners think it is. Even water that meets municipal standards carries chlorine, the taste and smell that come with it, fine sediment, and a growing list of contaminants that treatment plants were never built to remove. Aquveda installs whole-home filtration that cleans the water for the entire house, not just one faucet.",
-      "We start with a free in-home water test so you see exactly what is in your water before you spend a dollar. Then we size and install a filtration system on the main line, matched to your home, your water, and your flow. The result is water that tastes better, smells like nothing, and is gentler on your skin, your hair, your fixtures, and your appliances.",
+      "We start with a free water report so you see exactly what is in your water before you spend a dollar. Then we size and install a filtration system on the main line, matched to your home, your water, and your flow. The result is water that tastes better, smells like nothing, and is gentler on your skin, your hair, your fixtures, and your appliances.",
       "Every install is performed by a licensed, insured installer, tested on completion, and backed by our lifetime workmanship warranty and the manufacturer equipment warranty.",
     ],
     included: [
-      "Free in-home water test and contaminant report",
+      "Free water report on your home's water",
       "System sized to your home, water, and flow rate",
       "Licensed, insured installation on the main line",
       "Hardness, chlorine, taste, odor, sediment, and 75+ contaminants addressed",
@@ -102,13 +102,13 @@ export const services: Service[] = [
       { name: "Well-Water Treatment", desc: "Iron, sulfur, and pH correction, quoted on your water-test result." },
     ],
     process: [
-      { title: "Free water test", body: "We test your water in your home and show you exactly what is in it." },
+      { title: "Free water report", body: "Tell us about your home and we send a report on what's in your water, no visit required." },
       { title: "Right-sized recommendation", body: "We size the system to your home and water, and quote it on the spot." },
       { title: "Clean, licensed install", body: "A licensed installer fits the system on the main line and tidies up." },
       { title: "Test & guarantee", body: "We retest the water with you and back the work with our warranty." },
     ],
     faqs: [
-      { q: "Do I really need filtration if my water is treated by the city?", a: "Municipal treatment makes water safe to the legal standard, but it still arrives with chlorine, taste and odor, sediment from aging pipes, and contaminants that plants are not required to remove. A free water test shows you exactly what is in yours, so you can decide from real data." },
+      { q: "Do I really need filtration if my water is treated by the city?", a: "Municipal treatment makes water safe to the legal standard, but it still arrives with chlorine, taste and odor, sediment from aging pipes, and contaminants that plants are not required to remove. A free water report shows you what's likely in yours, so you can decide from real data." },
       { q: "What does whole-home filtration remove?", a: "A properly sized system removes chlorine, taste, and odor across the whole house, captures sediment, and can target specific contaminants like PFAS when your test calls for it. We size the media to your actual water." },
       { q: "How long does an install take?", a: "Most whole-home filtration installs are completed in a single visit of a few hours by a licensed installer, with the water tested before and after." },
       { q: "Do the filters need maintenance?", a: "Yes, media and filters are serviced on a schedule. We can handle the testing and filter changes for you so the system stays at full performance for its life." },
@@ -124,7 +124,7 @@ export const services: Service[] = [
       "Under-sink reverse osmosis drinking water system installed at a kitchen tap",
     metaTitle: "Reverse Osmosis Drinking Water in Greater Philadelphia | Aquveda",
     metaDescription:
-      "Under-sink reverse osmosis drinking water in Blue Bell, Malvern, Exton & nearby. 7-stage filtration with alkaline post-filter. Free in-home water test and quote.",
+      "Under-sink reverse osmosis drinking water in Blue Bell, Malvern, Exton & nearby. 7-stage filtration with alkaline post-filter. Free water report and quote.",
     intro: [
       "For the water you drink and cook with, reverse osmosis is the most thorough treatment. Aquveda installs under-sink RO systems that push your water through a multi-stage process and a fine membrane, removing dissolved solids, taste, and contaminants that whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality from a dedicated tap.",
       "Our system uses 7-stage filtration with an alkaline post-filter that adds beneficial minerals back for a balanced taste. You get better coffee and tea, clearer ice, better-tasting cooking, and the end of buying and hauling bottled water. We can run a line to your refrigerator and ice maker so they get the same water.",
@@ -146,7 +146,7 @@ export const services: Service[] = [
       { name: "Filter & Membrane Service", desc: "Scheduled changes keep the water pure." },
     ],
     process: [
-      { title: "Free water test", body: "We test your tap water and show you what RO will remove." },
+      { title: "Free water report", body: "We send a report on your water and what RO will remove." },
       { title: "Choose your setup", body: "Standard, with a fridge line or other options, your call." },
       { title: "Clean under-sink install", body: "A licensed installer fits it tidily and routes the drain and lines." },
       { title: "Taste the difference", body: "We test the finished water with you and back it with our warranty." },
@@ -168,14 +168,14 @@ export const services: Service[] = [
       "Well water treatment system removing iron, manganese, and sulfur for a rural Pennsylvania home",
     metaTitle: "Well Water Treatment in Greater Philadelphia | Aquveda",
     metaDescription:
-      "Well water treatment for rural Philadelphia-area homes: iron, manganese, sulfur, pH, and bacteria. Free in-home water test, then a system sized to your results.",
+      "Well water treatment for rural Philadelphia-area homes: iron, manganese, sulfur, pH, and bacteria. Free water report, then a system sized to your results.",
     intro: [
       "Well water gives you independence from the municipal supply, and a different set of problems. Iron stains fixtures and laundry rust-orange, manganese leaves black specks, sulfur brings a rotten-egg smell, low pH eats at copper pipes, and bacteria can show up without warning. Aquveda builds well-water systems for rural homes across the greater Philadelphia area, sized to what your water actually contains.",
-      "It starts with a free in-home water test. Well water varies house to house, so the right system depends entirely on your results. We design around them, whether that means an iron and sulfur filter, pH correction, UV disinfection, or a combination, and quote it upfront.",
+      "It starts with a free water report. Well water varies house to house, so the right system depends entirely on your results. We design around them, whether that means an iron and sulfur filter, pH correction, UV disinfection, or a combination, and quote it upfront.",
       "Every system is installed by a licensed, insured installer and backed by our lifetime workmanship warranty. We retest the water with you on completion so you can see the difference.",
     ],
     included: [
-      "Free in-home well-water test and full report",
+      "Free water report on your home's water",
       "System designed around your specific results",
       "Iron, manganese, and sulfur removal as needed",
       "pH correction and UV disinfection where called for",
@@ -188,10 +188,10 @@ export const services: Service[] = [
       { name: "pH Correction", desc: "Neutralizes acidic water that corrodes copper pipes." },
       { name: "UV Disinfection", desc: "Inactivates bacteria, common on private wells." },
       { name: "Sediment Filtration", desc: "Captures sand and grit from the well." },
-      { name: "Whole-Home Softening", desc: "Adds hardness removal where the test calls for it." },
+      { name: "Whole-Home Softening", desc: "Adds hardness removal where your results call for it." },
     ],
     process: [
-      { title: "Free water test", body: "We test your well water and show you exactly what is in it." },
+      { title: "Free water report", body: "We send a free report on your water, then confirm well specifics during the quote." },
       { title: "System designed to your results", body: "We design around your iron, sulfur, pH, and bacteria readings, and quote it." },
       { title: "Clean, licensed install", body: "A licensed installer fits the system and tidies up." },
       { title: "Retest & guarantee", body: "We retest the water with you and back the work with our warranty." },
@@ -213,14 +213,14 @@ export const services: Service[] = [
       "Specialty water treatment equipment including a water softener and UV purification",
     metaTitle: "Specialty Water Treatment in Greater Philadelphia | Aquveda",
     metaDescription:
-      "Specialty water treatment across Greater Philadelphia: water softeners, UV purification, iron and sulfur removal, and niche systems sized to your free water test.",
+      "Specialty water treatment across Greater Philadelphia: water softeners, UV purification, iron and sulfur removal, and niche systems sized to your free water report.",
     intro: [
       "Some water problems need a targeted fix rather than a full system. Aquveda installs the specialty equipment that solves a specific issue: a water softener for hard-water scale, UV purification for bacteria, iron and sulfur removal for staining and odor, and other niche treatment that matches what your test finds.",
-      "Every recommendation starts with a free in-home water test. We size the equipment to your water and your home, explain the result in plain language, and quote it upfront, so you buy only what your water needs.",
+      "Every recommendation starts with a free water report. We size the equipment to your water and your home, explain the result in plain language, and quote it upfront, so you buy only what your water needs.",
       "Each install is handled by a licensed, insured installer and backed by our lifetime workmanship warranty.",
     ],
     included: [
-      "Free in-home water test and recommendation",
+      "Free water report and recommendation",
       "Water softeners, metered or salt-free",
       "UV purification for bacteria",
       "Iron and sulfur removal",
@@ -236,13 +236,13 @@ export const services: Service[] = [
       { name: "Filter & Salt Service", desc: "Scheduled filter changes and softener salt delivery." },
     ],
     process: [
-      { title: "Free water test", body: "We test your water and pinpoint the specific issue." },
+      { title: "Free water report", body: "We send a report on your water and pinpoint the likely issue." },
       { title: "Targeted recommendation", body: "We size the right equipment for the problem and quote it upfront." },
       { title: "Clean, licensed install", body: "A licensed installer fits it and tidies up." },
       { title: "Verify & guarantee", body: "We confirm the result and back the work with our warranty." },
     ],
     faqs: [
-      { q: "Do you install just a water softener?", a: "Yes. A softener is one of our most common specialty installs. We size it to your hardness, measured during a free in-home test." },
+      { q: "Do you install just a water softener?", a: "Yes. A softener is one of our most common specialty installs. We size it to your hardness, based on your free water report." },
       { q: "What is the difference between a softener and a salt-free conditioner?", a: "A softener removes the hardness minerals using ion exchange, the most complete fix. A salt-free conditioner changes the minerals so they don't form scale, with no salt and no backwash. We recommend the right one for your home and water." },
       { q: "Is UV purification worth it?", a: "If your test shows bacteria, UV is a reliable, chemical-free way to inactivate it. We recommend it when the results call for it." },
       { q: "Can you service equipment you didn't install?", a: "Usually yes, after an initial assessment. We can handle filter changes, salt delivery, and repairs on most existing systems." },
@@ -270,7 +270,7 @@ export const towns: Town[] = [
   { slug: "malvern", name: "Malvern", county: "Chester County", region: "Chester County",
     blurb: "From the borough to the surrounding townships, Malvern has real well-water pockets where filtration and disinfection are often genuinely needed." },
   { slug: "exton", name: "Exton", county: "Chester County", region: "Chester County",
-    blurb: "Exton's mix of municipal-hard and private-well homes makes a free water test the right first step for nearly every household." },
+    blurb: "Exton's mix of municipal-hard and private-well homes makes a free water report the right first step for nearly every household." },
   { slug: "west-chester", name: "West Chester", county: "Chester County", region: "Chester County",
     blurb: "West Chester's historic homes and newer developments both benefit from softening, filtration, and clean drinking water at the tap." },
   { slug: "great-valley", name: "Great Valley", county: "Chester County", region: "Chester County",
@@ -291,7 +291,7 @@ export const featuredTownNames = ["Blue Bell", "Malvern", "Exton", "West Chester
 export type WhyItem = { icon: string; title: string; body: string };
 
 export const whyChoose: WhyItem[] = [
-  { icon: "bolt", title: "Free In-Home Water Test", body: "We test your water in your home and show you exactly what is in it before you spend a dollar." },
+  { icon: "bolt", title: "Free Water Report", body: "Get a clear report on what's likely in your water, with our recommendations, before you spend a dollar." },
   { icon: "shield", title: "Licensed & Insured", body: "Every system is installed by a licensed, insured installer. You're protected start to finish." },
   { icon: "badge", title: "Lifetime Workmanship Warranty", body: "We stand behind every install for as long as you own your home." },
   { icon: "home", title: "Locally Owned & Operated", body: "We live and work in the western Philadelphia suburbs, your neighbors, not a franchise." },
@@ -305,7 +305,7 @@ export type Stat = { value: string; label: string };
 
 // HONEST credibility band, no fabricated history or job counts.
 export const stats: Stat[] = [
-  { value: "Free", label: "In-Home Water Test" },
+  { value: "Free", label: "Water Report" },
   { value: "Licensed", label: "& Fully Insured" },
   { value: "Warranty", label: "On Every Install" },
   { value: "Local", label: "Greater Philadelphia" },
@@ -364,7 +364,7 @@ export const flagship = {
 // ============================================================
 export type Step = { title: string; body: string };
 export const steps: Step[] = [
-  { title: "Free in-home water test", body: "We test your water in your home and show you exactly what is in it, no pressure, no obligation." },
+  { title: "Free water report", body: "Tell us about your home and we send a free report on what's in your water, no visit and no obligation." },
   { title: "Review and quote", body: "We explain the results in plain language and quote the right-sized system on the spot, with upfront pricing." },
   { title: "Install and enjoy", body: "A licensed installer fits your system cleanly in one visit, then we retest the water with you and back it with our warranty." },
 ];
@@ -376,7 +376,7 @@ export type CompareRow = { feature: string; aquveda: boolean; typical: boolean; 
 export const comparison = {
   columns: ["Aquveda", "Typical providers", "Big-box DIY"],
   rows: [
-    { feature: "Free in-home water test before you buy", aquveda: true, typical: false, diy: false },
+    { feature: "Free water report before you buy", aquveda: true, typical: false, diy: false },
     { feature: "Licensed, insured installer", aquveda: true, typical: true, diy: false },
     { feature: "System sized to your home and water", aquveda: true, typical: true, diy: false },
     { feature: "Upfront pricing, no high-pressure sales", aquveda: true, typical: false, diy: true },
@@ -405,23 +405,23 @@ export const articles: Article[] = [
     title: "Is the water hard in the Philadelphia suburbs?",
     tag: "Local water",
     excerpt: "Most of the western Philadelphia suburbs run moderately hard to hard. Here is what that means for your home, and how to know your number.",
-    metaDescription: "Is water hard in the Philadelphia suburbs? What hardness means for your home and how a free water test gives you the exact number. Aquveda explains.",
+    metaDescription: "Is water hard in the Philadelphia suburbs? What hardness means for your home and how a free water report gives you the exact number. Aquveda explains.",
     body: [
       "If you see spots on your glassware, crusty buildup on faucets and showerheads, or your soap never seems to lather, you are almost certainly dealing with hard water. Across the Philadelphia suburbs, most homes, whether on municipal supply or a private well, see water that runs moderately hard to hard.",
       "Hardness is dissolved calcium and magnesium. It scales the inside of your water heater and pipes, shortens the life of dishwashers and washing machines, and leaves skin and hair feeling dry. It will not harm your health, and the costs add up quietly. The harder the water, the faster the damage adds up.",
-      "The only way to know your real number is to test. A free in-home water test measures your hardness in minutes and shows you whether a softener or a salt-free conditioner is the right fix. From there, you decide based on your actual water.",
+      "A free water report shows you what's likely in your water and whether a softener or a salt-free conditioner is the right fix. From there, you decide based on real information.",
     ],
   },
   {
     slug: "what-a-water-test-reveals",
-    title: "What a free water test actually reveals",
+    title: "What a free water report actually reveals",
     tag: "Getting started",
     excerpt: "A good test takes minutes and tells you far more than hardness. Here is what we measure and why it matters before you spend a dollar.",
-    metaDescription: "What does a home water test reveal? Hardness, chlorine, sediment, and more, and why Aquveda starts every job with a free in-home test before recommending anything.",
+    metaDescription: "What does a free water report reveal? Hardness, chlorine, sediment, and more, and why Aquveda starts every job with a free water report before recommending anything.",
     body: [
-      "Every Aquveda job starts with a free in-home water test, because the right system depends entirely on what is in your water. Guessing leads to oversized equipment you do not need, or undersized equipment that cannot keep up.",
-      "We check hardness, chlorine and the taste and odor that come with it, sediment and clarity, and, for well homes, signs of iron, sulfur, and pH issues. Where testing calls for it, we can target specific contaminants like PFAS. You see the results in plain language, right at your kitchen table.",
-      "From there we recommend only what your water needs. Sometimes that is a full system, sometimes it is a single softener or a drinking-water unit. Either way, you make the call with real data in front of you, and the test costs you nothing.",
+      "Every Aquveda job starts with a free water report, because the right system depends entirely on what is in your water. Guessing leads to oversized equipment you do not need, or undersized equipment that cannot keep up.",
+      "Your report covers hardness, chlorine and the taste and odor that come with it, sediment, and, for well homes, the iron, sulfur, and pH concerns common nearby. It flags where something like PFAS is worth a closer look. You see it all in plain language, no visit required.",
+      "From there we recommend only what your water needs. Sometimes that is a full system, sometimes it is a single softener or a drinking-water unit. Either way, you make the call with real information in front of you, and the report costs you nothing.",
     ],
   },
   {
@@ -433,7 +433,7 @@ export const articles: Article[] = [
     body: [
       "A traditional softener uses ion exchange to actually remove the calcium and magnesium that cause hardness. It is the most complete fix: no scale, easier lathering, softer laundry, and longer appliance life. It uses salt and a small amount of water to regenerate, and a metered head only regenerates when needed, which keeps both in check.",
       "A salt-free conditioner does not remove the minerals; it changes their structure so they do not stick and form scale. It uses no salt and no backwash, which suits homes that want low maintenance or have drainage or sodium concerns. You will not get the slippery softened-water feel, but you will get strong scale control.",
-      "Which is right comes down to your hardness level, your household, and your preferences. A free in-home test gives us the number, and we recommend the option that fits your home and water.",
+      "Which is right comes down to your hardness level, your household, and your preferences. A free water report gives us the picture, and we recommend the option that fits your home and water.",
     ],
   },
   {
@@ -455,7 +455,7 @@ export const articles: Article[] = [
 // ============================================================
 export const homeFaqs: Faq[] = [
   { q: "What is the Complete Home Water System?", a: "It is our flagship setup: a complete home system with softening and chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system. A licensed plumber installs it in one trip. The whole-home system cleans and softens every tap, and reverse osmosis gives you bottled-water quality at the kitchen sink." },
-  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, through July 31, the Complete Home Water System is $2,699 installed, regularly $5,998. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Every quote still starts with a free in-home water test." },
-  { q: "Do I have to buy the complete system?", a: "No. We also install whole-home filtration, reverse osmosis, well water treatment, and specialty systems on their own. We size to your water after a free test and quote what your results call for." },
+  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, through July 31, the Complete Home Water System is $2,699 installed, regularly $5,998. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Every quote still starts with a free water report." },
+  { q: "Do I have to buy the complete system?", a: "No. We also install whole-home filtration, reverse osmosis, well water treatment, and specialty systems on their own. We size to your water from your free water report and quote what your results call for." },
   { q: "Is the work guaranteed?", a: "Yes. Every system is installed by a licensed plumber and backed by our lifetime workmanship warranty, plus the manufacturer equipment warranty." },
 ]; 
