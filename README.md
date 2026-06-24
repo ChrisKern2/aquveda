@@ -1,8 +1,8 @@
-# Aquveda, Website
+# Wellbrook, Website
 
-A multi-page, SEO-optimized **Astro + Tailwind CSS** site for Aquveda
+A multi-page, SEO-optimized **Astro + Tailwind CSS** site for Wellbrook
 (whole-home water filtration, water softening and conditioning, reverse-osmosis
-drinking water, and the Aquveda Care plan) serving Montgomery & Chester County, PA.
+drinking water, and the Wellbrook Care plan) serving Montgomery & Chester County, PA.
 Static output, deploys to Vercel with zero config.
 
 ## Quick start
@@ -21,9 +21,9 @@ npm run preview  # preview the built site locally
   `outputDirectory: dist`) so Vercel builds correctly regardless of the project's
   original preset.
 - `@astrojs/sitemap` generates `sitemap-index.xml`; `public/robots.txt` points to it.
-  **After deploying, submit `https://aquveda.com/sitemap-index.xml` in
+  **After deploying, submit `https://wellbrookwater.com/sitemap-index.xml` in
   Google Search Console.**
-- Set **aquveda.com** as the production domain in Vercel and remove the old domain.
+- Set **wellbrookwater.com** as the production domain in Vercel and remove the old domain.
 
 ## Page map
 

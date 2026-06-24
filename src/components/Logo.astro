@@ -1,5 +1,5 @@
 ---
-// Aquveda "The Crest" logo: a water droplet filling with a rising wave, plus the
+// Wellbrook "The Crest" logo: a water droplet filling with a rising wave, plus the
 // Newsreader wordmark. `variant` flips colors for light vs. dark backgrounds.
 // Each instance gets a unique clipPath id so inlined defs never collide.
 interface Props { variant?: "dark" | "light"; size?: number; href?: string; }
@@ -15,7 +15,7 @@ const cid = `aq-${variant}`;
 const h = Math.round(size * 1.32);
 const w = Math.round(h * 0.83);
 ---
-<a href={href} aria-label="Aquveda home" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+<a href={href} aria-label="Wellbrook home" style="text-decoration:none;display:flex;align-items:center;gap:10px">
   <svg width={w} height={h} viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs><clipPath id={cid}><path d="M50 6C50 6 18 46 18 72a32 32 0 1 0 64 0C82 46 50 6 50 6Z"></path></clipPath></defs>
     <path d="M50 6C50 6 18 46 18 72a32 32 0 1 0 64 0C82 46 50 6 50 6Z" fill={drop}></path>
@@ -24,5 +24,5 @@ const w = Math.round(h * 0.83);
       <path d="M8 88q14-14 28-2t28 2 28-6V120H8Z" fill={wave2}></path>
     </g>
   </svg>
-  <span style={`font:500 ${size}px/1 var(--font-display);letter-spacing:-.01em;color:${text}`}>Aquveda</span>
+  <span style={`font:500 ${size}px/1 var(--font-display);letter-spacing:-.01em;color:${text}`}>Wellbrook</span>
 </a>

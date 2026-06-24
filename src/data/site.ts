@@ -1,5 +1,5 @@
 // ============================================================
-// SINGLE SOURCE OF TRUTH for Aquveda.
+// SINGLE SOURCE OF TRUTH for Wellbrook.
 // Edit business facts, services, and towns here, pages, the
 // mega-menu, the service grid, schema, and the sitemap all read
 // from this file. To add a town, add one entry to `towns`.
@@ -7,12 +7,12 @@
 // ============================================================
 
 export const business = {
-  name: "Aquveda",
-  legalName: "Aquveda",
-  domain: "https://aquveda.com",
+  name: "Wellbrook",
+  legalName: "Wellbrook",
+  domain: "https://wellbrookwater.com",
   phoneDisplay: "(215) 978-9719",
   phoneHref: "tel:2159789719",
-  email: "chris@aquveda.com",
+  email: "chris@wellbrookwater.com",
   foundedYear: 2026,
   priceRange: "$$$",
   tagline: "Water, perfected.",
@@ -77,11 +77,11 @@ export const services: Service[] = [
     image: "/images/svc-filtration.svg",
     imageAlt:
       "Whole-home water filtration system installed on the main line in a Philadelphia-area home",
-    metaTitle: "Whole-Home Water Filtration in Greater Philadelphia | Aquveda",
+    metaTitle: "Whole-Home Water Filtration in Greater Philadelphia | Wellbrook",
     metaDescription:
       "Whole-home water filtration in Blue Bell, Malvern, Exton & nearby. Remove chlorine, taste, odor, and emerging contaminants from every tap. Free, no-obligation quotes.",
     intro: [
-      "What comes out of the tap is not what most homeowners think it is. Even water that meets municipal standards carries chlorine, the taste and smell that come with it, fine sediment, and a growing list of contaminants that treatment plants were never built to remove. Aquveda installs whole-home filtration that cleans the water for the entire house, not just one faucet.",
+      "What comes out of the tap is not what most homeowners think it is. Even water that meets municipal standards carries chlorine, the taste and smell that come with it, fine sediment, and a growing list of contaminants that treatment plants were never built to remove. Wellbrook installs whole-home filtration that cleans the water for the entire house, not just one faucet.",
       "We start with a free, no-obligation quote so you know the system and the price up front. Then we size and install a filtration system on the main line, matched to your home, your water, and your flow. The result is water that tastes better, smells like nothing, and is gentler on your skin, your hair, your fixtures, and your appliances.",
       "Every install is performed by a licensed, insured installer, tested on completion, and backed by our lifetime workmanship warranty and the manufacturer equipment warranty.",
     ],
@@ -122,11 +122,11 @@ export const services: Service[] = [
     image: "/images/svc-ro.svg",
     imageAlt:
       "Under-sink reverse osmosis drinking water system installed at a kitchen tap",
-    metaTitle: "Reverse Osmosis Drinking Water in Greater Philadelphia | Aquveda",
+    metaTitle: "Reverse Osmosis Drinking Water in Greater Philadelphia | Wellbrook",
     metaDescription:
       "Under-sink reverse osmosis drinking water in Blue Bell, Malvern, Exton & nearby. 7-stage filtration with alkaline post-filter. Free, no-obligation quote.",
     intro: [
-      "For the water you drink and cook with, reverse osmosis is the most thorough treatment. Aquveda installs under-sink RO systems that push your water through a multi-stage process and a fine membrane, removing dissolved solids, taste, and contaminants that whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality from a dedicated tap.",
+      "For the water you drink and cook with, reverse osmosis is the most thorough treatment. Wellbrook installs under-sink RO systems that push your water through a multi-stage process and a fine membrane, removing dissolved solids, taste, and contaminants that whole-home filtration leaves behind. The result is clean, crisp, bottled-water quality from a dedicated tap.",
       "Our system uses 7-stage filtration with an alkaline post-filter that adds beneficial minerals back for a balanced taste. You get better coffee and tea, clearer ice, better-tasting cooking, and the end of buying and hauling bottled water. We can run a line to your refrigerator and ice maker so they get the same water.",
       "Every system is installed cleanly under the sink by a licensed installer, with the drinking water tested on completion and backed by our lifetime workmanship warranty.",
     ],
@@ -166,11 +166,11 @@ export const services: Service[] = [
     image: "/images/svc-softener.svg",
     imageAlt:
       "Well water treatment system removing iron, manganese, and sulfur for a rural Pennsylvania home",
-    metaTitle: "Well Water Treatment in Greater Philadelphia | Aquveda",
+    metaTitle: "Well Water Treatment in Greater Philadelphia | Wellbrook",
     metaDescription:
       "Well water treatment for rural Philadelphia-area homes: iron, manganese, sulfur, pH, and bacteria. Free, no-obligation quote, then a system sized to your home.",
     intro: [
-      "Well water gives you independence from the municipal supply, and a different set of problems. Iron stains fixtures and laundry rust-orange, manganese leaves black specks, sulfur brings a rotten-egg smell, low pH eats at copper pipes, and bacteria can show up without warning. Aquveda builds well-water systems for rural homes across the greater Philadelphia area, sized to what your water actually contains.",
+      "Well water gives you independence from the municipal supply, and a different set of problems. Iron stains fixtures and laundry rust-orange, manganese leaves black specks, sulfur brings a rotten-egg smell, low pH eats at copper pipes, and bacteria can show up without warning. Wellbrook builds well-water systems for rural homes across the greater Philadelphia area, sized to what your water actually contains.",
       "It starts with a free quote. Well water varies house to house, so we design the right system for your home, whether that means an iron and sulfur filter, pH correction, UV disinfection, or a combination, and price it upfront.",
       "Every system is installed by a licensed, insured installer and backed by our lifetime workmanship warranty. We retest the water with you on completion so you can see the difference.",
     ],
@@ -211,11 +211,11 @@ export const services: Service[] = [
     image: "/images/svc-care.svg",
     imageAlt:
       "Specialty water treatment equipment including a water softener and UV purification",
-    metaTitle: "Specialty Water Treatment in Greater Philadelphia | Aquveda",
+    metaTitle: "Specialty Water Treatment in Greater Philadelphia | Wellbrook",
     metaDescription:
       "Specialty water treatment across Greater Philadelphia: water softeners, UV purification, iron and sulfur removal, and niche systems, with free, no-obligation quotes.",
     intro: [
-      "Some water problems need a targeted fix rather than a full system. Aquveda installs the specialty equipment that solves a specific issue: a water softener for hard-water scale, UV purification for bacteria, iron and sulfur removal for staining and odor, and other niche treatment that matches what your test finds.",
+      "Some water problems need a targeted fix rather than a full system. Wellbrook installs the specialty equipment that solves a specific issue: a water softener for hard-water scale, UV purification for bacteria, iron and sulfur removal for staining and odor, and other niche treatment that matches what your test finds.",
       "Every recommendation starts with a free, no-obligation quote. We size the equipment to your home and water, explain it in plain language, and price it upfront, so you buy only what your water needs.",
       "Each install is handled by a licensed, insured installer and backed by our lifetime workmanship warranty.",
     ],
@@ -335,7 +335,7 @@ export const nav = [
 
 // ============================================================
 // FLAGSHIP SYSTEM (the featured bundle on the home page)
-// Pricing sourced from "Aquveda - Price Sheet.xlsx":
+// Pricing sourced from "Wellbrook - Price Sheet.xlsx":
 // Complete Home Water System: founder $2,699, regular $5,998 (matches the reference site).
 // ============================================================
 export const flagship = {
@@ -349,7 +349,7 @@ export const flagship = {
   priceNote: "Founder pricing through July 31. Regular price $5,998.",
   image: "/images/flagship-system.svg",
   imageAlt:
-    "The complete Aquveda home water system: whole-home softening and filtration with under-sink reverse osmosis",
+    "The complete Wellbrook home water system: whole-home softening and filtration with under-sink reverse osmosis",
   features: [
     "Complete home system: softening plus chlorine and chloramine carbon filtration",
     "Under-sink reverse-osmosis drinking water system with alkaline post-filter",
@@ -372,18 +372,18 @@ export const steps: Step[] = [
 // ============================================================
 // COMPARISON TABLE (generic, no named competitors)
 // ============================================================
-export type CompareRow = { feature: string; aquveda: boolean; typical: boolean; diy: boolean };
+export type CompareRow = { feature: string; wellbrook: boolean; typical: boolean; diy: boolean };
 export const comparison = {
-  columns: ["Aquveda", "Typical providers", "Big-box DIY"],
+  columns: ["Wellbrook", "Typical providers", "Big-box DIY"],
   rows: [
-    { feature: "Free, no-obligation quote before you buy", aquveda: true, typical: false, diy: false },
-    { feature: "Licensed, insured installer", aquveda: true, typical: true, diy: false },
-    { feature: "System sized to your home and water", aquveda: true, typical: true, diy: false },
-    { feature: "Upfront pricing, no high-pressure sales", aquveda: true, typical: false, diy: true },
-    { feature: "No long-term contracts or rentals", aquveda: true, typical: false, diy: true },
-    { feature: "Lifetime workmanship warranty on the install", aquveda: true, typical: false, diy: false },
-    { feature: "Local, owner-operated service", aquveda: true, typical: false, diy: false },
-    { feature: "Ongoing filter and service plans available", aquveda: true, typical: false, diy: false },
+    { feature: "Free, no-obligation quote before you buy", wellbrook: true, typical: false, diy: false },
+    { feature: "Licensed, insured installer", wellbrook: true, typical: true, diy: false },
+    { feature: "System sized to your home and water", wellbrook: true, typical: true, diy: false },
+    { feature: "Upfront pricing, no high-pressure sales", wellbrook: true, typical: false, diy: true },
+    { feature: "No long-term contracts or rentals", wellbrook: true, typical: false, diy: true },
+    { feature: "Lifetime workmanship warranty on the install", wellbrook: true, typical: false, diy: false },
+    { feature: "Local, owner-operated service", wellbrook: true, typical: false, diy: false },
+    { feature: "Ongoing filter and service plans available", wellbrook: true, typical: false, diy: false },
   ] as CompareRow[],
 };
 
@@ -405,7 +405,7 @@ export const articles: Article[] = [
     title: "Is the water hard in the Philadelphia suburbs?",
     tag: "Local water",
     excerpt: "Most of the western Philadelphia suburbs run moderately hard to hard. Here is what that means for your home, and how to know your number.",
-    metaDescription: "Is water hard in the Philadelphia suburbs? What hardness means for your home and how Aquveda fixes it. Free, no-obligation quotes.",
+    metaDescription: "Is water hard in the Philadelphia suburbs? What hardness means for your home and how Wellbrook fixes it. Free, no-obligation quotes.",
     body: [
       "If you see spots on your glassware, crusty buildup on faucets and showerheads, or your soap never seems to lather, you are almost certainly dealing with hard water. Across the Philadelphia suburbs, most homes, whether on municipal supply or a private well, see water that runs moderately hard to hard.",
       "Hardness is dissolved calcium and magnesium. It scales the inside of your water heater and pipes, shortens the life of dishwashers and washing machines, and leaves skin and hair feeling dry. It will not harm your health, and the costs add up quietly. The harder the water, the faster the damage adds up.",
@@ -417,7 +417,7 @@ export const articles: Article[] = [
     title: "What's really in your tap water",
     tag: "Getting started",
     excerpt: "Even treated water carries more than you think. Here is what is really in your tap, and why it matters before you spend a dollar.",
-    metaDescription: "What's really in your tap water in the Philadelphia suburbs: chlorine, hardness, sediment, and more, and how Aquveda fixes it. Free, no-obligation quotes.",
+    metaDescription: "What's really in your tap water in the Philadelphia suburbs: chlorine, hardness, sediment, and more, and how Wellbrook fixes it. Free, no-obligation quotes.",
     body: [
       "What comes out of your tap is rarely just water. Even treated municipal supply carries chlorine, the taste and odor that come with it, hardness, and sediment from aging pipes, and the right system depends entirely on what is in yours.",
       "City water arrives with chlorine and hardness; well water can carry iron, sulfur, manganese, and even bacteria. Hardness scales your pipes and appliances, chlorine affects taste and smell, and sediment shortens the life of your fixtures.",
@@ -441,7 +441,7 @@ export const articles: Article[] = [
     title: "Why reverse osmosis for the water you drink",
     tag: "Drinking water",
     excerpt: "Whole-home filtration cleans every tap. For the water you actually drink and cook with, reverse osmosis takes it one step further.",
-    metaDescription: "Why use reverse osmosis for drinking water? How RO differs from whole-home filtration, what it removes, and whether remineralization is worth it. Aquveda explains.",
+    metaDescription: "Why use reverse osmosis for drinking water? How RO differs from whole-home filtration, what it removes, and whether remineralization is worth it. Wellbrook explains.",
     body: [
       "Whole-home filtration strips chlorine, taste, odor, and sediment from every tap in the house. For most uses, that is exactly what you want. For the water you drink and cook with, reverse osmosis goes further.",
       "RO pushes water through a very fine membrane that removes dissolved solids and many contaminants that carbon filtration alone leaves behind. The result is clean, crisp, bottled-water quality straight from a dedicated faucet, with no more buying or hauling cases of bottled water.",

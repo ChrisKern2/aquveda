@@ -26,7 +26,7 @@ const productSchema = {
   "@type": "Product",
   name: flagship.name,
   description: flagship.tagline,
-  brand: { "@type": "Brand", name: "Aquveda" },
+  brand: { "@type": "Brand", name: "Wellbrook" },
   image: new URL(flagship.image, site).href,
   offers: {
     "@type": "Offer",
@@ -48,7 +48,7 @@ const faqSchema = {
 };
 ---
 <Layout
-  title="Aquveda | Whole-Home Water Filtration & Softening in Greater Philadelphia"
+  title="Wellbrook | Whole-Home Water Filtration & Softening in Greater Philadelphia"
   description="The Complete Home Water System: whole-home softening and filtration plus reverse-osmosis drinking water, $2,699 installed during founder pricing (regularly $5,998). Free, no-obligation quotes across Greater Philadelphia, focused on the western suburbs."
   path="/"
   schema={[productSchema, faqSchema]}

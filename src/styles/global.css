@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 /* ============================================================
-   BRAND TOKENS  (Aquveda palette + fonts)
+   BRAND TOKENS  (Wellbrook palette + fonts)
    Exposed to Tailwind as utilities: bg-navy, text-flag, font-display, etc.
    ============================================================ */
 @theme {
-  /* Aquveda v2 (The Crest). Legacy keys kept; values are the brand palette. */
+  /* Wellbrook v2 (The Crest). Legacy keys kept; values are the brand palette. */
   --color-navy: #0e3a43;   /* Deep Marine */
   --color-ink: #11272c;    /* Ink */
   --color-flag: #15919b;   /* Hydro Teal */
