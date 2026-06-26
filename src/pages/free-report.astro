@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TopBar from "../components/TopBar.astro";
+import Header from "../components/Header.astro";
+import PageHero from "../components/PageHero.astro";
+import FreeReportForm from "../components/FreeReportForm.astro";
+import Footer from "../components/Footer.astro";
+---
+<Layout
+  title="Free Water Report for Your Zip | Wellbrook"
+  description="Get a free, plain-English water-quality report for your zip across Montgomery & Chester County. Hardness, chlorine, disinfection byproducts, and PFAS. No cost, no salesperson."
+  path="/free-report"
+>
+  <TopBar />
+  <Header />
+  <PageHero
+    eyebrow="Free Water Report"
+    title="What's Really in Your Tap Water?"
+    subtitle="Enter your zip and we'll send a free, plain-English report on your area's water. No cost, no salesperson."
+    crumbs={[{ label: "Home", href: "/" }, { label: "Free Water Report" }]}
+  />
+
+  <section style="background:#fff">
+    <div class="wrap" style="padding:60px 0 70px">
+      <FreeReportForm />
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
