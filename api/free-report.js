@@ -4,13 +4,15 @@
 // Flow:
 //   1. Validate input + honeypot.
 //   2. Classify zip (in-area vs out-of-area).
-//   3. Create a Jobber lead (best-effort, never blocks the email).
-//   4. Email the customer: their report, or a polite "not in your area yet".
+//   3. Email the customer: their report, or a polite "not in your area yet".
+//   4. In-area: also email Chris the lead details so he can call.
 // ============================================================
 
 import { classifyZip } from "./_data/serviceArea.js";
-import { send, reportEmail, rejectionEmail } from "./_lib/email.js";
-import { createJobberLead } from "./_lib/jobber.js";
+import { send, reportEmail, rejectionEmail, leadNotificationEmail } from "./_lib/email.js";
+
+// Where new-lead notifications go so Chris can call.
+const LEAD_NOTIFY = process.env.LEAD_NOTIFY_EMAIL || process.env.REPLY_TO_EMAIL || "chris@wellbrookwater.com";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -47,26 +49,29 @@ export default async function handler(req, res) {
     }
 
     if (cls.ok) {
-      // In-area only: log the lead in Jobber (with phone) so we can call them.
-      // Best-effort: never let Jobber block or fail the report email.
-      createJobberLead({
-        firstName,
-        lastName,
-        email,
-        phone,
-        zip: cls.zip,
-        concern,
-        ownsHome,
-        inArea: true,
-        source: "Website free water report",
-      }).catch((err) => console.error("Jobber lead error:", err.message));
-
+      // Customer's report confirmation is the priority — send it first.
       const reportUrl = SITE + cls.reportPath;
       await send({
         to: email,
         subject: "We got it, your Wellbrook water report",
         html: reportEmail({ firstName, reportUrl, phone }),
       });
+
+      // Notify Chris of the new lead so he can call. Best-effort: never let a
+      // hiccup here fail the customer's confirmation above.
+      try {
+        const who = [firstName, lastName].filter(Boolean).join(" ") || email;
+        await send({
+          to: LEAD_NOTIFY,
+          subject: `New lead: ${who}${phone ? " — " + phone : ""}`,
+          html: leadNotificationEmail({
+            firstName, lastName, email, phone, zip: cls.zip, concern, ownsHome,
+          }),
+        });
+      } catch (err) {
+        console.error("Lead notification email error:", err.message);
+      }
+
       return res.status(200).json({ ok: true, status: "in_area" });
     }
 

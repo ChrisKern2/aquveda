@@ -1,6 +1,8 @@
 # Free water report — setup
 
-This wires a free-report form into the site. A visitor enters their name, email, **phone**, and zip. If the zip is in your service area, three things happen: they get a "we got it" confirmation email with a link to their water report, a lead is created in Jobber with their **phone number** and a note telling you to call to put the quote together, and the on-screen message tells them to expect your call. If the zip is outside the area, they get a polite "we don't serve your area yet" email and **no Jobber lead is created**. You build and send the quote on the call, not through the website.
+This wires a free-report form into the site. A visitor enters their name, email, **phone**, and zip. If the zip is in your service area, three things happen: they get a "we got it" confirmation email with a link to their water report, **you get a "New lead" email at chris@wellbrookwater.com** with their name, phone, email, zip, and concern so you can call, and the on-screen message tells them to expect your call. If the zip is outside the area, they get a polite "we don't serve your area yet" email and **no lead email is sent**. You build and send the quote on the call, not through the website.
+
+> **Note on Jobber:** auto-creating leads in Jobber was removed. Jobber rotates its OAuth refresh token on every use, which a static/serverless site can't persist, so the integration would break after the first lead. Leads now come to you by email instead — reliable and zero-maintenance. The unused `api/_lib/jobber.js` and `scripts/jobber-auth.mjs` are left in the repo in case you want to revisit it with proper token storage later.
 
 The site stays static. The logic runs in one Vercel serverless function under `/api`, which Vercel deploys automatically. Nothing about your Astro build changes.
 
