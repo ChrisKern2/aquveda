@@ -2,15 +2,15 @@
 
 This wires a free-report form into the site. A visitor enters their name, email, **phone**, and zip. If the zip is in your service area, three things happen: they get a "we got it" confirmation email with a link to their water report, **the lead is auto-created in Jobber** (as a Client with a "call to set up a quote" note containing their phone, zip, and concern), and **you also get a "New lead" backup email at chris@wellbrookwater.com**. If the zip is outside the area, they get a polite "we don't serve your area yet" email and no lead is created. You assign a team member to call and build the quote from the Jobber client.
 
-## Jobber token persistence (Upstash Redis)
+## Jobber token persistence (Redis)
 
-Jobber rotates its OAuth refresh token on every refresh and invalidates the old one. A serverless function has no memory between cold starts, so the rotated token is stored in **Upstash Redis** and read back on each run. Setup:
+Jobber rotates its OAuth refresh token on every refresh and invalidates the old one. A serverless function has no memory between cold starts, so the rotated token is stored in **Redis** and read back on each run (`api/_lib/tokenStore.js`, using `ioredis`). Setup:
 
-1. In Vercel → your project → **Storage** → **Create Database** → **Upstash for Redis** → free plan, US region → **Create**, and **connect it to the project**. This auto-adds `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` (or `KV_REST_API_*`; the code reads either).
-2. Set `JOBBER_REFRESH_TOKEN` in Vercel to a freshly minted token (run `node --env-file=.env scripts/jobber-auth.mjs`). This is only the one-time **seed** — after the first lead, the store holds the live token and the seed is ignored.
+1. In Vercel → your project → **Storage** → add a Redis database (the **Redis**/Redis Cloud or **Upstash** marketplace integration) and **connect it to the project**. This auto-adds a connection URL env var — the code reads `REDIS_URL` (falls back to `KV_URL` / `REDIS_URI`). The password is embedded in that URL.
+2. Set `JOBBER_REFRESH_TOKEN` in Vercel to a freshly minted token (run `node --env-file=.env scripts/jobber-auth.mjs`). This is only the one-time **seed** — after the first refresh, the store holds the live token and the seed is ignored.
 3. Redeploy. The first in-area submission seeds the store; everything after is automatic.
 
-If the Upstash vars are absent, lead creation still *tries* but the token won't persist (it would work once then fail) — so the store is required for reliable Jobber sync. The backup lead email works regardless.
+If `REDIS_URL` is absent, lead creation still *tries* but the token won't persist (it would work once then fail) — so the store is required for reliable Jobber sync. The backup lead email works regardless.
 
 The site stays static. The logic runs in one Vercel serverless function under `/api`, which Vercel deploys automatically. Nothing about your Astro build changes.
 

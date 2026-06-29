@@ -1,48 +1,47 @@
 // ============================================================
-// Durable key-value store backed by Upstash Redis (REST API).
-// Used to persist Jobber's rotating OAuth tokens across serverless
-// cold starts. Works with either Upstash-native env vars or the
-// Vercel KV (KV_REST_API_*) names the integration may inject.
+// Durable key-value store backed by Redis (Vercel "Redis" / Redis Cloud
+// integration, or any redis:// / rediss:// connection URL). Persists
+// Jobber's rotating OAuth tokens across serverless cold starts.
 // ============================================================
 
-const URL =
-  process.env.UPSTASH_REDIS_REST_URL ||
-  process.env.KV_REST_API_URL ||
-  "";
-const TOKEN =
-  process.env.UPSTASH_REDIS_REST_TOKEN ||
-  process.env.KV_REST_API_TOKEN ||
+import Redis from "ioredis";
+
+const REDIS_URL =
+  process.env.REDIS_URL ||
+  process.env.KV_URL ||
+  process.env.REDIS_URI ||
   "";
 
-export const kvEnabled = Boolean(URL && TOKEN);
+export const kvEnabled = Boolean(REDIS_URL);
 
-// Run a single Redis command, e.g. ["GET","key"] or ["SET","key","val"].
-async function cmd(args) {
-  const res = await fetch(URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(args),
-  });
-  if (!res.ok) throw new Error("Redis " + res.status + ": " + (await res.text()));
-  const json = await res.json();
-  return json.result;
+// Reused across warm invocations; recreated on cold start.
+let client = null;
+function getClient() {
+  if (!client) {
+    client = new Redis(REDIS_URL, {
+      maxRetriesPerRequest: 2,
+      connectTimeout: 8000,
+      // Fail fast instead of retrying forever (which would hang the function).
+      retryStrategy: (times) => (times > 2 ? null : Math.min(times * 200, 1000)),
+    });
+    client.on("error", (e) => console.error("Redis error:", e.message));
+  }
+  return client;
 }
 
 export async function kvGet(key) {
   if (!kvEnabled) return null;
-  return cmd(["GET", key]);
+  return getClient().get(key);
 }
 
 export async function kvSet(key, value) {
   if (!kvEnabled) return null;
-  return cmd(["SET", key, String(value)]);
+  return getClient().set(key, String(value));
 }
 
-// Set several keys; returns when all are written.
+// Set several keys; resolves when all are written.
 export async function kvSetMany(pairs) {
   if (!kvEnabled) return null;
-  await Promise.all(Object.entries(pairs).map(([k, v]) => kvSet(k, v)));
+  const c = getClient();
+  await Promise.all(Object.entries(pairs).map(([k, v]) => c.set(k, String(v))));
 }
