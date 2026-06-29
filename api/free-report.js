@@ -83,9 +83,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true, status: "out_of_area" });
   } catch (err) {
     console.error("free-report error:", err);
-    return res.status(500).json({
-      error: "Something went wrong. Please try again.",
-      debug: String((err && err.message) || err),
-    });
+    return res.status(500).json({ error: "Something went wrong. Please try again." });
   }
 }
