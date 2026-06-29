@@ -8,8 +8,8 @@ interface Props {
   tone?: "red" | "parchment";
 }
 const {
-  title = "Get the Help You Need",
-  subtitle = "Call us today or send us a message, we'll get you a free, no-obligation quote the same day.",
+  title = "See What's In Your Water",
+  subtitle = "Get a free, plain-English report on your area's water. We'll review it, then call to put together a no-obligation quote.",
   tone = "red",
 } = Astro.props;
 
@@ -27,7 +27,7 @@ const subColor = isRed ? "rgba(255,255,255,.85)" : "#5e7177";
       <p style={`font:400 17px/1.6 var(--font-body);color:${subColor}`}>{subtitle}</p>
     </div>
     <div class="stack-sm" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <a class={isRed ? "btn btn-white" : "btn btn-primary"} href="/contact" style="font:700 16px/1 var(--font-body);padding:17px 30px">Get a Free Quote <Icon name="arrow" size={17} /></a>
+      <a class={isRed ? "btn btn-white" : "btn btn-primary"} href="/free-report" style="font:700 16px/1 var(--font-body);padding:17px 30px">Get Your Free Water Report <Icon name="arrow" size={17} /></a>
       <a class={isRed ? "btn btn-ghost" : "btn btn-navy"} href={business.phoneHref} style="font:700 16px/1 var(--font-body);padding:17px 26px">
         <Icon name="phone" size={17} /> {business.phoneDisplay}
       </a>

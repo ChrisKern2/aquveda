@@ -45,7 +45,7 @@ import Logo from "./Logo.astro";
         </a>
       </div>
 
-      <a class="btn btn-primary" href="/contact" style="font:700 14px/1 var(--font-body);padding:13px 22px;letter-spacing:.02em">Get a Free Quote</a>
+      <a class="btn btn-primary" href="/free-report" style="font:700 14px/1 var(--font-body);padding:13px 22px;letter-spacing:.02em">Free Water Report</a>
 
       <!-- Mobile toggle -->
       <button id="navToggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;color:#0e3a43;padding:4px">
@@ -65,7 +65,8 @@ import Logo from "./Logo.astro";
       <a href="/learn" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Learn</a>
       <a href="/about" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">About</a>
       <a href="/contact" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px">Contact</a>
-      <a href={business.phoneHref} class="btn btn-navy" style="font:700 15px/1 var(--font-body);padding:14px;justify-content:center;margin-top:10px">Call {business.phoneDisplay}</a>
+      <a href="/free-report" class="btn btn-primary" style="font:700 15px/1 var(--font-body);padding:14px;justify-content:center;margin-top:10px">Get Your Free Water Report</a>
+      <a href={business.phoneHref} class="btn btn-navy" style="font:700 15px/1 var(--font-body);padding:14px;justify-content:center;margin-top:6px">Call {business.phoneDisplay}</a>
     </div>
   </div>
 </header>

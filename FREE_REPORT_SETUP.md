@@ -1,6 +1,6 @@
 # Free water report — setup
 
-This wires a free-report form into the site. A visitor enters their zip and email. If the zip is in your service area, they get their water report by email with a button to request a quote. If not, they get a polite "we don't serve your area yet" email. Every submission also creates a lead in Jobber.
+This wires a free-report form into the site. A visitor enters their name, email, **phone**, and zip. If the zip is in your service area, three things happen: they get a "we got it" confirmation email with a link to their water report, a lead is created in Jobber with their **phone number** and a note telling you to call to put the quote together, and the on-screen message tells them to expect your call. If the zip is outside the area, they get a polite "we don't serve your area yet" email and **no Jobber lead is created**. You build and send the quote on the call, not through the website.
 
 The site stays static. The logic runs in one Vercel serverless function under `/api`, which Vercel deploys automatically. Nothing about your Astro build changes.
 

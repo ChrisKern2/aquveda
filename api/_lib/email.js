@@ -9,8 +9,9 @@ const REPLY_TO = process.env.REPLY_TO_EMAIL || "chris@wellbrookwater.com";
 const QUOTE_URL = process.env.QUOTE_URL || "https://wellbrookwater.com/free-report#quote";
 
 const NAVY = "#0E3A43";
-const TEAL = "#1591C6";
+const TEAL = "#15919B";
 const SAND = "#FBFAF7";
+const MIST = "#EAF4F4";
 
 export async function send({ to, subject, html }) {
   const res = await fetch(RESEND_URL, {
@@ -49,24 +50,51 @@ function button(href, label) {
     font-weight:bold;font-size:16px;padding:14px 28px;border-radius:28px">${label}</a>`;
 }
 
-export function reportEmail({ firstName, reportUrl }) {
+// One numbered "what happens next" row.
+function step(n, title, body) {
+  return `<table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px"><tr>
+    <td width="34" valign="top">
+      <div style="width:26px;height:26px;border-radius:50%;background:${NAVY};color:#fff;font-weight:bold;font-size:13px;text-align:center;line-height:26px">${n}</div>
+    </td>
+    <td valign="top" style="padding-left:12px">
+      <div style="font-size:15px;font-weight:bold;color:${NAVY};margin:0 0 2px">${title}</div>
+      <div style="font-size:14px;line-height:21px;color:#5d6b71">${body}</div>
+    </td></tr></table>`;
+}
+
+export function reportEmail({ firstName, reportUrl, phone }) {
   const hi = firstName ? `Hi ${firstName},` : "Hi there,";
+  const callStep = phone
+    ? `We give you a quick call at ${phone} to walk through what it means and put together your free, no-pressure quote.`
+    : `We give you a quick call to walk through what it means and put together your free, no-pressure quote.`;
   return shell(`
-    <h1 style="color:${NAVY};font-size:24px;margin:0 0 14px">Your water report is ready.</h1>
+    <h1 style="color:${NAVY};font-size:24px;margin:0 0 14px">We got it.</h1>
     <p style="font-size:15px;line-height:23px;margin:0 0 18px">${hi}</p>
     <p style="font-size:15px;line-height:23px;margin:0 0 22px">
-      Here is your free, plain-English water-quality report for your zip. It covers hardness,
-      chlorine and chloramine, disinfection byproducts, and PFAS, with the public sources cited.
-      These are area figures, so your home can read differently, especially on a well or with older pipes.
+      Your free water report request is in, and good news, your home is inside our service area.
+      Your plain-English report covers hardness, chlorine and chloramine, disinfection byproducts,
+      and PFAS for your area, with the public sources cited.
     </p>
     <p style="margin:0 0 26px">${button(reportUrl, "View your water report")}</p>
-    <hr style="border:none;border-top:1px solid #e6eef0;margin:0 0 22px">
-    <h2 style="color:${NAVY};font-size:18px;margin:0 0 10px">Want to fix what is in your water?</h2>
-    <p style="font-size:15px;line-height:23px;margin:0 0 22px">
-      We size the right system for your home and water, with upfront pricing, no pressure,
-      and no long-term contracts. Licensed and insured, with a lifetime workmanship warranty.
+
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:${MIST};border-radius:12px;margin:0 0 28px">
+      <tr><td style="padding:18px 20px">
+        <div style="color:${TEAL};font-size:12px;font-weight:bold;letter-spacing:2px;margin:0 0 6px">NO IN-HOME VISIT REQUIRED</div>
+        <p style="font-size:14px;line-height:21px;margin:0;color:#3c4f55">
+          We pull the most recent public water-quality data for your address and read it for you.
+          No in-home visit and no wasted weekend just to find out where you stand.
+        </p>
+      </td></tr>
+    </table>
+
+    <h2 style="color:${NAVY};font-size:18px;margin:0 0 16px">What happens next</h2>
+    ${step(1, "You are reading it", "This email confirms we have your request and your report.")}
+    ${step(2, "We review your water", "We go over the public data for your area and the concern you told us about.")}
+    ${step(3, "We call you", callStep)}
+
+    <p style="font-size:14px;line-height:22px;margin:20px 0 0;color:#5d6b71">
+      Want to talk sooner? Call us at <a href="tel:2159789719" style="color:${TEAL};font-weight:bold">(215) 978-9719</a>.
     </p>
-    <p style="margin:0 0 6px">${button(QUOTE_URL, "Request a free quote")}</p>
   `);
 }
 

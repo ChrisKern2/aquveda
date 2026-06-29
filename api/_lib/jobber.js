@@ -45,7 +45,7 @@ async function gql(token, query, variables) {
 // Creates a client in Jobber and attaches a note with the lead context.
 // Returns the new client id, or throws.
 export async function createJobberLead({
-  firstName, lastName, email, zip, source, concern, inArea,
+  firstName, lastName, email, phone, zip, source, concern, ownsHome, inArea,
 }) {
   const token = await getAccessToken();
 
@@ -61,6 +61,7 @@ export async function createJobberLead({
     firstName: firstName || "Website",
     lastName: lastName || "Lead",
     emails: email ? [{ description: "MAIN", primary: true, address: email }] : [],
+    phones: phone ? [{ description: "MAIN", primary: true, number: phone }] : [],
     billingAddress: zip
       ? { postalCode: zip, country: "United States" }
       : undefined,
@@ -78,8 +79,10 @@ export async function createJobberLead({
         clientNoteCreate(input: $input) { userErrors { message } }
       }`;
     const message =
-      `Free water report request (${inArea ? "IN AREA" : "OUT OF AREA"}).\n` +
-      `Zip: ${zip}\nMain concern: ${concern || "n/a"}\nSource: ${source || "Website free report"}`;
+      `Free water report lead${inArea === false ? " (OUT OF AREA)" : " (IN AREA) — call to put together the quote"}.\n` +
+      `Phone: ${phone || "n/a"}\nEmail: ${email || "n/a"}\nZip: ${zip}\n` +
+      `Owns home: ${ownsHome || "n/a"}\nMain concern: ${concern || "n/a"}\n` +
+      `Source: ${source || "Website free report"}`;
     try {
       await gql(token, noteMutation, { input: { clientId, message } });
     } catch (e) {

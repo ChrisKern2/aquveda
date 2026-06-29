@@ -16,6 +16,7 @@
     <div style="display:grid;gap:14px">
       <input name="firstName" placeholder="First name" autocomplete="given-name" class="wb-in" />
       <input name="email" type="email" required placeholder="Email *" autocomplete="email" class="wb-in" />
+      <input name="phone" type="tel" required placeholder="Phone *" autocomplete="tel" class="wb-in" />
       <input name="zip" required inputmode="numeric" maxlength="5" placeholder="Zip code *" autocomplete="postal-code" class="wb-in" />
 
       <select name="ownsHome" class="wb-in" aria-label="Do you own your home?">
@@ -34,7 +35,7 @@
       </select>
 
       <button type="submit" id="wb-submit"
-        style="background:#1591C6;color:#fff;border:none;font-weight:800;font-size:16px;padding:15px;border-radius:30px;cursor:pointer">
+        style="background:#15919B;color:#fff;border:none;font-weight:800;font-size:16px;padding:15px;border-radius:30px;cursor:pointer">
         Get my free report
       </button>
     </div>
@@ -49,7 +50,7 @@
 
 <style>
   .wb-in{width:100%;box-sizing:border-box;padding:14px 16px;border:1px solid #d6dfe2;border-radius:10px;font-size:15px;color:#1e2d34;background:#fff}
-  .wb-in:focus{outline:none;border-color:#1591C6;box-shadow:0 0 0 3px rgba(21,145,198,.15)}
+  .wb-in:focus{outline:none;border-color:#15919B;box-shadow:0 0 0 3px rgba(21,145,155,.15)}
 </style>
 
 <script>
@@ -92,9 +93,8 @@
           and your zip is outside that area. We just emailed you, and we will reach out if we expand to you.</p>`);
       } else {
         show(`<h2 style="color:#0E3A43;font-size:22px;margin:0 0 10px">Check your email</h2>
-          <p style="color:#5d6b71;font-size:15px;line-height:23px;margin:0 0 18px">
-          Your water report is on the way. It should land in a minute or two. Ready to fix what is in your water?</p>
-          <a href="/contact" style="display:inline-block;background:#1591C6;color:#fff;text-decoration:none;font-weight:800;padding:13px 26px;border-radius:28px">Request a free quote</a>`);
+          <p style="color:#5d6b71;font-size:15px;line-height:23px;margin:0">
+          Your water report is on the way, it should land in a minute or two. We'll also give you a call shortly at the number you provided to go over your results and put together a free quote, no pressure.</p>`);
       }
     } catch (err) {
       btn.disabled = false;

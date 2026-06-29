@@ -25,6 +25,7 @@ export default async function handler(req, res) {
       firstName = "",
       lastName = "",
       email = "",
+      phone = "",
       zip = "",
       concern = "",
       ownsHome = "",
@@ -45,23 +46,26 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Please enter a valid 5-digit zip code." });
     }
 
-    // Fire the Jobber lead but do not let it block or fail the email.
-    createJobberLead({
-      firstName,
-      lastName,
-      email,
-      zip: cls.zip,
-      concern,
-      inArea: cls.ok,
-      source: "Website free water report",
-    }).catch((err) => console.error("Jobber lead error:", err.message));
-
     if (cls.ok) {
+      // In-area only: log the lead in Jobber (with phone) so we can call them.
+      // Best-effort: never let Jobber block or fail the report email.
+      createJobberLead({
+        firstName,
+        lastName,
+        email,
+        phone,
+        zip: cls.zip,
+        concern,
+        ownsHome,
+        inArea: true,
+        source: "Website free water report",
+      }).catch((err) => console.error("Jobber lead error:", err.message));
+
       const reportUrl = SITE + cls.reportPath;
       await send({
         to: email,
-        subject: "Your Wellbrook water report",
-        html: reportEmail({ firstName, reportUrl }),
+        subject: "We got it, your Wellbrook water report",
+        html: reportEmail({ firstName, reportUrl, phone }),
       });
       return res.status(200).json({ ok: true, status: "in_area" });
     }

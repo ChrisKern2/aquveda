@@ -9,8 +9,9 @@ interface Props {
   image?: string;
   imageAlt?: string;
   crumbs?: { label: string; href?: string }[];
+  showCta?: boolean;
 }
-const { eyebrow, title, subtitle, image, imageAlt = "", crumbs = [] } = Astro.props;
+const { eyebrow, title, subtitle, image, imageAlt = "", crumbs = [], showCta = true } = Astro.props;
 
 // BreadcrumbList JSON-LD, built from the visible crumbs.
 const site = business.domain;
@@ -46,11 +47,13 @@ const breadcrumbLd = crumbs.length > 1 ? {
     {eyebrow && <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc;margin-bottom:14px">{eyebrow}</div>}
     <h1 style="font:700 46px/1.02 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance;margin-bottom:16px">{title}</h1>
     {subtitle && <p style="font:400 18px/1.65 var(--font-body);color:#cde6e8;max-width:560px;margin-bottom:26px">{subtitle}</p>}
-    <div class="stack-sm" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <a class="btn btn-primary" href="/contact" style="font:700 15px/1 var(--font-body);padding:16px 28px">Get a Free Quote <Icon name="arrow" size={17} /></a>
-      <a class="btn btn-ghost" href={business.phoneHref} style="font:700 15px/1 var(--font-body);padding:16px 24px">
-        <span style="color:#7fd3dc;display:flex"><Icon name="phone" size={16} /></span>{business.phoneDisplay}
-      </a>
-    </div>
+    {showCta && (
+      <div class="stack-sm" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="/free-report" style="font:700 15px/1 var(--font-body);padding:16px 28px">Get Your Free Water Report <Icon name="arrow" size={17} /></a>
+        <a class="btn btn-ghost" href={business.phoneHref} style="font:700 15px/1 var(--font-body);padding:16px 24px">
+          <span style="color:#7fd3dc;display:flex"><Icon name="phone" size={16} /></span>{business.phoneDisplay}
+        </a>
+      </div>
+    )}
   </div>
 </section>

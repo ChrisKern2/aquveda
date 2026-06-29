@@ -71,9 +71,9 @@ const faqSchema = {
   <section id="quote" style="background:#0e3a43">
     <div class="wrap hero-grid" style="padding-top:74px;padding-bottom:74px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
       <div style="display:flex;flex-direction:column;gap:18px">
-        <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc">Free Quote</div>
-        <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance">Get your free quote</h2>
-        <p style="font:400 17px/1.65 var(--font-body);color:#cde6e8;max-width:440px">Tell us about your home and we'll send a clear, no-obligation quote for the right system, often the same day. Prefer to talk? Call us at <a href="tel:2159789719" style="color:#7fd3dc;font-weight:600;text-decoration:none">(215) 978-9719</a>.</p>
+        <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#7fd3dc">Ready Now?</div>
+        <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#fff;text-wrap:balance">Skip ahead and request a quote</h2>
+        <p style="font:400 17px/1.65 var(--font-body);color:#cde6e8;max-width:440px">Already know what you need? Tell us about your home and we'll send a clear, no-obligation quote, often the same day. Not sure yet? <a href="/free-report" style="color:#7fd3dc;font-weight:600;text-decoration:none">Start with a free water report</a> or call <a href="tel:2159789719" style="color:#7fd3dc;font-weight:600;text-decoration:none">(215) 978-9719</a>.</p>
         <div style="display:flex;flex-direction:column;gap:13px;margin-top:6px">
           {["Free, no-obligation quote", "Upfront, honest pricing", "Licensed & fully insured", "Lifetime workmanship warranty"].map((t) => (
             <div style="display:flex;align-items:center;gap:11px;color:#5fcf97"><Icon name="check" size={19} /><span style="font:500 15px/1 var(--font-body);color:#e3e8ef">{t}</span></div>
@@ -85,6 +85,6 @@ const faqSchema = {
   </section>
 
   <ServiceAreaList />
-  <CTABand tone="red" title="Get your free quote today" subtitle="Tell us what you need and we'll send a clear, no-obligation quote. Call us now or send a message, we respond the same day." />
+  <CTABand tone="red" />
   <Footer />
 </Layout>

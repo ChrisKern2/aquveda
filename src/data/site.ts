@@ -364,8 +364,8 @@ export const flagship = {
 // ============================================================
 export type Step = { title: string; body: string };
 export const steps: Step[] = [
-  { title: "Request your free quote", body: "Tell us about your home and what you need, by phone or through the form. No obligation." },
-  { title: "Get upfront pricing", body: "We send a clear, no-obligation quote for the right-sized system, often the same day." },
+  { title: "Get your free water report", body: "Enter your zip and we'll send a free, plain-English report on your area's water. No cost, no salesperson." },
+  { title: "We review and call you", body: "We go over your results, size the right system for your home, and give you a clear, no-obligation quote." },
   { title: "Install and enjoy", body: "A licensed plumber installs your system cleanly in one visit, backed by our lifetime workmanship warranty." },
 ];
 
