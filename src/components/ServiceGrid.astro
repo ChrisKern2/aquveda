@@ -10,7 +10,7 @@ import Icon from "./Icon.astro";
       <p style="font:400 17px/1.6 var(--font-body);color:#5e7177">Four ways we make your water better, from whole-home systems to the water you drink, each sized to your home and installed to last.</p>
     </div>
 
-    <div class="grid-3" style="display:grid;grid-template-columns:repeat(2,1fr);gap:26px;align-items:start">
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(2,1fr);gap:26px;align-items:stretch">
       {services.map((s) => (
         <div class="card card-hover" style="overflow:hidden;display:flex;flex-direction:column">
           <img src={s.image} alt={s.imageAlt} width="690" height="380" loading="lazy"
@@ -30,7 +30,7 @@ import Icon from "./Icon.astro";
                 </li>
               ))}
             </ul>
-            <a href={`/services/${s.slug}`} class="btn btn-navy" style="font:700 14px/1 var(--font-body);padding:14px 18px;justify-content:center;margin-top:6px">Explore {s.name} <Icon name="arrow" size={16} /></a>
+            <a href={`/services/${s.slug}`} class="btn btn-navy" style="font:700 14px/1 var(--font-body);padding:14px 18px;justify-content:center;margin-top:auto">Explore {s.name} <Icon name="arrow" size={16} /></a>
           </div>
         </div>
       ))}
