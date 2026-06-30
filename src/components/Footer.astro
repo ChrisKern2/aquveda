@@ -7,7 +7,7 @@ const social = [
   { name: "facebook", url: business.social.facebook },
   { name: "instagram", url: business.social.instagram },
   { name: "google", url: business.social.google },
-];
+].filter((s) => s.url && !s.url.startsWith("{{"));
 ---
 <footer style="background:#0b2a31">
   <div class="wrap" style="padding-top:56px;padding-bottom:40px;display:flex;flex-direction:column;gap:40px">
@@ -19,7 +19,7 @@ const social = [
         <p style="font:600 12.5px/1.5 var(--font-body);color:#7d899a">Licensed &amp; Insured &middot; PA HIC #{`{{HIC_NUMBER}}`}</p>
         <div style="display:flex;gap:10px">
           {social.map((s) => (
-            <a href={s.url.startsWith("{{") ? "#" : s.url} aria-label={s.name} class="foot-link" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:#c9d0db">
+            <a href={s.url} aria-label={s.name} target="_blank" rel="noopener noreferrer" class="foot-link" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:#c9d0db">
               <Icon name={s.name} size={18} />
             </a>
           ))}

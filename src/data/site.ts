@@ -27,8 +27,8 @@ export const business = {
     { day: "Sunday", time: "Closed" },
   ],
   social: {
-    facebook: "{{FACEBOOK_URL}}",
-    instagram: "{{INSTAGRAM_URL}}",
+    facebook: "https://www.facebook.com/profile.php?id=61591441258904",
+    instagram: "https://www.instagram.com/wellbrookwater/",
     google: "{{GOOGLE_PROFILE_URL}}",
   },
   // Counties served (used in schema + copy).
