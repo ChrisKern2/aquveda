@@ -13,6 +13,10 @@
     <input type="text" name="website" tabindex="-1" autocomplete="off"
       style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
 
+    <!-- captures the system tier a visitor clicked (from ?system=), sent to Jobber -->
+    <input type="hidden" name="system" id="wb-system" />
+    <div id="wb-interest" style="display:none;margin:0 0 16px;padding:12px 14px;background:#eaf4f4;border-radius:10px;color:#0E3A43;font-size:14px;line-height:1.4"></div>
+
     <div style="display:grid;gap:14px">
       <input name="firstName" placeholder="First name" autocomplete="given-name" class="wb-in" />
       <input name="email" type="email" required placeholder="Email *" autocomplete="email" class="wb-in" />
@@ -57,6 +61,16 @@
   const form = document.getElementById("wb-report-form");
   const result = document.getElementById("wb-result");
   const btn = document.getElementById("wb-submit");
+
+  // If they arrived from a "Get Started" tier button, capture which system
+  // they're interested in and show it, so it rides along to the Jobber lead.
+  const system = new URLSearchParams(location.search).get("system");
+  if (system) {
+    document.getElementById("wb-system").value = system;
+    const banner = document.getElementById("wb-interest");
+    banner.textContent = "You're interested in: " + system + ". We'll size it for your home and go over it on the call.";
+    banner.style.display = "block";
+  }
 
   function show(html) {
     form.style.display = "none";

@@ -99,7 +99,7 @@ export function reportEmail({ firstName, reportUrl, phone }) {
 }
 
 // Internal notification to Chris when a new in-area lead comes in, so he can call.
-export function leadNotificationEmail({ firstName, lastName, email, phone, zip, concern, ownsHome }) {
+export function leadNotificationEmail({ firstName, lastName, email, phone, zip, concern, ownsHome, system }) {
   const name = [firstName, lastName].filter(Boolean).join(" ") || "(no name given)";
   const telDigits = (phone || "").replace(/[^0-9]/g, "");
   const row = (label, val) =>
@@ -112,6 +112,7 @@ export function leadNotificationEmail({ firstName, lastName, email, phone, zip, 
     <p style="font-size:14px;line-height:21px;margin:0 0 20px;color:#5d6b71">In your service area. Call them to put together a quote.</p>
     <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e6eef0;border-bottom:1px solid #e6eef0">
       ${row("Name", name)}
+      ${system ? row("Interested in", system) : ""}
       ${row("Phone", phone ? `<a href="tel:${telDigits}" style="color:${TEAL};font-weight:bold;text-decoration:none">${phone}</a>` : "")}
       ${row("Email", email ? `<a href="mailto:${email}" style="color:${TEAL};text-decoration:none">${email}</a>` : "")}
       ${row("Zip", zip)}

@@ -32,6 +32,7 @@ export default async function handler(req, res) {
       zip = "",
       concern = "",
       ownsHome = "",
+      system = "", // which tier they clicked "Get Started" on, if any
       website = "", // honeypot: real users never fill this
     } = body;
 
@@ -62,7 +63,7 @@ export default async function handler(req, res) {
       // and must never fail the customer's confirmation or the team email.
       try {
         await createJobberLead({
-          firstName, lastName, email, phone, zip: cls.zip, concern, ownsHome,
+          firstName, lastName, email, phone, zip: cls.zip, concern, ownsHome, system,
           source: "Website free water report",
         });
       } catch (err) {
@@ -76,7 +77,7 @@ export default async function handler(req, res) {
           to: LEAD_NOTIFY,
           subject: `New lead: ${who}${phone ? " — " + phone : ""}`,
           html: leadNotificationEmail({
-            firstName, lastName, email, phone, zip: cls.zip, concern, ownsHome,
+            firstName, lastName, email, phone, zip: cls.zip, concern, ownsHome, system,
           }),
         });
       } catch (err) {

@@ -35,7 +35,7 @@ import Icon from "./Icon.astro";
             ))}
           </ul>
 
-          <a href="/free-report" class={t.popular ? "btn btn-primary" : "btn btn-navy"} style="font:700 14px/1 var(--font-body);padding:15px 20px;justify-content:center;margin-top:24px">Get Started <Icon name="arrow" size={16} /></a>
+          <a href={`/free-report?system=${encodeURIComponent(t.name)}`} class={t.popular ? "btn btn-primary" : "btn btn-navy"} style="font:700 14px/1 var(--font-body);padding:15px 20px;justify-content:center;margin-top:auto">Get Started <Icon name="arrow" size={16} /></a>
         </div>
       ))}
     </div>
