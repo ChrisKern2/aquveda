@@ -6,6 +6,9 @@ import Hero from "../components/Hero.astro";
 import ReviewLogos from "../components/ReviewLogos.astro";
 import CredentialBar from "../components/CredentialBar.astro";
 import FlagshipSystem from "../components/FlagshipSystem.astro";
+import SystemTiers from "../components/SystemTiers.astro";
+import GuaranteeBar from "../components/GuaranteeBar.astro";
+import CarePlan from "../components/CarePlan.astro";
 import ServiceGrid from "../components/ServiceGrid.astro";
 import CTABand from "../components/CTABand.astro";
 import HowItWorks from "../components/HowItWorks.astro";
@@ -33,7 +36,7 @@ const productSchema = {
     price: "2699",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
-    priceValidUntil: "2026-07-31",
+    priceValidUntil: "2026-12-31",
     url: site,
   },
 };
@@ -59,8 +62,11 @@ const faqSchema = {
   <ReviewLogos />
   <CredentialBar />
   <FlagshipSystem />
+  <SystemTiers />
+  <GuaranteeBar />
   <ServiceGrid />
   <HowItWorks />
+  <CarePlan />
   <ComparisonTable />
   <StatBand />
   <Testimonials />

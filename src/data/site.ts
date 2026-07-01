@@ -329,6 +329,7 @@ export const nav = [
   { label: "Service Areas", href: "/service-areas" },
   { label: "Reviews", href: "/#reviews" },
   { label: "Learn", href: "/learn" },
+  { label: "Care Plan", href: "/care-plan" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -339,14 +340,14 @@ export const nav = [
 // Complete Home Water System: founder $2,699, regular $5,998 (matches the reference site).
 // ============================================================
 export const flagship = {
-  eyebrow: "Founder pricing, through July 31",
+  eyebrow: "Founder pricing — limited install slots",
   name: "The Complete Home Water System",
   tagline:
     "Whole-home softening with chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system, installed by a licensed plumber in one trip.",
   priceRegular: "$5,998",
   price: "$2,699",
   priceUnit: "installed",
-  priceNote: "Founder pricing through July 31. Regular price $5,998.",
+  priceNote: "Founder pricing, limited to a set number of installs each month. Regular price $5,998.",
   image: "/images/flagship-system.svg",
   imageAlt:
     "The complete Wellbrook home water system: whole-home softening and filtration with under-sink reverse osmosis",
@@ -357,6 +358,129 @@ export const flagship = {
     "Lifetime workmanship warranty",
     "Manufacturer equipment warranty",
   ],
+};
+
+// ============================================================
+// OUTCOME GUARANTEE (risk reversal — guarantee the result, not just labor)
+// ============================================================
+export const guarantee = {
+  title: "The Wellbrook Water Guarantee",
+  promise:
+    "If your water isn't measurably softer and cleaner on a follow-up retest, we make it right.",
+  detail:
+    "We guarantee the result, not just the labor. Every install is backed by our lifetime workmanship warranty and the manufacturer equipment warranty, and we retest your water with you so you can see the difference.",
+};
+
+// ============================================================
+// SYSTEM TIERS (Good / Better / Best ladder — Complete System is the anchor)
+// Prices reference the Jobber price sheet; Complete is the founder bundle.
+// ============================================================
+export type Tier = {
+  name: string;
+  tagline: string;
+  price: string;
+  anchor?: string;
+  priceNote?: string;
+  popular?: boolean;
+  features: string[];
+};
+export const systemTiers: Tier[] = [
+  {
+    name: "Reverse Osmosis",
+    tagline: "Bottled-water quality at your kitchen sink.",
+    price: "From $900",
+    features: [
+      "Under-sink 4-stage reverse osmosis",
+      "Alkaline remineralization option",
+      "Dedicated faucet, fridge & ice line",
+      "Filter & membrane service available",
+      "Licensed installation",
+    ],
+  },
+  {
+    name: "Whole-Home Filtration & Softening",
+    tagline: "Clean, soft water from every tap.",
+    price: "From $2,600",
+    features: [
+      "Whole-home chlorine & chloramine carbon filtration",
+      "Metered softener or salt-free conditioner",
+      "Protects plumbing, water heater & appliances",
+      "High-flow option for larger homes",
+      "Licensed install + lifetime workmanship warranty",
+    ],
+  },
+  {
+    name: "Complete Home Water System",
+    tagline: "Whole-home filtration + softening + under-sink RO. Everything, one install.",
+    price: "$2,699",
+    anchor: "$5,998",
+    priceNote: "During founder pricing, less than the whole-home system alone.",
+    popular: true,
+    features: [
+      "Everything in Whole-Home, plus reverse osmosis",
+      "Softening + chlorine/chloramine carbon filtration",
+      "Under-sink RO with alkaline post-filter",
+      "One licensed plumber visit, done for you",
+      "Lifetime workmanship + manufacturer warranty",
+    ],
+  },
+];
+
+// ============================================================
+// WELLBROOK WATER CARE PLAN (recurring-revenue membership)
+// ============================================================
+export type CareTier = {
+  name: string;
+  monthly: string;
+  annual: string;
+  popular?: boolean;
+  features: string[];
+};
+export const carePlan = {
+  eyebrow: "Keep it running",
+  title: "The Wellbrook Water Care Plan",
+  intro:
+    "Your system does its best work when it's maintained. Members get scheduled service, priority scheduling, and member-only pricing, so you never have to guess when a filter is due.",
+  tiers: [
+    {
+      name: "Essential Care",
+      monthly: "$75",
+      annual: "$799/yr",
+      features: [
+        "Annual system inspection & performance check",
+        "One RO filter change per year (pre + carbon)",
+        "Priority scheduling, front of the line",
+        "10% off any repair or added service",
+      ],
+    },
+    {
+      name: "Complete Care",
+      monthly: "$129",
+      annual: "$1,299/yr",
+      popular: true,
+      features: [
+        "Everything in Essential, plus:",
+        "Full RO filter & membrane service on schedule",
+        "Softener salt delivery & fill, twice a year",
+        "Annual water retest so you see it's working",
+        "15% off repairs and future plumbing work",
+        "Lifetime workmanship warranty stays valid while you're a member",
+      ],
+    },
+    {
+      name: "Total Home Care",
+      monthly: "$199",
+      annual: "$1,999/yr",
+      features: [
+        "Everything in Complete, plus:",
+        "All filter, membrane & salt service, unlimited scheduled visits",
+        "Priority emergency response",
+        "20% off all plumbing & repair work",
+        "Annual whole-home plumbing check",
+        "Transferable to a new owner if you sell",
+      ],
+    },
+  ] as CareTier[],
 };
 
 // ============================================================
@@ -455,7 +579,8 @@ export const articles: Article[] = [
 // ============================================================
 export const homeFaqs: Faq[] = [
   { q: "What is the Complete Home Water System?", a: "It is our flagship setup: a complete home system with softening and chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system. A licensed plumber installs it in one trip. The whole-home system cleans and softens every tap, and reverse osmosis gives you bottled-water quality at the kitchen sink." },
-  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, through July 31, the Complete Home Water System is $2,699 installed, regularly $5,998. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Reach out for a free, no-obligation quote." },
-  { q: "Do I have to buy the complete system?", a: "No. We also install whole-home filtration, reverse osmosis, well water treatment, and specialty systems on their own. We size to your home and water and quote what you need, with no obligation." },
-  { q: "Is the work guaranteed?", a: "Yes. Every system is installed by a licensed plumber and backed by our lifetime workmanship warranty, plus the manufacturer equipment warranty." },
-]; 
+  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, the Complete Home Water System is $2,699 installed, regularly $5,998. Founder pricing is limited to a set number of installs each month. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Reach out for a free, no-obligation quote." },
+  { q: "Do I have to buy the complete system?", a: "No. We offer three options: reverse osmosis for drinking water, whole-home filtration and softening for every tap, or the Complete Home Water System that bundles both. We size to your home and water and quote what you need, with no obligation." },
+  { q: "Do you guarantee the results?", a: "Yes. If your water isn't measurably softer and cleaner on a follow-up retest, we make it right. We guarantee the result, not just the labor, and every install is backed by our lifetime workmanship warranty plus the manufacturer equipment warranty." },
+  { q: "Do you offer a maintenance plan?", a: "Yes. The Wellbrook Water Care Plan keeps your system serviced on schedule, with priority scheduling and member-only pricing. Plans start at $75 per month and can be added at install so you never have to guess when a filter is due." },
+];

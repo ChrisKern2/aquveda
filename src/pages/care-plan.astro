@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TopBar from "../components/TopBar.astro";
+import Header from "../components/Header.astro";
+import PageHero from "../components/PageHero.astro";
+import CarePlan from "../components/CarePlan.astro";
+import GuaranteeBar from "../components/GuaranteeBar.astro";
+import CTABand from "../components/CTABand.astro";
+import Footer from "../components/Footer.astro";
+---
+<Layout
+  title="Wellbrook Water Care Plan | Membership & Maintenance"
+  description="Keep your water system running its best. The Wellbrook Water Care Plan includes scheduled filter and membrane service, softener salt delivery, annual retests, priority scheduling, and member-only pricing. Plans from $75/month across Greater Philadelphia."
+  path="/care-plan"
+>
+  <TopBar />
+  <Header />
+  <PageHero
+    eyebrow="Wellbrook Water Care Plan"
+    title="Set it, and never think about your water again"
+    subtitle="Scheduled service, priority scheduling, and member-only pricing, so your system keeps delivering clean, soft water year after year."
+    crumbs={[{ label: "Home", href: "/" }, { label: "Care Plan" }]}
+  />
+  <CarePlan />
+  <GuaranteeBar />
+  <CTABand tone="parchment" title="Ready for better water?" subtitle="Start with a free water report and we'll size the right system, then set you up on the plan that fits." />
+  <Footer />
+</Layout>
