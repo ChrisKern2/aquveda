@@ -7,8 +7,8 @@ import Logo from "./Logo.astro";
   <div class="wrap" style="padding-top:13px;padding-bottom:13px;display:flex;align-items:center;justify-content:space-between;gap:24px">
     <Logo variant="dark" size={26} />
 
-    <nav style="display:flex;align-items:center;gap:28px">
-      <div class="nav-links" style="display:flex;align-items:center;gap:28px">
+    <nav style="display:flex;align-items:center;gap:18px">
+      <div class="nav-links" style="display:flex;align-items:center;gap:17px">
         <!-- Services mega-menu -->
         <div class="has-mega">
           <a class="nav-link" href="/#services" style="font:600 14px/1 var(--font-body);color:#0e3a43;display:flex;align-items:center;gap:5px">
@@ -33,20 +33,20 @@ import Logo from "./Logo.astro";
           </div>
         </div>
 
-        <a class="nav-link" href="/service-areas" style="font:600 14px/1 var(--font-body);color:#0e3a43">Service Areas</a>
-        <a class="nav-link" href="/#reviews" style="font:600 14px/1 var(--font-body);color:#0e3a43">Reviews</a>
-        <a class="nav-link" href="/learn" style="font:600 14px/1 var(--font-body);color:#0e3a43">Learn</a>
-        <a class="nav-link" href="/care-plan" style="font:600 14px/1 var(--font-body);color:#0e3a43">Care Plan</a>
-        <a class="nav-link" href="/about" style="font:600 14px/1 var(--font-body);color:#0e3a43">About</a>
-        <a class="nav-link" href="/contact" style="font:600 14px/1 var(--font-body);color:#0e3a43">Contact</a>
+        <a class="nav-link" href="/service-areas" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Service Areas</a>
+        <a class="nav-link" href="/#reviews" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Reviews</a>
+        <a class="nav-link" href="/learn" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Learn</a>
+        <a class="nav-link" href="/care-plan" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Care Plan</a>
+        <a class="nav-link" href="/about" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">About</a>
+        <a class="nav-link" href="/contact" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Contact</a>
 
-        <a href={business.phoneHref} style="font:700 15px/1 var(--font-display);letter-spacing:.03em;color:#0e3a43;text-decoration:none;display:flex;align-items:center;gap:8px">
+        <a href={business.phoneHref} style="font:700 15px/1 var(--font-display);letter-spacing:.03em;color:#0e3a43;text-decoration:none;display:flex;align-items:center;gap:7px;white-space:nowrap">
           <span style="color:#15919b;display:flex"><Icon name="phone" size={16} /></span>
           {business.phoneDisplay}
         </a>
       </div>
 
-      <a class="btn btn-primary" href="/free-report" style="font:700 14px/1 var(--font-body);padding:13px 22px;letter-spacing:.02em">Free Water Report</a>
+      <a class="btn btn-primary" href="/free-report" style="font:700 14px/1 var(--font-body);padding:12px 18px;letter-spacing:.02em;white-space:nowrap">Free Water Report</a>
 
       <!-- Mobile toggle -->
       <button id="navToggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;color:#0e3a43;padding:4px">

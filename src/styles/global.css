@@ -97,7 +97,7 @@ h1,h2,h3,h4,p{margin:0}
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width:980px){
+@media (max-width:1140px){
   .nav-links{display:none !important}
   .mobile-toggle{display:inline-flex !important}
 }
