@@ -89,10 +89,9 @@
   const ZAPIER_WEBHOOK = "https://hooks.zapier.com/hooks/catch/28133353/4uop5l5/";
 
   function sendToZapier() {
-    // Spam + validation gate: never send honeypot hits or submissions that fail
-    // the form's own client-side validation.
+    // Guard: the caller only invokes this for validated, non-honeypot
+    // submissions the server already accepted; this is just belt-and-suspenders.
     if (form.website && form.website.value.trim()) return;
-    if (!form.checkValidity()) return;
 
     const fd = new FormData(form);
     const rawName = (fd.get("firstName") || "").toString().trim();
@@ -121,7 +120,6 @@
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    sendToZapier(); // send the lead to Zapier in parallel; never blocks success
     btn.disabled = true;
     btn.textContent = "Sending...";
 
@@ -141,6 +139,10 @@
         alert(json.error || "Something went wrong. Please try again.");
         return;
       }
+
+      // Validated, non-bot submission accepted -> send the lead to Zapier,
+      // fire-and-forget, immediately before showing the success state.
+      if (json.status !== "ignored") sendToZapier();
 
       if (json.status === "out_of_area") {
         show(`<h2 style="color:#0E3A43;font-size:22px;margin:0 0 10px">We are not in your area yet</h2>
