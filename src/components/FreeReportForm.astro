@@ -70,7 +70,7 @@
   const btn = document.getElementById("wb-submit");
 
   // If they arrived from a "Get Started" tier button, capture which system
-  // they're interested in and show it, so it rides along to the Jobber lead.
+  // they're interested in and show it, so it rides along with the lead.
   const system = new URLSearchParams(location.search).get("system");
   if (system) {
     document.getElementById("wb-system").value = system;
@@ -85,8 +85,43 @@
     result.innerHTML = html;
   }
 
+  // ---- Zapier webhook: the lead destination ----
+  const ZAPIER_WEBHOOK = "https://hooks.zapier.com/hooks/catch/28133353/4uop5l5/";
+
+  function sendToZapier() {
+    // Spam + validation gate: never send honeypot hits or submissions that fail
+    // the form's own client-side validation.
+    if (form.website && form.website.value.trim()) return;
+    if (!form.checkValidity()) return;
+
+    const fd = new FormData(form);
+    const rawName = (fd.get("firstName") || "").toString().trim();
+    const sp = rawName.indexOf(" "); // single name field -> split on first space
+    const ownMap = { yes: "Yes, I own it", no: "No, I rent" };
+    const payload = {
+      first_name: sp === -1 ? rawName : rawName.slice(0, sp),
+      last_name: sp === -1 ? "" : rawName.slice(sp + 1).trim(),
+      email: (fd.get("email") || "").toString().trim(),
+      phone: (fd.get("phone") || "").toString().trim(),
+      zip: (fd.get("zip") || "").toString().trim(),
+      water_source: (fd.get("waterSource") || "").toString(),
+      own_home: ownMap[(fd.get("ownsHome") || "").toString()] || "",
+      concern: (fd.get("concern") || "").toString(),
+    };
+
+    // Fire-and-forget: urlencoded is a CORS "simple request" (no preflight) and
+    // Zapier parses it natively; no-cors gives an opaque response we never read.
+    fetch(ZAPIER_WEBHOOK, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(payload).toString(),
+    }).catch(() => {});
+  }
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    sendToZapier(); // send the lead to Zapier in parallel; never blocks success
     btn.disabled = true;
     btn.textContent = "Sending...";
 

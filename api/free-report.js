@@ -5,12 +5,12 @@
 //   1. Validate input + honeypot.
 //   2. Classify zip (in-area vs out-of-area).
 //   3. Email the customer: their report, or a polite "not in your area yet".
-//   4. In-area: auto-create the lead in Jobber + email the team as a backup.
+//   4. In-area: email the team the lead. (Lead capture goes to Zapier from the
+//      browser — see FreeReportForm.astro.)
 // ============================================================
 
 import { classifyZip } from "./_data/serviceArea.js";
 import { send, reportEmail, rejectionEmail, leadNotificationEmail } from "./_lib/email.js";
-import { createJobberLead } from "./_lib/jobber.js";
 
 // Where new-lead notifications go so Chris can call.
 const LEAD_NOTIFY = process.env.LEAD_NOTIFY_EMAIL || process.env.REPLY_TO_EMAIL || "chris@wellbrookwater.com";
@@ -60,18 +60,7 @@ export default async function handler(req, res) {
         html: reportEmail({ firstName, reportUrl, phone }),
       });
 
-      // Auto-create the lead in Jobber. Best-effort: it manages its own token
-      // and must never fail the customer's confirmation or the team email.
-      try {
-        await createJobberLead({
-          firstName, lastName, email, phone, zip: cls.zip, concern, ownsHome, waterSource, system,
-          source: "Website free water report",
-        });
-      } catch (err) {
-        console.error("Jobber lead error:", err.message);
-      }
-
-      // Email the team as a backup so a lead is never lost even if Jobber hiccups.
+      // Email the team the lead as well (Zapier is the primary lead capture).
       try {
         const who = [firstName, lastName].filter(Boolean).join(" ") || email;
         await send({
