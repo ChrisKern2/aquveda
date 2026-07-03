@@ -16,6 +16,9 @@ import Icon from "./Icon.astro";
           {t.popular && (
             <span style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#15919b;color:#fff;font:700 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;padding:7px 15px;border-radius:100px;white-space:nowrap">Most Popular</span>
           )}
+          <div style="height:152px;display:flex;align-items:center;justify-content:center;margin:6px 0 18px">
+            <img src={t.image} alt={t.name} width="320" height="320" loading="lazy" style="max-height:100%;max-width:100%;object-fit:contain" />
+          </div>
           <h3 style="font:700 22px/1.15 var(--font-display);letter-spacing:.01em;color:#0e3a43;margin-bottom:8px">{t.name}</h3>
           <p style="font:400 14.5px/1.5 var(--font-body);color:#5e7177;margin-bottom:16px;min-height:44px">{t.tagline}</p>
 

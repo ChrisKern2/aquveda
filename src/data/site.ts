@@ -348,9 +348,9 @@ export const flagship = {
   price: "$2,699",
   priceUnit: "installed",
   priceNote: "Founder pricing, limited to a set number of installs each month. Regular price $5,998.",
-  image: "/images/flagship-system.svg",
+  image: "/images/complete-system.webp",
   imageAlt:
-    "The complete Wellbrook home water system: whole-home softening and filtration with under-sink reverse osmosis",
+    "Wellbrook Complete Home Water System: whole-home softener and filtration tanks with an under-sink reverse-osmosis unit and faucet",
   features: [
     "Complete home system: softening plus chlorine and chloramine carbon filtration",
     "Under-sink reverse-osmosis drinking water system with alkaline post-filter",
@@ -382,6 +382,7 @@ export type Tier = {
   anchor?: string;
   priceNote?: string;
   popular?: boolean;
+  image: string;
   features: string[];
 };
 export const systemTiers: Tier[] = [
@@ -389,6 +390,7 @@ export const systemTiers: Tier[] = [
     name: "Reverse Osmosis",
     tagline: "Bottled-water quality at your kitchen sink.",
     price: "From $900",
+    image: "/images/reverse-osmosis.webp",
     features: [
       "Under-sink 4-stage reverse osmosis",
       "Alkaline remineralization option",
@@ -401,6 +403,7 @@ export const systemTiers: Tier[] = [
     name: "Whole-Home Filtration & Softening",
     tagline: "Clean, soft water from every tap.",
     price: "From $2,600",
+    image: "/images/whole-home.webp",
     features: [
       "Whole-home chlorine & chloramine carbon filtration",
       "Metered softener or salt-free conditioner",
@@ -416,6 +419,7 @@ export const systemTiers: Tier[] = [
     anchor: "$5,998",
     priceNote: "During founder pricing, less than the whole-home system alone.",
     popular: true,
+    image: "/images/complete-system.webp",
     features: [
       "Everything in Whole-Home, plus reverse osmosis",
       "Softening + chlorine/chloramine carbon filtration",
