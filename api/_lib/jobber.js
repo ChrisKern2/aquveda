@@ -76,7 +76,7 @@ async function gql(token, query, variables) {
 // Create a client (lead) in Jobber and attach a note with the call context.
 // Returns the new client id, or throws.
 export async function createJobberLead({
-  firstName, lastName, email, phone, zip, source, concern, ownsHome, system,
+  firstName, lastName, email, phone, zip, source, concern, ownsHome, waterSource, system,
 }) {
   const token = await getAccessToken();
 
@@ -110,7 +110,7 @@ export async function createJobberLead({
     const message =
       `FREE WATER REPORT LEAD — call to set up a quote.\n` +
       `Phone: ${phone || "n/a"}\nEmail: ${email || "n/a"}\nZip: ${zip || "n/a"}\n` +
-      `Owns home: ${ownsHome || "n/a"}\nMain concern: ${concern || "n/a"}\n` +
+      `Owns home: ${ownsHome || "n/a"}\nWater source: ${waterSource || "n/a"}\nMain concern: ${concern || "n/a"}\n` +
       (system ? `Interested in: ${system}\n` : "") +
       `Source: ${source || "Website free water report"}`;
     try {
