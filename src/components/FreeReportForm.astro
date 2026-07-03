@@ -8,30 +8,30 @@
     See what public testing shows for your area: hardness, chlorine, disinfection byproducts, and PFAS. No cost, no salesperson.
   </p>
 
-  <form id="wb-report-form" novalidate>
+  <form id="wb-report-form">
     <!-- honeypot: hidden from humans -->
     <input type="text" name="website" tabindex="-1" autocomplete="off"
       style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
 
-    <!-- captures the system tier a visitor clicked (from ?system=), sent to Jobber -->
+    <!-- captures the system tier a visitor clicked (from ?system=), sent with the lead -->
     <input type="hidden" name="system" id="wb-system" />
     <div id="wb-interest" style="display:none;margin:0 0 16px;padding:12px 14px;background:#eaf4f4;border-radius:10px;color:#0E3A43;font-size:14px;line-height:1.4"></div>
 
     <div style="display:grid;gap:14px">
-      <input name="firstName" placeholder="First name" autocomplete="given-name" class="wb-in" />
+      <input name="firstName" required placeholder="First name *" autocomplete="given-name" class="wb-in" />
       <input name="email" type="email" required placeholder="Email *" autocomplete="email" class="wb-in" />
       <input name="phone" type="tel" required placeholder="Phone *" autocomplete="tel" class="wb-in" />
       <input name="zip" required inputmode="numeric" maxlength="5" placeholder="Zip code *" autocomplete="postal-code" class="wb-in" />
 
-      <select name="waterSource" class="wb-in" aria-label="Main water source">
+      <select name="waterSource" required class="wb-in" aria-label="Main water source">
         <option value="">Is your main water source... *</option>
         <option>City water</option>
         <option>Well water</option>
         <option>Not sure</option>
       </select>
 
-      <select name="ownsHome" class="wb-in" aria-label="Do you own your home?">
-        <option value="">Do you own your home?</option>
+      <select name="ownsHome" required class="wb-in" aria-label="Do you own your home?">
+        <option value="">Do you own your home? *</option>
         <option value="yes">Yes, I own it</option>
         <option value="no">No, I rent</option>
       </select>
