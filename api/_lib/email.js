@@ -98,8 +98,10 @@ export function reportEmail({ firstName, reportUrl, phone }) {
   `);
 }
 
-// Internal notification to Chris when a new in-area lead comes in, so he can call.
-export function leadNotificationEmail({ firstName, lastName, email, phone, zip, concern, ownsHome, waterSource, system }) {
+// Internal notification to Chris when a new lead comes in, so he can call.
+// formType "quote_request" (the quote form) vs "water_report" (default).
+export function leadNotificationEmail({ formType, firstName, lastName, email, phone, zip, address, message, concern, ownsHome, waterSource, system }) {
+  const isQuote = formType === "quote_request";
   const name = [firstName, lastName].filter(Boolean).join(" ") || "(no name given)";
   const telDigits = (phone || "").replace(/[^0-9]/g, "");
   const row = (label, val) =>
@@ -108,17 +110,15 @@ export function leadNotificationEmail({ firstName, lastName, email, phone, zip, 
       <td style="padding:9px 0;font:400 14px/1.5 Arial;color:#1e2d34;vertical-align:top">${val || "&mdash;"}</td>
     </tr>`;
   return shell(`
-    <h1 style="color:${NAVY};font-size:22px;margin:0 0 6px">New free-report lead</h1>
-    <p style="font-size:14px;line-height:21px;margin:0 0 20px;color:#5d6b71">In your service area. Call them to put together a quote.</p>
+    <h1 style="color:${NAVY};font-size:22px;margin:0 0 6px">${isQuote ? "New quote request" : "New free-report lead"}</h1>
+    <p style="font-size:14px;line-height:21px;margin:0 0 20px;color:#5d6b71">${isQuote ? "They asked for a quote directly. Call them to build it." : "In your service area. Call them to put together a quote."}</p>
     <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e6eef0;border-bottom:1px solid #e6eef0">
       ${row("Name", name)}
       ${system ? row("Interested in", system) : ""}
       ${row("Phone", phone ? `<a href="tel:${telDigits}" style="color:${TEAL};font-weight:bold;text-decoration:none">${phone}</a>` : "")}
       ${row("Email", email ? `<a href="mailto:${email}" style="color:${TEAL};text-decoration:none">${email}</a>` : "")}
-      ${row("Zip", zip)}
-      ${row("Owns home", ownsHome)}
-      ${row("Water source", waterSource)}
-      ${row("Main concern", concern)}
+      ${isQuote ? row("Address", address || zip) : row("Zip", zip)}
+      ${isQuote ? (message ? row("Message", message) : "") : row("Owns home", ownsHome) + row("Water source", waterSource) + row("Main concern", concern)}
     </table>
   `);
 }

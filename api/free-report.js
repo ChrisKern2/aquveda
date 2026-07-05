@@ -1,12 +1,12 @@
 // ============================================================
 // POST /api/free-report
 // Vercel serverless function (auto-deployed from /api on any framework).
-// Flow:
-//   1. Validate input + honeypot.
-//   2. Classify zip (in-area vs out-of-area).
-//   3. Email the customer: their report, or a polite "not in your area yet".
-//   4. In-area: email the team the lead. (Lead capture goes to Zapier from the
-//      browser — see FreeReportForm.astro.)
+// Handles BOTH lead forms, distinguished by formType:
+//   "water_report" (default) — validate, classify zip, email the customer
+//     their report (or the out-of-area note), email the team the lead.
+//   "quote_request" — the quote form on the homepage/contact page. No zip
+//     gating or customer email; just validate and email the team the lead.
+// Lead capture also goes to Zapier from the browser (see the form components).
 // ============================================================
 
 import { classifyZip } from "./_data/serviceArea.js";
@@ -25,15 +25,18 @@ export default async function handler(req, res) {
     const body =
       typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
     const {
+      formType = "water_report", // "water_report" | "quote_request"
       firstName = "",
       lastName = "",
       email = "",
       phone = "",
       zip = "",
+      address = "", // quote form: street address or zip, as typed
+      message = "", // quote form: optional free-text note
       concern = "",
       ownsHome = "",
       waterSource = "", // city water / well water / not sure
-      system = "", // which tier they clicked "Get Started" on, if any
+      system = "", // system of interest / tier they clicked
       website = "", // honeypot: real users never fill this
     } = body;
 
@@ -42,6 +45,20 @@ export default async function handler(req, res) {
 
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       return res.status(400).json({ error: "Please enter a valid email address." });
+    }
+
+    // Quote requests: no zip gating and no customer email — the promise is a
+    // callback, not a report. Email the team the lead and finish.
+    if (formType === "quote_request") {
+      const who = [firstName, lastName].filter(Boolean).join(" ") || email;
+      await send({
+        to: LEAD_NOTIFY,
+        subject: `New quote request: ${who}${phone ? " — " + phone : ""}`,
+        html: leadNotificationEmail({
+          formType, firstName, lastName, email, phone, zip, address, message, system,
+        }),
+      });
+      return res.status(200).json({ ok: true, status: "quote_received" });
     }
 
     const SITE = process.env.SITE_URL || "https://wellbrookwater.com";

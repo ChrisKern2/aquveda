@@ -36,18 +36,6 @@ export const business = {
   state: "PA",
 } as const;
 
-// The Jobber embed, preserved exactly from the original site.
-// Rendered raw inside the QuoteForm component.
-export const jobber = {
-  clienthubId: "20e4967a-d1b4-4256-b3e1-75265d5650c0-4888609",
-  scriptSrc:
-    "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js",
-  formUrl:
-    "https://clienthub.getjobber.com/client_hubs/20e4967a-d1b4-4256-b3e1-75265d5650c0/public/work_request/embedded_work_request_form?form_id=4888609",
-  cssHref:
-    "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css",
-} as const;
-
 export type SubService = { name: string; desc: string };
 export type Faq = { q: string; a: string };
 

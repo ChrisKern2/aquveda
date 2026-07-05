@@ -120,6 +120,7 @@
     const sp = rawName.indexOf(" "); // single name field -> split on first space
     const ownMap = { yes: "Yes, I own it", no: "No, I rent" };
     const payload = {
+      formType: "water_report",
       first_name: sp === -1 ? rawName : rawName.slice(0, sp),
       last_name: sp === -1 ? "" : rawName.slice(sp + 1).trim(),
       email: (fd.get("email") || "").toString().trim(),
@@ -140,6 +141,7 @@
     btn.textContent = "Sending...";
 
     const data = Object.fromEntries(new FormData(form).entries());
+    data.formType = "water_report";
 
     try {
       const res = await fetch("/api/free-report", {
