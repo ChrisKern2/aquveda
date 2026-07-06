@@ -437,7 +437,7 @@ export const carePlan = {
     {
       name: "Essential Care",
       monthly: "$29",
-      annual: "$290/yr (2 months free)",
+      annual: "$319/yr (1 month free)",
       features: [
         "One scheduled care visit per year: 28-point inspection and performance check",
         "Whole-home sediment pre-filter change included",
@@ -450,7 +450,7 @@ export const carePlan = {
     {
       name: "Complete Care",
       monthly: "$49",
-      annual: "$490/yr (2 months free)",
+      annual: "$539/yr (1 month free)",
       popular: true,
       features: [
         "Everything in Essential, plus:",
@@ -462,7 +462,7 @@ export const carePlan = {
     {
       name: "Total Care",
       monthly: "$79",
-      annual: "$790/yr (2 months free)",
+      annual: "$869/yr (1 month free)",
       features: [
         "Everything in Complete, plus:",
         "Four visits per year: two care visits and two salt deliveries",
