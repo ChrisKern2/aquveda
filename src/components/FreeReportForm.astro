@@ -135,6 +135,30 @@
     sendLead(new URLSearchParams(payload).toString());
   }
 
+  // ---- Meta Lead event: browser Pixel + server Conversions API sharing one
+  // eventID so Meta de-duplicates them into a single Lead conversion. ----
+  function makeEventId() {
+    return `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+  }
+
+  function fireMetaLead(lead) {
+    const eventId = makeEventId();
+    // 1) Browser event (Pixel)
+    if (window.fbq) window.fbq("track", "Lead", {}, { eventID: eventId });
+    // 2) Server event (Conversions API) with the SAME eventId. Fire-and-forget.
+    fetch("/api/meta-capi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventId,
+        email: lead.email,
+        phone: lead.phone,
+        zip: lead.zip,
+        eventSourceUrl: window.location.href,
+      }),
+    }).catch(() => {});
+  }
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     btn.disabled = true;
@@ -158,9 +182,12 @@
         return;
       }
 
-      // Validated, non-bot submission accepted -> send the lead to Zapier,
-      // fire-and-forget, immediately before showing the success state.
-      if (json.status !== "ignored") sendToZapier();
+      // Validated, non-bot submission accepted -> send the lead to Zapier and
+      // fire the Meta Lead event (Pixel + CAPI), immediately before success.
+      if (json.status !== "ignored") {
+        sendToZapier();
+        fireMetaLead(data);
+      }
 
       if (json.status === "out_of_area") {
         show(`<h2 style="color:#0E3A43;font-size:22px;margin:0 0 10px">We are not in your area yet</h2>
