@@ -174,7 +174,7 @@ function renderHTML(r) {
     <div class="cta-text"><h3>${esc(r.ctaHeading)}</h3><p>${esc(r.ctaBody)}</p></div>
     <div class="cta-act">
       <div class="cta-pre sans">Want to talk sooner?</div>
-      <a class="cta-phone" href="tel:2159789719">(215) 978-9719</a>
+      <a class="cta-phone" href="tel:2678409239">(267) 840-9239</a>
     </div>
   </div>
   <div class="sources">${esc(r.sources)}</div>

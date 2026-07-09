@@ -22,14 +22,14 @@ DESIGN DIRECTION, make it FEEL like mercurios.com
 Reproduce this structure and trust-signal density (this is what makes that site work):
 
 1. UTILITY TOP BAR: left = "Locally owned · Licensed & fully insured"; right =
-   "Free same-day quotes" + a tappable phone (215) 978-9719. Keep it.
+   "Free same-day quotes" + a tappable phone (267) 840-9239. Keep it.
 2. STICKY HEADER with a real MEGA-MENU. Each top service has a dropdown of
    sub-services (see SERVICES tree below). Right side: prominent phone + a solid
    "Get a Free Quote" button (this is our version of their "Schedule Online").
 3. HERO: full-width with a real water-treatment home PHOTO background (use a
    placeholder image now, /images/hero-home.jpg, that I will swap). Big headline
    with the location in it, a one-line subhead, dual CTA ("Get a Free Quote" +
-   "or call us today (215) 978-9719"), and a small review/rating badge.
+   "or call us today (267) 840-9239"), and a small review/rating badge.
 4. SERVICE-AREA HEADLINE band right under the hero: "Serving Blue Bell, Malvern,
    Exton, West Chester, Ambler, Wayne and More," with a short paragraph.
 5. SERVICE GRID: icon tiles per top service (Whole-Home Filtration, Pressure Washing,
@@ -75,7 +75,7 @@ TECH
 BUSINESS FACTS (use everywhere)
 ============================================================
 - Name: Aquveda   Domain: https://aquveda.com
-- Phone: (215) 978-9719  (tel:2159789719)
+- Phone: (267) 840-9239  (tel:2678409239)
 - Email: chris@aquveda.com
 - Founded: 2026, locally owned. Licensed & fully insured. 100% satisfaction
   guarantee. Free same-day quotes. Residential & commercial.
