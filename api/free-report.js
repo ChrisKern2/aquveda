@@ -15,6 +15,32 @@ import { send, reportEmail, rejectionEmail, leadNotificationEmail } from "./_lib
 // Where new-lead notifications go so Chris can call.
 const LEAD_NOTIFY = process.env.LEAD_NOTIFY_EMAIL || process.env.REPLY_TO_EMAIL || "chris@wellbrookwater.com";
 
+// HighServiceHub (GoHighLevel) inbound-webhook trigger. Posting a lead here
+// runs the "Website Leads to CRM (Contact + Opportunity)" workflow, which
+// creates/updates the contact and drops an opportunity into Sales > New Lead.
+// Server-to-server so ad-blockers/browsers can't drop it (unlike the browser
+// Zapier call). Overridable via env; falls back to the known trigger URL.
+const CRM_WEBHOOK =
+  process.env.GHL_LEAD_WEBHOOK ||
+  "https://services.leadconnectorhq.com/hooks/1GISJlacwjrTTrHeKPO3/webhook-trigger/05588e81-8806-4435-bee9-7f72931ad267";
+
+// Fire the lead into the CRM. Keys must match the workflow's mapped payload
+// (lead_type, source, full_name, first_name, last_name, email, phone, address,
+// postal_code, system_of_interest, message, water_source, owns_home, concern,
+// page_url). Never throws — a CRM hiccup must not fail the form or the email.
+async function sendToCrm(payload) {
+  try {
+    const r = await fetch(CRM_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!r.ok) console.error("CRM webhook non-200:", r.status, await r.text());
+  } catch (err) {
+    console.error("CRM webhook error:", err.message);
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -58,6 +84,23 @@ export default async function handler(req, res) {
           formType, firstName, lastName, email, phone, zip, address, message, system,
         }),
       });
+      await sendToCrm({
+        lead_type: "quote_request",
+        source: "Website - Quote Request",
+        full_name: who,
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        address,
+        postal_code: zip,
+        system_of_interest: system,
+        message,
+        water_source: "",
+        owns_home: "",
+        concern: "",
+        page_url: (process.env.SITE_URL || "https://wellbrookwater.com") + "/contact",
+      });
       return res.status(200).json({ ok: true, status: "quote_received" });
     }
 
@@ -90,6 +133,24 @@ export default async function handler(req, res) {
       } catch (err) {
         console.error("Lead notification email error:", err.message);
       }
+
+      await sendToCrm({
+        lead_type: "water_report",
+        source: "Website - Free Water Report",
+        full_name: [firstName, lastName].filter(Boolean).join(" ") || email,
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        address,
+        postal_code: cls.zip,
+        system_of_interest: system,
+        message,
+        water_source: waterSource,
+        owns_home: ownsHome,
+        concern,
+        page_url: SITE + "/free-report",
+      });
 
       return res.status(200).json({ ok: true, status: "in_area" });
     }
