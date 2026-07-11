@@ -24,13 +24,20 @@ const CRM_WEBHOOK =
   process.env.GHL_LEAD_WEBHOOK ||
   "https://services.leadconnectorhq.com/hooks/1GISJlacwjrTTrHeKPO3/webhook-trigger/05588e81-8806-4435-bee9-7f72931ad267";
 
+// Out-of-area report leads go to a separate workflow that creates the contact
+// and tags it "out of area" (no sales opportunity) so Chris can follow up when
+// the service area expands. See "Out-of-Area Leads (Tag for Future Follow-up)".
+const CRM_WEBHOOK_OOA =
+  process.env.GHL_LEAD_WEBHOOK_OOA ||
+  "https://services.leadconnectorhq.com/hooks/1GISJlacwjrTTrHeKPO3/webhook-trigger/682936d0-a624-48a4-93cc-79963be76618";
+
 // Fire the lead into the CRM. Keys must match the workflow's mapped payload
 // (lead_type, source, full_name, first_name, last_name, email, phone, address,
 // postal_code, system_of_interest, message, water_source, owns_home, concern,
 // page_url). Never throws — a CRM hiccup must not fail the form or the email.
-async function sendToCrm(payload) {
+async function sendToCrm(payload, url = CRM_WEBHOOK) {
   try {
-    const r = await fetch(CRM_WEBHOOK, {
+    const r = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -158,8 +165,30 @@ export default async function handler(req, res) {
     await send({
       to: email,
       subject: "About water service in your area",
-      html: rejectionEmail({ firstName }),
+      html: rejectionEmail({ firstName, zip: cls.zip }),
     });
+    // Capture the lead in the CRM tagged "out of area" (no sales opportunity),
+    // so Chris can reach out when the service area expands to their ZIP.
+    await sendToCrm(
+      {
+        lead_type: "water_report_out_of_area",
+        source: "Website - Free Water Report (Out of Area)",
+        full_name: [firstName, lastName].filter(Boolean).join(" ") || email,
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        address,
+        postal_code: cls.zip,
+        system_of_interest: system,
+        message,
+        water_source: waterSource,
+        owns_home: ownsHome,
+        concern,
+        page_url: SITE + "/free-report",
+      },
+      CRM_WEBHOOK_OOA
+    );
     return res.status(200).json({ ok: true, status: "out_of_area" });
   } catch (err) {
     console.error("free-report error:", err);

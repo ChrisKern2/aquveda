@@ -123,19 +123,26 @@ export function leadNotificationEmail({ formType, firstName, lastName, email, ph
   `);
 }
 
-export function rejectionEmail({ firstName }) {
+export function rejectionEmail({ firstName, zip }) {
   const hi = firstName ? `Hi ${firstName},` : "Hi there,";
+  const zipBit = zip ? ` (${zip})` : "";
   return shell(`
-    <h1 style="color:${NAVY};font-size:24px;margin:0 0 14px">We are not in your area yet.</h1>
+    <h1 style="color:${NAVY};font-size:23px;margin:0 0 14px">Thanks for reaching out.</h1>
     <p style="font-size:15px;line-height:23px;margin:0 0 18px">${hi}</p>
     <p style="font-size:15px;line-height:23px;margin:0 0 18px">
-      Thanks for the interest. Right now Wellbrook serves Montgomery and Chester County and the
-      nearby western Philadelphia suburbs, and your zip falls outside that area, so we cannot send a
-      local report or install a system for you yet.
+      We received your request for a free water report. Right now Wellbrook covers the greater
+      Philadelphia area, and your ZIP${zipBit} sits just outside where we can currently send a
+      technician &mdash; so we are not able to put together a local report or install a system for
+      you just yet.
+    </p>
+    <p style="font-size:15px;line-height:23px;margin:0 0 18px">
+      Here is the honest part: we are steadily expanding, and we add new neighborhoods as demand
+      builds. We have kept your details on file, and the moment we reach your area you will be among
+      the first people we call.
     </p>
     <p style="font-size:15px;line-height:23px;margin:0 0 6px">
-      We are expanding. If you would like, reply to this email and we will keep your zip on file and
-      reach out when we reach you.
+      If anything changes or you have a question in the meantime, just reply to this email &mdash; a
+      real person on our team will read it and get back to you.
     </p>
   `);
 }
