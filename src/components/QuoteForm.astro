@@ -87,6 +87,19 @@
     return false;
   }
 
+  // Meta Lead event: browser Pixel + server Conversions API sharing one
+  // eventID so Meta de-duplicates them into a single Lead conversion.
+  function qMakeEventId() { return `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`; }
+  function qFireMetaLead(lead) {
+    const eventId = qMakeEventId();
+    if (window.fbq) window.fbq("track", "Lead", {}, { eventID: eventId });
+    fetch("/api/meta-capi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ eventId, email: lead.email, phone: lead.phone, zip: lead.zip, eventSourceUrl: location.href }),
+    }).catch(() => {});
+  }
+
   function qShowSuccess() {
     qForm.style.display = "none";
     qResult.style.display = "block";
@@ -159,6 +172,7 @@
           own_home: "",
           concern: "",
         }).toString());
+        qFireMetaLead({ email: apiBody.email, phone: apiBody.phone, zip: apiBody.zip });
       }
       qShowSuccess();
     } catch (err) {

@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   try {
     const body =
       typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
-    const { eventId, email, phone, zip, eventSourceUrl } = body;
+    const { eventId, email, phone, zip, eventSourceUrl, testEventCode } = body;
 
     const PIXEL_ID = process.env.META_PIXEL_ID || "1025841546937119";
     const TOKEN = process.env.META_CAPI_TOKEN;
@@ -54,6 +54,11 @@ export default async function handler(req, res) {
         },
       ],
     };
+
+    // Optional: routes the event to Events Manager > Test Events (kept out of
+    // live metrics). Only set when a caller explicitly passes it; real form
+    // submissions never do, so production events are always live.
+    if (testEventCode) payload.test_event_code = testEventCode;
 
     const fbRes = await fetch(
       `https://graph.facebook.com/v21.0/${PIXEL_ID}/events?access_token=${encodeURIComponent(TOKEN)}`,
