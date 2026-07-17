@@ -299,6 +299,16 @@ export const stats: Stat[] = [
   { value: "Local", label: "Greater Philadelphia" },
 ];
 
+// ============================================================
+// REVIEWS MASTER SWITCH
+// false = every review/testimonial/star-rating element is hidden sitewide:
+//   the hero rating badge, the "5-Star Rated" bar under the hero, the
+//   Testimonials section, and the "Reviews" nav links.
+// Flip to true ONCE you have real reviews AND have filled in `testimonials`
+// and `business.reviewCount` below. Full instructions: REVIEWS-RESTORE.md
+// ============================================================
+export const ENABLE_REVIEWS = false;
+
 // Review-platform placeholders for the testimonials section.
 export const reviewPlatforms = ["Google", "Yelp", "Facebook", "Nextdoor"];
 
@@ -312,10 +322,11 @@ export const testimonials: Testimonial[] = [
 ];
 
 // Primary navigation (the mega-menu is built from `services`).
+// The Reviews entry only appears once ENABLE_REVIEWS is true.
 export const nav = [
   { label: "Services", href: "/#services", mega: true },
   { label: "Service Areas", href: "/service-areas" },
-  { label: "Reviews", href: "/#reviews" },
+  ...(ENABLE_REVIEWS ? [{ label: "Reviews", href: "/#reviews" }] : []),
   { label: "Learn", href: "/learn" },
   { label: "Care Plan", href: "/care-plan" },
   { label: "About", href: "/about" },

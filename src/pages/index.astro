@@ -21,7 +21,7 @@ import ServiceAreaList from "../components/ServiceAreaList.astro";
 import QuoteForm from "../components/QuoteForm.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/Icon.astro";
-import { business, flagship, homeFaqs } from "../data/site";
+import { business, flagship, homeFaqs, ENABLE_REVIEWS } from "../data/site";
 
 const site = business.domain;
 const productSchema = {
@@ -59,7 +59,7 @@ const faqSchema = {
   <TopBar />
   <Header />
   <Hero />
-  <ReviewLogos />
+  {ENABLE_REVIEWS && <ReviewLogos />}
   <CredentialBar />
   <FlagshipSystem />
   <SystemTiers />
@@ -69,7 +69,7 @@ const faqSchema = {
   <CarePlan />
   <ComparisonTable />
   <StatBand />
-  <Testimonials />
+  {ENABLE_REVIEWS && <Testimonials />}
   <LearnPreview />
   <HomeFaq />
 

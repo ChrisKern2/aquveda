@@ -1,5 +1,5 @@
 ---
-import { business, services } from "../data/site";
+import { business, services, ENABLE_REVIEWS } from "../data/site";
 import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 ---
@@ -34,7 +34,7 @@ import Logo from "./Logo.astro";
         </div>
 
         <a class="nav-link" href="/service-areas" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Service Areas</a>
-        <a class="nav-link" href="/#reviews" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Reviews</a>
+        {ENABLE_REVIEWS && <a class="nav-link" href="/#reviews" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Reviews</a>}
         <a class="nav-link" href="/learn" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Learn</a>
         <a class="nav-link" href="/care-plan" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Care Plan</a>
         <a class="nav-link" href="/about" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">About</a>
@@ -62,7 +62,7 @@ import Logo from "./Logo.astro";
         <a href={`/services/${s.slug}`} style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">{s.name}</a>
       ))}
       <a href="/service-areas" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Service Areas</a>
-      <a href="/#reviews" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Reviews</a>
+      {ENABLE_REVIEWS && <a href="/#reviews" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Reviews</a>}
       <a href="/learn" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Learn</a>
       <a href="/care-plan" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Care Plan</a>
       <a href="/about" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">About</a>
