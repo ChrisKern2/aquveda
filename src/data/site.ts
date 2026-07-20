@@ -337,7 +337,7 @@ export const nav = [
 // ============================================================
 // FLAGSHIP SYSTEM (the featured bundle on the home page)
 // Pricing sourced from "Wellbrook - Price Sheet.xlsx":
-// Complete Home Water System: founder $2,699, regular $5,998 (matches the reference site).
+// Complete Home Water System: founder $2,899, regular $5,998.
 // ============================================================
 export const flagship = {
   eyebrow: "Founder pricing — limited install slots",
@@ -345,7 +345,7 @@ export const flagship = {
   tagline:
     "Whole-home softening with chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system, installed by a licensed plumber in one trip.",
   priceRegular: "$5,998",
-  price: "$2,699",
+  price: "$2,899",
   priceUnit: "installed",
   priceNote: "Founder pricing, limited to a set number of installs each month. Regular price $5,998.",
   image: "/images/complete-system.webp",
@@ -389,7 +389,7 @@ export const systemTiers: Tier[] = [
   {
     name: "Reverse Osmosis",
     tagline: "Bottled-water quality at your kitchen sink.",
-    price: "From $900",
+    price: "From $899",
     image: "/images/reverse-osmosis.webp",
     features: [
       "Under-sink 4-stage reverse osmosis",
@@ -402,7 +402,7 @@ export const systemTiers: Tier[] = [
   {
     name: "Whole-Home Filtration & Softening",
     tagline: "Clean, soft water from every tap.",
-    price: "From $2,600",
+    price: "From $2,499",
     image: "/images/whole-home.webp",
     features: [
       "Whole-home chlorine & chloramine carbon filtration",
@@ -415,9 +415,9 @@ export const systemTiers: Tier[] = [
   {
     name: "Complete Home Water System",
     tagline: "Whole-home filtration + softening + under-sink RO. Everything, one install.",
-    price: "$2,699",
+    price: "$2,899",
     anchor: "$5,998",
-    priceNote: "During founder pricing, less than the whole-home system alone.",
+    priceNote: "During founder pricing, less than the whole-home system and RO bought separately.",
     popular: true,
     image: "/images/complete-system.webp",
     features: [
@@ -583,7 +583,7 @@ export const articles: Article[] = [
 // ============================================================
 export const homeFaqs: Faq[] = [
   { q: "What is the Complete Home Water System?", a: "It is our flagship setup: a complete home system with softening and chlorine and chloramine carbon filtration, plus an under-sink reverse-osmosis drinking water system. A licensed plumber installs it in one trip. The whole-home system cleans and softens every tap, and reverse osmosis gives you bottled-water quality at the kitchen sink." },
-  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, the Complete Home Water System is $2,699 installed, regularly $5,998. Founder pricing is limited to a set number of installs each month. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Reach out for a free, no-obligation quote." },
+  { q: "How much does the Complete Home Water System cost?", a: "During founder pricing, the Complete Home Water System is $2,899 installed, regularly $5,998. Founder pricing is limited to a set number of installs each month. That covers the whole-home softening and filtration system, the under-sink reverse-osmosis system, and licensed plumber installation. Reach out for a free, no-obligation quote." },
   { q: "Do I have to buy the complete system?", a: "No. We offer three options: reverse osmosis for drinking water, whole-home filtration and softening for every tap, or the Complete Home Water System that bundles both. We size to your home and water and quote what you need, with no obligation." },
   { q: "Do you guarantee the results?", a: "Yes. If your water isn't measurably softer and cleaner on a follow-up retest, we make it right. We guarantee the result, not just the labor, and every install is backed by our lifetime workmanship warranty plus the manufacturer equipment warranty." },
   { q: "Do you offer a maintenance plan?", a: "Yes. The Wellbrook Water Care Plan keeps your system serviced on schedule, with priority scheduling and member-only pricing. Plans start at $29 per month, with no contracts and cancel anytime, and can be added at install so you never have to guess when a filter is due." },
