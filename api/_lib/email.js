@@ -43,7 +43,7 @@ function shell(inner) {
     </td></tr>
     <tr><td style="padding:18px 28px;color:#51606C;font-size:12px;line-height:18px">
       Wellbrook Water &middot; Montgomery &amp; Chester County, PA &middot;
-      <a href="tel:2678409239" style="color:#51606C">(267) 840-9239</a> &middot;
+      <a href="tel:2674123549" style="color:#51606C">(267) 412-3549</a> &middot;
       <a href="https://wellbrookwater.com" style="color:#51606C">wellbrookwater.com</a>
     </td></tr>
   </table></td></tr></table></body></html>`;
@@ -97,7 +97,7 @@ export function reportEmail({ firstName, reportUrl, phone }) {
     ${step(3, "We call you", callStep)}
 
     <p style="font-size:14px;line-height:22px;margin:20px 0 0;color:#51606C">
-      Want to talk sooner? Call us at <a href="tel:2678409239" style="color:${COPPER};font-weight:bold">(267) 840-9239</a>.
+      Want to talk sooner? Call us at <a href="tel:2674123549" style="color:${COPPER};font-weight:bold">(267) 412-3549</a>.
     </p>
   `);
 }
