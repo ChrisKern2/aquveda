@@ -26,16 +26,16 @@ import { articles } from "../../data/site";
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
         {articles.map((p) => (
           <a href={`/learn/${p.slug}`} class="card card-hover" style="padding:28px;display:flex;flex-direction:column;gap:12px;text-decoration:none">
-            <span style="align-self:flex-start;font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#15919b;background:#cde6e8;padding:6px 10px;border-radius:100px">{p.tag}</span>
-            <h2 style="font:700 19px/1.25 var(--font-display);color:#0e3a43;letter-spacing:.01em">{p.title}</h2>
-            <p style="font:400 14.5px/1.6 var(--font-body);color:#5e7177;flex:1">{p.excerpt}</p>
-            <span style="font:700 14px/1 var(--font-body);color:#15919b;display:flex;align-items:center;gap:6px">Read article <Icon name="arrow" size={15} /></span>
+            <span style="align-self:flex-start;font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#1a5e91;background:#d7e7f3;padding:6px 10px;border-radius:100px">{p.tag}</span>
+            <h2 style="font:700 19px/1.25 var(--font-display);color:#143c5f;letter-spacing:.01em">{p.title}</h2>
+            <p style="font:400 14.5px/1.6 var(--font-body);color:#51606c;flex:1">{p.excerpt}</p>
+            <span style="font:700 14px/1 var(--font-body);color:#1a5e91;display:flex;align-items:center;gap:6px">Read article <Icon name="arrow" size={15} /></span>
           </a>
         ))}
       </div>
     </div>
   </section>
-  <CTABand tone="red" title="Have a Question About Your Water?" subtitle="Start with a free, plain-English report on your area's water. Request yours today." />
+  <CTABand tone="navy" title="Have a Question About Your Water?" subtitle="Start with a free, plain-English report on your area's water. Request yours today." />
   <Footer />
   <style>
     @media (max-width:880px){ section div[style*="repeat(3"]{grid-template-columns:1fr 1fr !important} }

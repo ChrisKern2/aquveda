@@ -5,26 +5,26 @@ import Icon from "./Icon.astro";
 <section id="how-it-works" style="background:#fff">
   <div class="wrap" style="padding-top:74px;padding-bottom:74px">
     <div style="text-align:center;max-width:640px;margin:0 auto 48px">
-      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#15919b;margin-bottom:12px">Simple From Start to Finish</div>
-      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#0e3a43;margin-bottom:14px;text-wrap:balance">How It Works in 3 Simple Steps</h2>
-      <p style="font:400 17px/1.6 var(--font-body);color:#5e7177">No pressure, no guesswork. We report, we explain, we install.</p>
+      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#1a5e91;margin-bottom:12px">Simple From Start to Finish</div>
+      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#143c5f;margin-bottom:14px;text-wrap:balance">How It Works in 3 Simple Steps</h2>
+      <p style="font:400 17px/1.6 var(--font-body);color:#51606c">No pressure, no guesswork. We report, we explain, we install.</p>
     </div>
 
     <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
       {steps.map((step, i) => (
         <div class="card" style="padding:32px 28px;display:flex;flex-direction:column;gap:14px;position:relative">
           <div style="display:flex;align-items:center;gap:14px">
-            <span style="width:52px;height:52px;border-radius:50%;background:#0e3a43;color:#7fd3dc;display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--font-display);flex:none">{i + 1}</span>
-            <h3 style="font:700 20px/1.15 var(--font-display);color:#0e3a43;letter-spacing:.01em">{step.title}</h3>
+            <span style="width:52px;height:52px;border-radius:50%;background:#143c5f;color:#7dbee6;display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--font-display);flex:none">{i + 1}</span>
+            <h3 style="font:700 20px/1.15 var(--font-display);color:#143c5f;letter-spacing:.01em">{step.title}</h3>
           </div>
-          <p style="font:400 15px/1.65 var(--font-body);color:#5e7177">{step.body}</p>
+          <p style="font:400 15px/1.65 var(--font-body);color:#51606c">{step.body}</p>
         </div>
       ))}
     </div>
 
     <div style="text-align:center;margin-top:40px">
       <a class="btn btn-primary" href="/free-report" style="font:700 16px/1 var(--font-body);padding:17px 30px">Get Your Free Water Report <Icon name="arrow" size={17} /></a>
-      <div style="font:500 13.5px/1.5 var(--font-body);color:#5e7177;margin-top:12px">Or call <a href={business.phoneHref} style="color:#15919b;font-weight:600;text-decoration:none">{business.phoneDisplay}</a></div>
+      <div style="font:500 13.5px/1.5 var(--font-body);color:#51606c;margin-top:12px">Or call <a href={business.phoneHref} style="color:#1a5e91;font-weight:600;text-decoration:none">{business.phoneDisplay}</a></div>
     </div>
   </div>
 </section>

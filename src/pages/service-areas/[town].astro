@@ -46,10 +46,10 @@ const description = `Whole-home water filtration, softening & drinking water in 
   <section style="background:#fff">
     <div class="wrap" style="padding-top:64px;padding-bottom:50px;max-width:820px">
       <div class="prose">
-        <h2 style="font:700 30px/1.1 var(--font-display);color:#0e3a43;margin-bottom:18px;letter-spacing:.01em">Your Local Water Treatment Team in {town.name}</h2>
+        <h2 style="font:700 30px/1.1 var(--font-display);color:#143c5f;margin-bottom:18px;letter-spacing:.01em">Your Local Water Treatment Team in {town.name}</h2>
         <p>{town.blurb} As a locally owned company serving {town.county}, Wellbrook brings whole-home filtration, reverse osmosis, well water treatment, and specialty systems right to your door, with the same upfront pricing, careful insured crews, and lifetime workmanship warranty we bring to every neighborhood we serve.</p>
         <p>Whether you want cleaner, better-tasting water from every tap, an end to hard-water scale, or bottled-water quality at the kitchen sink, we handle it start to finish. We start with a free water report on your area, size the right system for your home, install it cleanly with a licensed installer, and walk the result with you before we leave. You get better water and a price you agreed to up front, with no surprises.</p>
-        <p>Ready for better water in {town.name}? Get your free water report or call us at <a href="tel:2678409239" style="color:#15919b;font-weight:600;text-decoration:none">{business.phoneDisplay}</a>.</p>
+        <p>Ready for better water in {town.name}? Get your free water report or call us at <a href="tel:2678409239" style="color:#1a5e91;font-weight:600;text-decoration:none">{business.phoneDisplay}</a>.</p>
       </div>
     </div>
   </section>
@@ -57,20 +57,20 @@ const description = `Whole-home water filtration, softening & drinking water in 
   <!-- Services available in this town -->
   <section style="background:#f7f4ec">
     <div class="wrap" style="padding-top:56px;padding-bottom:64px">
-      <h2 style="font:700 30px/1.1 var(--font-display);color:#0e3a43;margin-bottom:28px;letter-spacing:.01em;text-align:center">Our Services in {town.name}</h2>
+      <h2 style="font:700 30px/1.1 var(--font-display);color:#143c5f;margin-bottom:28px;letter-spacing:.01em;text-align:center">Our Services in {town.name}</h2>
       <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         {services.map((s) => (
           <a href={`/services/${s.slug}`} class="card card-hover" style="padding:26px;display:flex;flex-direction:column;gap:12px;text-decoration:none">
-            <span style="width:46px;height:46px;border-radius:11px;background:#e9e1d2;display:flex;align-items:center;justify-content:center;color:#15919b"><Icon name={s.icon} size={24} /></span>
-            <h3 style="font:700 20px/1.1 var(--font-display);color:#0e3a43;letter-spacing:.01em">{s.name} in {town.name}</h3>
-            <p style="font:400 14.5px/1.6 var(--font-body);color:#5e7177">{s.short}</p>
-            <span style="font:700 14px/1 var(--font-body);color:#15919b;display:flex;align-items:center;gap:7px;margin-top:auto">Learn more <Icon name="arrow" size={15} /></span>
+            <span style="width:46px;height:46px;border-radius:11px;background:#f0eae0;display:flex;align-items:center;justify-content:center;color:#1a5e91"><Icon name={s.icon} size={24} /></span>
+            <h3 style="font:700 20px/1.1 var(--font-display);color:#143c5f;letter-spacing:.01em">{s.name} in {town.name}</h3>
+            <p style="font:400 14.5px/1.6 var(--font-body);color:#51606c">{s.short}</p>
+            <span style="font:700 14px/1 var(--font-body);color:#1a5e91;display:flex;align-items:center;gap:7px;margin-top:auto">Learn more <Icon name="arrow" size={15} /></span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <CTABand tone="red" title={`Free Water Report for ${town.name}`} subtitle="See what's in your area's water, then we'll call to put together a no-obligation quote." />
+  <CTABand tone="navy" title={`Free Water Report for ${town.name}`} subtitle="See what's in your area's water, then we'll call to put together a no-obligation quote." />
   <Footer />
 </Layout>

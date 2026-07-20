@@ -1,35 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Under-sink reverse osmosis system with a dedicated drinking-water faucet and a glass of water">
   <defs>
     <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#cde6e8"/><stop offset="1" stop-color="#e9e1d2"/>
+      <stop offset="0" stop-color="#eaf3f9"/><stop offset="1" stop-color="#f0eae0"/>
     </linearGradient>
     <linearGradient id="water3" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7fd3dc"/><stop offset="1" stop-color="#15919b"/>
+      <stop offset="0" stop-color="#7dbee6"/><stop offset="1" stop-color="#2278b5"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg3)"/>
   <!-- counter line -->
-  <rect x="0" y="150" width="800" height="16" fill="#0e3a43" opacity="0.85"/>
-  <rect x="0" y="166" width="800" height="10" fill="#5e7177" opacity="0.35"/>
+  <rect x="0" y="150" width="800" height="16" fill="#143c5f" opacity="0.85"/>
+  <rect x="0" y="166" width="800" height="10" fill="#51606c" opacity="0.35"/>
   <!-- faucet -->
-  <path d="M300 150 V96 a40 40 0 0 1 40 -40 h70" fill="none" stroke="#0e3a43" stroke-width="13" stroke-linecap="round"/>
-  <rect x="286" y="150" width="28" height="6" rx="3" fill="#0e3a43"/>
-  <circle cx="410" cy="56" r="9" fill="#15919b"/>
+  <path d="M300 150 V96 a40 40 0 0 1 40 -40 h70" fill="none" stroke="#143c5f" stroke-width="13" stroke-linecap="round"/>
+  <rect x="286" y="150" width="28" height="6" rx="3" fill="#143c5f"/>
+  <circle cx="410" cy="56" r="9" fill="#2278b5"/>
   <!-- water stream + drop -->
   <path d="M300 156 v40" stroke="url(#water3)" stroke-width="6" stroke-linecap="round"/>
-  <path d="M300 206 c 0 0 -10 12 -10 20 a10 10 0 1 0 20 0 c 0 -8 -10 -20 -10 -20 Z" fill="#15919b"/>
+  <path d="M300 206 c 0 0 -10 12 -10 20 a10 10 0 1 0 20 0 c 0 -8 -10 -20 -10 -20 Z" fill="#2278b5"/>
   <!-- glass of water -->
-  <path d="M196 250 h64 l-7 92 a10 10 0 0 1 -10 9 h-30 a10 10 0 0 1 -10 -9 Z" fill="#ffffff" stroke="#0e3a43" stroke-width="5"/>
+  <path d="M196 250 h64 l-7 92 a10 10 0 0 1 -10 9 h-30 a10 10 0 0 1 -10 -9 Z" fill="#ffffff" stroke="#143c5f" stroke-width="5"/>
   <path d="M201 300 h54 l-4 42 a10 10 0 0 1 -10 9 h-26 a10 10 0 0 1 -10 -9 Z" fill="url(#water3)" opacity="0.85"/>
   <!-- under-sink RO canisters -->
   <g>
-    <rect x="470" y="250" width="44" height="120" rx="20" fill="#ffffff" stroke="#0e3a43" stroke-width="5"/>
-    <rect x="524" y="250" width="44" height="120" rx="20" fill="#ffffff" stroke="#0e3a43" stroke-width="5"/>
-    <rect x="578" y="250" width="44" height="120" rx="20" fill="#ffffff" stroke="#0e3a43" stroke-width="5"/>
-    <rect x="470" y="236" width="152" height="20" rx="8" fill="#0e3a43"/>
-    <circle cx="492" cy="300" r="9" fill="#7fd3dc"/><circle cx="546" cy="300" r="9" fill="#3db8c6"/><circle cx="600" cy="300" r="9" fill="#15919b"/>
+    <rect x="470" y="250" width="44" height="120" rx="20" fill="#ffffff" stroke="#143c5f" stroke-width="5"/>
+    <rect x="524" y="250" width="44" height="120" rx="20" fill="#ffffff" stroke="#143c5f" stroke-width="5"/>
+    <rect x="578" y="250" width="44" height="120" rx="20" fill="#ffffff" stroke="#143c5f" stroke-width="5"/>
+    <rect x="470" y="236" width="152" height="20" rx="8" fill="#143c5f"/>
+    <circle cx="492" cy="300" r="9" fill="#7dbee6"/><circle cx="546" cy="300" r="9" fill="#7dbee6"/><circle cx="600" cy="300" r="9" fill="#2278b5"/>
   </g>
   <!-- RO membrane tank -->
-  <rect x="636" y="286" width="96" height="56" rx="26" fill="#ffffff" stroke="#0e3a43" stroke-width="5"/>
-  <text x="684" y="322" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#15919b" text-anchor="middle">RO</text>
+  <rect x="636" y="286" width="96" height="56" rx="26" fill="#ffffff" stroke="#143c5f" stroke-width="5"/>
+  <text x="684" y="322" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#2278b5" text-anchor="middle">RO</text>
 </svg>

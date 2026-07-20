@@ -40,9 +40,9 @@ const blogSchema = {
   <section style="background:#fff">
     <div class="wrap prose" style="padding-top:60px;padding-bottom:56px;max-width:740px">
       {article.body.map((p) => <p>{p}</p>)}
-      <div style="margin-top:30px;padding:24px;background:#e9e1d2;border-radius:14px;display:flex;flex-direction:column;gap:12px">
-        <h2 style="font:700 20px/1.15 var(--font-display);color:#0e3a43">Want to know what is in your water?</h2>
-        <p style="font:400 15px/1.6 var(--font-body);color:#42505f;margin:0">It starts with a free, plain-English report on your area's water, no pressure.</p>
+      <div style="margin-top:30px;padding:24px;background:#f0eae0;border-radius:14px;display:flex;flex-direction:column;gap:12px">
+        <h2 style="font:700 20px/1.15 var(--font-display);color:#143c5f">Want to know what is in your water?</h2>
+        <p style="font:400 15px/1.6 var(--font-body);color:#16232c;margin:0">It starts with a free, plain-English report on your area's water, no pressure.</p>
         <a class="btn btn-primary" href="/free-report" style="font:700 14px/1 var(--font-body);padding:14px 22px;align-self:flex-start;margin-top:4px">Get Your Free Water Report <Icon name="arrow" size={15} /></a>
       </div>
     </div>
@@ -51,13 +51,13 @@ const blogSchema = {
   <!-- Related -->
   <section style="background:#f7f4ec">
     <div class="wrap" style="padding-top:56px;padding-bottom:64px">
-      <h2 style="font:700 26px/1.1 var(--font-display);color:#0e3a43;margin-bottom:26px;letter-spacing:.01em">Keep Reading</h2>
+      <h2 style="font:700 26px/1.1 var(--font-display);color:#143c5f;margin-bottom:26px;letter-spacing:.01em">Keep Reading</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         {related.map((p) => (
           <a href={`/learn/${p.slug}`} class="card card-hover" style="padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none">
-            <span style="align-self:flex-start;font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#15919b;background:#cde6e8;padding:6px 10px;border-radius:100px">{p.tag}</span>
-            <h3 style="font:700 16px/1.25 var(--font-body);color:#0e3a43">{p.title}</h3>
-            <span style="font:700 13.5px/1 var(--font-body);color:#15919b;display:flex;align-items:center;gap:6px;margin-top:2px">Read <Icon name="arrow" size={14} /></span>
+            <span style="align-self:flex-start;font:600 11px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#1a5e91;background:#d7e7f3;padding:6px 10px;border-radius:100px">{p.tag}</span>
+            <h3 style="font:700 16px/1.25 var(--font-body);color:#143c5f">{p.title}</h3>
+            <span style="font:700 13.5px/1 var(--font-body);color:#1a5e91;display:flex;align-items:center;gap:6px;margin-top:2px">Read <Icon name="arrow" size={14} /></span>
           </a>
         ))}
       </div>
@@ -67,6 +67,6 @@ const blogSchema = {
     </style>
   </section>
 
-  <CTABand tone="red" />
+  <CTABand tone="navy" />
   <Footer />
 </Layout>

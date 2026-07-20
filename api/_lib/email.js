@@ -8,10 +8,14 @@ const FROM = process.env.REPORT_FROM_EMAIL || "Wellbrook Water <reports@wellbroo
 const REPLY_TO = process.env.REPLY_TO_EMAIL || "chris@wellbrookwater.com";
 const QUOTE_URL = process.env.QUOTE_URL || "https://wellbrookwater.com/free-report#quote";
 
-const NAVY = "#0E3A43";
-const TEAL = "#15919B";
-const SAND = "#FBFAF7";
-const MIST = "#EAF4F4";
+// Wellbrook "The Ridgeline" palette. Email clients can't load web fonts, so the
+// templates stay on a system stack — only the colors carry the brand.
+const NAVY = "#143C5F";   // Well Navy
+const BLUE = "#2278B5";   // Brook Blue — fills/buttons only
+const LINK = "#1A5E91";   // AA-compliant link blue for text on light
+const COPPER = "#9C5526"; // AA-safe Service Copper, for phone numbers
+const SAND = "#FAF9F6";   // Paper
+const MIST = "#EAF3F9";   // Frost
 
 export async function send({ to, subject, html }) {
   const res = await fetch(RESEND_URL, {
@@ -27,26 +31,26 @@ export async function send({ to, subject, html }) {
 }
 
 function shell(inner) {
-  return `<!doctype html><html><body style="margin:0;background:${SAND};font-family:Arial,Helvetica,sans-serif;color:#1e2d34">
+  return `<!doctype html><html><body style="margin:0;background:${SAND};font-family:Arial,Helvetica,sans-serif;color:#16232C">
   <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:24px 12px">
   <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%">
     <tr><td style="background:${NAVY};border-radius:14px 14px 0 0;padding:22px 28px">
       <span style="color:#fff;font-size:22px;font-weight:bold;letter-spacing:.2px">Wellbrook</span>
-      <span style="color:#9fd3e2;font-size:11px;letter-spacing:3px;display:block;margin-top:2px">WATER, PERFECTED</span>
+      <span style="color:#7DBEE6;font-size:11px;letter-spacing:3px;display:block;margin-top:2px">YOUR HOME&rsquo;S WATER, HANDLED</span>
     </td></tr>
-    <tr><td style="background:#ffffff;padding:30px 28px;border:1px solid #e6eef0;border-top:none;border-radius:0 0 14px 14px">
+    <tr><td style="background:#ffffff;padding:30px 28px;border:1px solid #E4DED2;border-top:none;border-radius:0 0 14px 14px">
       ${inner}
     </td></tr>
-    <tr><td style="padding:18px 28px;color:#8a9aa0;font-size:12px;line-height:18px">
+    <tr><td style="padding:18px 28px;color:#51606C;font-size:12px;line-height:18px">
       Wellbrook Water &middot; Montgomery &amp; Chester County, PA &middot;
-      <a href="tel:2678409239" style="color:#8a9aa0">(267) 840-9239</a> &middot;
-      <a href="https://wellbrookwater.com" style="color:#8a9aa0">wellbrookwater.com</a>
+      <a href="tel:2678409239" style="color:#51606C">(267) 840-9239</a> &middot;
+      <a href="https://wellbrookwater.com" style="color:#51606C">wellbrookwater.com</a>
     </td></tr>
   </table></td></tr></table></body></html>`;
 }
 
 function button(href, label) {
-  return `<a href="${href}" style="display:inline-block;background:${TEAL};color:#fff;text-decoration:none;
+  return `<a href="${href}" style="display:inline-block;background:${BLUE};color:#fff;text-decoration:none;
     font-weight:bold;font-size:16px;padding:14px 28px;border-radius:28px">${label}</a>`;
 }
 
@@ -58,7 +62,7 @@ function step(n, title, body) {
     </td>
     <td valign="top" style="padding-left:12px">
       <div style="font-size:15px;font-weight:bold;color:${NAVY};margin:0 0 2px">${title}</div>
-      <div style="font-size:14px;line-height:21px;color:#5d6b71">${body}</div>
+      <div style="font-size:14px;line-height:21px;color:#51606C">${body}</div>
     </td></tr></table>`;
 }
 
@@ -79,8 +83,8 @@ export function reportEmail({ firstName, reportUrl, phone }) {
 
     <table width="100%" cellpadding="0" cellspacing="0" style="background:${MIST};border-radius:12px;margin:0 0 28px">
       <tr><td style="padding:18px 20px">
-        <div style="color:${TEAL};font-size:12px;font-weight:bold;letter-spacing:2px;margin:0 0 6px">NO IN-HOME VISIT REQUIRED</div>
-        <p style="font-size:14px;line-height:21px;margin:0;color:#3c4f55">
+        <div style="color:${LINK};font-size:12px;font-weight:bold;letter-spacing:2px;margin:0 0 6px">NO IN-HOME VISIT REQUIRED</div>
+        <p style="font-size:14px;line-height:21px;margin:0;color:#16232C">
           We pull the most recent public water-quality data for your address and read it for you.
           No in-home visit and no wasted weekend just to find out where you stand.
         </p>
@@ -92,8 +96,8 @@ export function reportEmail({ firstName, reportUrl, phone }) {
     ${step(2, "We review your water", "We go over the public data for your area and the concern you told us about.")}
     ${step(3, "We call you", callStep)}
 
-    <p style="font-size:14px;line-height:22px;margin:20px 0 0;color:#5d6b71">
-      Want to talk sooner? Call us at <a href="tel:2678409239" style="color:${TEAL};font-weight:bold">(267) 840-9239</a>.
+    <p style="font-size:14px;line-height:22px;margin:20px 0 0;color:#51606C">
+      Want to talk sooner? Call us at <a href="tel:2678409239" style="color:${COPPER};font-weight:bold">(267) 840-9239</a>.
     </p>
   `);
 }
@@ -107,16 +111,16 @@ export function leadNotificationEmail({ formType, firstName, lastName, email, ph
   const row = (label, val) =>
     `<tr>
       <td style="padding:9px 0;width:120px;font:bold 13px/1.4 Arial;color:${NAVY};vertical-align:top">${label}</td>
-      <td style="padding:9px 0;font:400 14px/1.5 Arial;color:#1e2d34;vertical-align:top">${val || "&mdash;"}</td>
+      <td style="padding:9px 0;font:400 14px/1.5 Arial;color:#16232C;vertical-align:top">${val || "&mdash;"}</td>
     </tr>`;
   return shell(`
     <h1 style="color:${NAVY};font-size:22px;margin:0 0 6px">${isQuote ? "New quote request" : "New free-report lead"}</h1>
-    <p style="font-size:14px;line-height:21px;margin:0 0 20px;color:#5d6b71">${isQuote ? "They asked for a quote directly. Call them to build it." : "In your service area. Call them to put together a quote."}</p>
-    <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #e6eef0;border-bottom:1px solid #e6eef0">
+    <p style="font-size:14px;line-height:21px;margin:0 0 20px;color:#51606C">${isQuote ? "They asked for a quote directly. Call them to build it." : "In your service area. Call them to put together a quote."}</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #E4DED2;border-bottom:1px solid #E4DED2">
       ${row("Name", name)}
       ${system ? row("Interested in", system) : ""}
-      ${row("Phone", phone ? `<a href="tel:${telDigits}" style="color:${TEAL};font-weight:bold;text-decoration:none">${phone}</a>` : "")}
-      ${row("Email", email ? `<a href="mailto:${email}" style="color:${TEAL};text-decoration:none">${email}</a>` : "")}
+      ${row("Phone", phone ? `<a href="tel:${telDigits}" style="color:${COPPER};font-weight:bold;text-decoration:none">${phone}</a>` : "")}
+      ${row("Email", email ? `<a href="mailto:${email}" style="color:${LINK};text-decoration:none">${email}</a>` : "")}
       ${isQuote ? row("Address", address || zip) : row("Zip", zip)}
       ${isQuote ? (message ? row("Message", message) : "") : row("Owns home", ownsHome) + row("Water source", waterSource) + row("Main concern", concern)}
     </table>

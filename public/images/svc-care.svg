@@ -1,34 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Annual water testing and scheduled filter service for the Wellbrook Care plan">
   <defs>
     <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#cde6e8"/><stop offset="1" stop-color="#e9e1d2"/>
+      <stop offset="0" stop-color="#eaf3f9"/><stop offset="1" stop-color="#f0eae0"/>
     </linearGradient>
     <linearGradient id="water4" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7fd3dc"/><stop offset="1" stop-color="#15919b"/>
+      <stop offset="0" stop-color="#7dbee6"/><stop offset="1" stop-color="#2278b5"/>
     </linearGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg4)"/>
-  <path d="M0 384 q 60 -26 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 V450 H0 Z" fill="#15919b" opacity="0.15"/>
+  <path d="M0 384 q 60 -26 120 0 t 120 0 t 120 0 t 120 0 t 120 0 t 120 0 V450 H0 Z" fill="#2278b5" opacity="0.15"/>
   <!-- clipboard -->
-  <rect x="250" y="96" width="180" height="240" rx="16" fill="#ffffff" stroke="#0e3a43" stroke-width="6"/>
-  <rect x="306" y="84" width="68" height="30" rx="9" fill="#0e3a43"/>
+  <rect x="250" y="96" width="180" height="240" rx="16" fill="#ffffff" stroke="#143c5f" stroke-width="6"/>
+  <rect x="306" y="84" width="68" height="30" rx="9" fill="#143c5f"/>
   <!-- checklist rows -->
   <g>
-    <circle cx="290" cy="156" r="13" fill="#15919b"/><path d="M283 156 l5 5 9 -10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="314" y="149" width="86" height="13" rx="6" fill="#cde6e8"/>
-    <circle cx="290" cy="200" r="13" fill="#15919b"/><path d="M283 200 l5 5 9 -10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="314" y="193" width="86" height="13" rx="6" fill="#cde6e8"/>
-    <circle cx="290" cy="244" r="13" fill="#15919b"/><path d="M283 244 l5 5 9 -10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="314" y="237" width="64" height="13" rx="6" fill="#cde6e8"/>
+    <circle cx="290" cy="156" r="13" fill="#2278b5"/><path d="M283 156 l5 5 9 -10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="314" y="149" width="86" height="13" rx="6" fill="#eaf3f9"/>
+    <circle cx="290" cy="200" r="13" fill="#2278b5"/><path d="M283 200 l5 5 9 -10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="314" y="193" width="86" height="13" rx="6" fill="#eaf3f9"/>
+    <circle cx="290" cy="244" r="13" fill="#2278b5"/><path d="M283 244 l5 5 9 -10" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="314" y="237" width="64" height="13" rx="6" fill="#eaf3f9"/>
   </g>
   <!-- recurring arrows around a droplet -->
   <g transform="translate(545 216)">
-    <path d="M0 -64 a64 64 0 0 1 60 40" fill="none" stroke="#3db8c6" stroke-width="11" stroke-linecap="round"/>
-    <path d="M60 -24 l4 -22 l-22 6 Z" fill="#3db8c6"/>
-    <path d="M0 64 a64 64 0 0 1 -60 -40" fill="none" stroke="#15919b" stroke-width="11" stroke-linecap="round"/>
-    <path d="M-60 24 l-4 22 l22 -6 Z" fill="#15919b"/>
+    <path d="M0 -64 a64 64 0 0 1 60 40" fill="none" stroke="#7dbee6" stroke-width="11" stroke-linecap="round"/>
+    <path d="M60 -24 l4 -22 l-22 6 Z" fill="#7dbee6"/>
+    <path d="M0 64 a64 64 0 0 1 -60 -40" fill="none" stroke="#2278b5" stroke-width="11" stroke-linecap="round"/>
+    <path d="M-60 24 l-4 22 l22 -6 Z" fill="#2278b5"/>
     <!-- test vial -->
-    <rect x="-15" y="-40" width="30" height="92" rx="15" fill="#ffffff" stroke="#0e3a43" stroke-width="5"/>
+    <rect x="-15" y="-40" width="30" height="92" rx="15" fill="#ffffff" stroke="#143c5f" stroke-width="5"/>
     <path d="M-10 16 h20 v26 a10 10 0 0 1 -20 0 Z" fill="url(#water4)"/>
   </g>
 </svg>

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Abstract clean water ripples and droplet">
   <defs>
     <linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0e3a43"/><stop offset="1" stop-color="#0b2a31"/>
+      <stop offset="0" stop-color="#143c5f"/><stop offset="1" stop-color="#16232c"/>
     </linearGradient>
     <linearGradient id="hdrop" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7fd3dc"/><stop offset="1" stop-color="#15919b"/>
+      <stop offset="0" stop-color="#7dbee6"/><stop offset="1" stop-color="#2278b5"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#hbg)"/>
   <!-- concentric ripples -->
-  <g fill="none" stroke="#3db8c6" stroke-width="3">
+  <g fill="none" stroke="#7dbee6" stroke-width="3">
     <ellipse cx="1120" cy="430" rx="120" ry="34" opacity="0.55"/>
     <ellipse cx="1120" cy="430" rx="240" ry="70" opacity="0.4"/>
     <ellipse cx="1120" cy="430" rx="380" ry="116" opacity="0.28"/>
@@ -20,7 +20,7 @@
   <path d="M1120 150 C 1120 150 1012 286 1012 372 a108 108 0 1 0 216 0 C 1228 286 1120 150 1120 150 Z" fill="url(#hdrop)" opacity="0.9"/>
   <path d="M1066 372 q 22 -30 50 -8" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" opacity="0.7"/>
   <!-- waves -->
-  <path d="M0 640 q 100 -50 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 V900 H0 Z" fill="#15919b" opacity="0.16"/>
-  <path d="M0 720 q 100 -44 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 V900 H0 Z" fill="#3db8c6" opacity="0.12"/>
-  <path d="M0 800 q 100 -40 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 V900 H0 Z" fill="#7fd3dc" opacity="0.1"/>
+  <path d="M0 640 q 100 -50 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 V900 H0 Z" fill="#2278b5" opacity="0.16"/>
+  <path d="M0 720 q 100 -44 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 V900 H0 Z" fill="#7dbee6" opacity="0.12"/>
+  <path d="M0 800 q 100 -40 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 t 200 0 V900 H0 Z" fill="#7dbee6" opacity="0.1"/>
 </svg>

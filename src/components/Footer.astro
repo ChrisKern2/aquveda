@@ -9,17 +9,17 @@ const social = [
   { name: "google", url: business.social.google },
 ].filter((s) => s.url && !s.url.startsWith("{{"));
 ---
-<footer style="background:#0b2a31">
+<footer style="background:#16232c">
   <div class="wrap" style="padding-top:56px;padding-bottom:40px;display:flex;flex-direction:column;gap:40px">
     <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px">
       <!-- Brand -->
       <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
         <Logo variant="light" size={30} />
-        <p style="font:400 14px/1.6 var(--font-body);color:#8aa0a6;max-width:280px">Whole-home filtration, reverse osmosis, well water treatment, and specialty systems across Greater Philadelphia, focused on the western suburbs. Locally owned, licensed, and fully insured.</p>
+        <p style="font:400 14px/1.6 var(--font-body);color:#a9c2d6;max-width:280px">Whole-home filtration, reverse osmosis, well water treatment, and specialty systems across Greater Philadelphia, focused on the western suburbs. Locally owned, licensed, and fully insured.</p>
         <p style="font:600 12.5px/1.5 var(--font-body);color:#7d899a">Licensed &amp; Insured &middot; PA HIC #{`{{HIC_NUMBER}}`}</p>
         <div style="display:flex;gap:10px">
           {social.map((s) => (
-            <a href={s.url} aria-label={s.name} target="_blank" rel="noopener noreferrer" class="foot-link" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:#c9d0db">
+            <a href={s.url} aria-label={s.name} target="_blank" rel="noopener noreferrer" class="foot-link" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:#d7e7f3">
               <Icon name={s.name} size={18} />
             </a>
           ))}
@@ -28,7 +28,7 @@ const social = [
 
       <!-- Services -->
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#3db8c6">Services</div>
+        <div style="font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#7dbee6">Services</div>
         {services.map((s) => (
           <a class="foot-link" href={`/services/${s.slug}`} style="font:400 14.5px/1.3 var(--font-body)">{s.name}</a>
         ))}
@@ -38,7 +38,7 @@ const social = [
 
       <!-- Quick menu / areas -->
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#3db8c6">Service Areas</div>
+        <div style="font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#7dbee6">Service Areas</div>
         {towns.slice(0, 7).map((t) => (
           <a class="foot-link" href={`/service-areas/${t.slug}`} style="font:400 14.5px/1.3 var(--font-body)">{t.name}</a>
         ))}
@@ -47,14 +47,14 @@ const social = [
 
       <!-- Contact + hours -->
       <div style="display:flex;flex-direction:column;gap:12px">
-        <div style="font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#3db8c6">Get In Touch</div>
+        <div style="font:600 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#7dbee6">Get In Touch</div>
         <a class="foot-link" href={business.phoneHref} style="font:700 15px/1.2 var(--font-body);display:flex;align-items:center;gap:8px"><Icon name="phone" size={15} />{business.phoneDisplay}</a>
         <a class="foot-link" href={`mailto:${business.email}`} style="font:400 14px/1.3 var(--font-body);display:flex;align-items:center;gap:8px;word-break:break-all"><Icon name="mail" size={15} />{business.email}</a>
         <div class="foot-link" style="font:400 13.5px/1.4 var(--font-body);display:flex;align-items:flex-start;gap:8px"><span style="margin-top:1px"><Icon name="pin" size={15} /></span>{`{{ADDRESS}}`}<br />Serving Greater Philadelphia, PA</div>
         <div style="margin-top:6px">
           <div style="font:600 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:#7d899a;margin-bottom:8px;display:flex;align-items:center;gap:7px"><Icon name="clock" size={13} /> Office Hours</div>
           {business.hours.map((h) => (
-            <div style="display:flex;justify-content:space-between;gap:14px;font:400 13px/1.7 var(--font-body);color:#8aa0a6"><span>{h.day}</span><span style="color:#c9d0db">{h.time}</span></div>
+            <div style="display:flex;justify-content:space-between;gap:14px;font:400 13px/1.7 var(--font-body);color:#a9c2d6"><span>{h.day}</span><span style="color:#d7e7f3">{h.time}</span></div>
           ))}
         </div>
       </div>

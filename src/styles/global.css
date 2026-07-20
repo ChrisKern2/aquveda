@@ -5,21 +5,39 @@
    Exposed to Tailwind as utilities: bg-navy, text-flag, font-display, etc.
    ============================================================ */
 @theme {
-  /* Wellbrook v2 (The Crest). Legacy keys kept; values are the brand palette. */
-  --color-navy: #0e3a43;   /* Deep Marine */
-  --color-ink: #11272c;    /* Ink */
-  --color-flag: #15919b;   /* Hydro Teal */
-  --color-flag-dark: #107880;
-  --color-parchment: #e9e1d2; /* Mineral Sand */
-  --color-slate: #5e7177;  /* Slate */
+  /* ---- Wellbrook v2 "The Ridgeline" brand palette ----
+     Source of truth: design_handoff_brand_refresh/README.md
+     Legacy key names kept so existing utilities keep resolving. */
+  --color-navy: #143c5f;      /* Well Navy — primary: headings, header/footer bg */
+  --color-ink: #16232c;       /* Ink — body text, deepest surfaces */
+  --color-flag: #2278b5;      /* Brook Blue — primary accent: fills, buttons */
+  --color-flag-dark: #1a5e91; /* darkened Brook Blue — AA-safe link/text blue */
+  --color-parchment: #f0eae0; /* Limestone — warm neutral bg, cards */
+  --color-slate: #51606c;     /* Graphite — muted text, captions, rules */
   --color-success: #1f8a5b;
-  --color-accent: #3db8c6; /* Aqua */
-  --color-accent2: #7fcde0;
-  --color-mist: #eaf4f4;   /* Mist */
-  --color-ivory: #fbfaf7;  /* Ivory (page background) */
+  --color-accent: #7dbee6;    /* Clear Sky — tints, accents on dark */
+  --color-accent2: #7dbee6;
+  --color-mist: #eaf3f9;      /* Frost — cool section backgrounds */
+  --color-ivory: #faf9f6;     /* Paper — page background */
+  --color-copper: #c4703a;    /* Service Copper — CTAs & phone ONLY */
+  --color-copper-text: #9c5526; /* AA-safe copper for text */
 
-  --font-display: "Newsreader", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Named brand tokens (preferred going forward) */
+  --wb-well-navy: #143c5f;
+  --wb-brook-blue: #2278b5;
+  --wb-clear-sky: #7dbee6;
+  --wb-service-copper: #c4703a;
+  --wb-limestone: #f0eae0;
+  --wb-frost: #eaf3f9;
+  --wb-graphite: #51606c;
+  --wb-paper: #faf9f6;
+  --wb-ink: #16232c;
+  --wb-link: #1a5e91;         /* AA-compliant link blue on light */
+  --wb-border: #e4ded2;       /* hairline rules on warm neutrals */
+
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-slab: "Bitter", Georgia, serif; /* approved alternate headline face */
 }
 
 /* ============================================================
@@ -30,46 +48,57 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:var(--font-body);
-  color:#0e3a43;
-  background:#fbfaf7;
+  color:#16232c;              /* Ink */
+  background:#faf9f6;         /* Paper */
+  font-size:16px;
+  line-height:1.6;
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 img{display:block;max-width:100%}
-::selection{background:#15919b;color:#fff}
+::selection{background:#2278b5;color:#fff}
 a{color:inherit}
 h1,h2,h3,h4,p{margin:0}
+
+/* Headings: display face, Well Navy, tight tracking at display sizes. */
+h1,h2,h3,h4{font-family:var(--font-display);color:#143c5f;letter-spacing:-.5px}
+h1{letter-spacing:-1px}
 
 .wrap{max-width:1140px;margin:0 auto;padding-left:28px;padding-right:28px}
 
 /* ============================================================
    BUTTONS  (ported from the original single-page site)
    ============================================================ */
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;text-decoration:none;border-radius:9px;cursor:pointer;border:none;transition:background .15s,border-color .15s,transform .05s;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:700;text-decoration:none;border-radius:10px;cursor:pointer;border:none;transition:background .15s,border-color .15s,transform .05s;line-height:1}
 .btn:active{transform:translateY(1px)}
-.btn-primary{background:#15919b;color:#fff;box-shadow:0 4px 16px rgba(179,48,58,.3)}
-.btn-primary:hover{background:#107880}
+/* Primary = Brook Blue fill, white text. Shadows minimal per brand. */
+.btn-primary{background:#2278b5;color:#fff}
+.btn-primary:hover{background:#1a5e91}
+/* CTA = Service Copper. Reserved for the ask (book/quote) and phone. Sparing. */
+.btn-cta{background:#c4703a;color:#fff}
+.btn-cta:hover{background:#9c5526}
 .btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.3);background:transparent}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
-.btn-white{background:#fff;color:#0e3a43}
-.btn-white:hover{background:#e9e1d2}
-.btn-navy{background:#0e3a43;color:#fff}
-.btn-navy:hover{background:#0b2a31}
+.btn-white{background:#fff;color:#143c5f}
+.btn-white:hover{background:#f0eae0}
+.btn-navy{background:#143c5f;color:#fff}
+.btn-navy:hover{background:#16232c}
 
 /* ============================================================
    LINKS
    ============================================================ */
 .nav-link{text-decoration:none;transition:color .15s}
-.nav-link:hover{color:#15919b}
-.foot-link{text-decoration:none;transition:color .15s;color:#c9d0db}
+.nav-link:hover{color:#1a5e91}
+.foot-link{text-decoration:none;transition:color .15s;color:#d7e7f3}
 .foot-link:hover{color:#fff}
 .util-phone{transition:color .15s}
-.util-phone:hover{color:#3db8c6}
+.util-phone:hover{color:#7dbee6}
 
 /* ============================================================
    CARDS + HOVER
    ============================================================ */
-.card{background:#fff;border:1px solid rgba(20,30,50,.08);border-radius:18px;transition:box-shadow .15s,transform .15s}
-.card-hover:hover{box-shadow:0 16px 40px rgba(20,30,50,.13);transform:translateY(-4px)}
+.card{background:#fff;border:1px solid #e4ded2;border-radius:14px;transition:box-shadow .15s,transform .15s}
+.card-hover:hover{box-shadow:0 12px 32px rgba(20,60,95,.10);transform:translateY(-4px)}
 
 /* ============================================================
    MEGA-MENU
@@ -77,22 +106,24 @@ h1,h2,h3,h4,p{margin:0}
 .has-mega{position:relative}
 .mega{
   position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(8px);
-  min-width:300px;background:#fff;border:1px solid rgba(20,30,50,.1);border-radius:14px;
-  box-shadow:0 24px 60px rgba(20,30,50,.18);padding:12px;
+  min-width:300px;background:#fff;border:1px solid #e4ded2;border-radius:14px;
+  box-shadow:0 20px 48px rgba(20,60,95,.16);padding:12px;
   opacity:0;visibility:hidden;transition:opacity .16s,transform .16s;z-index:60;
 }
 .mega::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
 .has-mega:hover .mega,.has-mega:focus-within .mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .mega-item{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:9px;text-decoration:none;transition:background .12s}
-.mega-item:hover{background:#e9e1d2}
-.mega-item strong{font:600 14.5px/1.2 var(--font-body);color:#0e3a43}
-.mega-item span{font:400 12px/1.3 var(--font-body);color:#5e7177}
+.mega-item:hover{background:#f0eae0}
+.mega-item strong{font:600 14.5px/1.2 var(--font-body);color:#143c5f}
+.mega-item span{font:400 12px/1.3 var(--font-body);color:#51606c}
 
 /* ============================================================
    PROSE  (service + town body copy)
    ============================================================ */
-.prose p{font:400 16.5px/1.75 var(--font-body);color:#42505f;margin-bottom:16px}
+.prose p{font:400 16.5px/1.75 var(--font-body);color:#16232c;margin-bottom:16px}
 .prose p:last-child{margin-bottom:0}
+.prose a{color:#1a5e91;text-decoration:underline}
+.prose a:hover{color:#143c5f}
 
 /* ============================================================
    RESPONSIVE

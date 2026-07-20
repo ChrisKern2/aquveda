@@ -5,16 +5,16 @@ import Icon from "./Icon.astro";
 <section style="background:#fff">
   <div class="wrap" style="padding-top:74px;padding-bottom:74px;max-width:820px">
     <div style="text-align:center;margin-bottom:30px">
-      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#15919b;margin-bottom:12px">Questions</div>
-      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#0e3a43;text-wrap:balance">Common questions</h2>
+      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#1a5e91;margin-bottom:12px">Questions</div>
+      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#143c5f;text-wrap:balance">Common questions</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px">
       {homeFaqs.map((f) => (
         <details class="card" style="padding:0;overflow:hidden">
-          <summary style="cursor:pointer;list-style:none;padding:20px 24px;font:700 16.5px/1.4 var(--font-body);color:#0e3a43;display:flex;justify-content:space-between;gap:16px;align-items:center">
-            {f.q}<span style="color:#15919b;flex:none"><Icon name="chevron" size={20} /></span>
+          <summary style="cursor:pointer;list-style:none;padding:20px 24px;font:700 16.5px/1.4 var(--font-body);color:#143c5f;display:flex;justify-content:space-between;gap:16px;align-items:center">
+            {f.q}<span style="color:#1a5e91;flex:none"><Icon name="chevron" size={20} /></span>
           </summary>
-          <p style="padding:0 24px 22px;font:400 15.5px/1.7 var(--font-body);color:#42505f">{f.a}</p>
+          <p style="padding:0 24px 22px;font:400 15.5px/1.7 var(--font-body);color:#16232c">{f.a}</p>
         </details>
       ))}
     </div>

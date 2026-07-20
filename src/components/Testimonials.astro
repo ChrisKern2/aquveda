@@ -2,17 +2,17 @@
 import { testimonials, reviewPlatforms } from "../data/site";
 import Icon from "./Icon.astro";
 ---
-<section id="reviews" style="background:#e9e1d2;scroll-margin-top:80px">
+<section id="reviews" style="background:#f0eae0;scroll-margin-top:80px">
   <div class="wrap" style="padding-top:74px;padding-bottom:74px">
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
-      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#15919b;margin-bottom:12px">Reviews</div>
-      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#0e3a43;margin-bottom:18px;text-wrap:balance">What Our Neighbors Say</h2>
-      <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;color:#5e7177;font:600 13px/1 var(--font-body)">
+      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#1a5e91;margin-bottom:12px">Reviews</div>
+      <h2 style="font:700 40px/1.05 var(--font-display);letter-spacing:.01em;color:#143c5f;margin-bottom:18px;text-wrap:balance">What Our Neighbors Say</h2>
+      <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;color:#51606c;font:600 13px/1 var(--font-body)">
         {reviewPlatforms.map((p) => (
           <span style="display:flex;align-items:center;gap:7px">
             {p === "Google" && <span style="color:#4285F4;display:flex"><Icon name="google" size={18} /></span>}
             {p === "Facebook" && <span style="color:#1877F2;display:flex"><Icon name="facebook" size={18} /></span>}
-            {p !== "Google" && p !== "Facebook" && <span style="color:#15919b;display:flex"><Icon name="star" size={16} /></span>}
+            {p !== "Google" && p !== "Facebook" && <span style="color:#1a5e91;display:flex"><Icon name="star" size={16} /></span>}
             {p}
           </span>
         ))}
@@ -25,8 +25,8 @@ import Icon from "./Icon.astro";
           <span style="display:flex;gap:2px;color:#f0b429">
             <Icon name="star" size={17} /><Icon name="star" size={17} /><Icon name="star" size={17} /><Icon name="star" size={17} /><Icon name="star" size={17} />
           </span>
-          <p style="font:400 15.5px/1.7 var(--font-body);color:#42505f;flex:1">{t.quote}</p>
-          <div style="font:700 14.5px/1.3 var(--font-body);color:#0e3a43">{t.name} <span style="font-weight:500;color:#5e7177">&middot; {t.town}</span></div>
+          <p style="font:400 15.5px/1.7 var(--font-body);color:#16232c;flex:1">{t.quote}</p>
+          <div style="font:700 14.5px/1.3 var(--font-body);color:#143c5f">{t.name} <span style="font-weight:500;color:#51606c">&middot; {t.town}</span></div>
         </div>
       ))}
     </div>

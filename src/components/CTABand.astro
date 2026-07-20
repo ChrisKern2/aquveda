@@ -5,20 +5,22 @@ import Icon from "./Icon.astro";
 interface Props {
   title?: string;
   subtitle?: string;
-  tone?: "red" | "parchment";
+  // Renamed from the legacy "red"/"parchment" (a pre-Ridgeline brand) so the
+  // prop describes what actually renders.
+  tone?: "navy" | "limestone";
 }
 const {
   title = "See What's In Your Water",
   subtitle = "Get a free, plain-English report on your area's water. We'll review it, then call to put together a no-obligation quote.",
-  tone = "red",
+  tone = "navy",
 } = Astro.props;
 
-const isRed = tone === "red";
-const bg = isRed
-  ? "linear-gradient(120% 130% at 80% 20%, #1aa7b0 0%, #15919b 55%, #107880 100%)"
-  : "#e9e1d2";
-const titleColor = isRed ? "#fff" : "#0e3a43";
-const subColor = isRed ? "rgba(255,255,255,.85)" : "#5e7177";
+const isNavy = tone === "navy";
+const bg = isNavy
+  ? "linear-gradient(120% 130% at 80% 20%, #2278b5 0%, #143c5f 55%, #143c5f 100%)"
+  : "#f0eae0";
+const titleColor = isNavy ? "#fff" : "#143c5f";
+const subColor = isNavy ? "rgba(255,255,255,.85)" : "#51606c";
 ---
 <section style={`background:${bg}`}>
   <div class="wrap" style="padding-top:56px;padding-bottom:56px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap">
@@ -27,8 +29,8 @@ const subColor = isRed ? "rgba(255,255,255,.85)" : "#5e7177";
       <p style={`font:400 17px/1.6 var(--font-body);color:${subColor}`}>{subtitle}</p>
     </div>
     <div class="stack-sm" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <a class={isRed ? "btn btn-white" : "btn btn-primary"} href="/free-report" style="font:700 16px/1 var(--font-body);padding:17px 30px">Get Your Free Water Report <Icon name="arrow" size={17} /></a>
-      <a class={isRed ? "btn btn-ghost" : "btn btn-navy"} href={business.phoneHref} style="font:700 16px/1 var(--font-body);padding:17px 26px">
+      <a class="btn btn-cta" href="/free-report" style="font:700 16px/1 var(--font-body);padding:17px 30px">Get Your Free Water Report <Icon name="arrow" size={17} /></a>
+      <a class={isNavy ? "btn btn-ghost" : "btn btn-navy"} href={business.phoneHref} style="font:700 16px/1 var(--font-body);padding:17px 26px">
         <Icon name="phone" size={17} /> {business.phoneDisplay}
       </a>
     </div>

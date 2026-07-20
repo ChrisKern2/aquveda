@@ -12,7 +12,9 @@ interface Props {
   schema?: object[];
 }
 
-const { title, description, path = "/", image = "/images/hero-home.svg", schema = [] } = Astro.props;
+// Default social/OG image is the brand stacked lockup (PNG — most social
+// platforms won't render an SVG OG image).
+const { title, description, path = "/", image = "/brand/wellbrook-og.png", schema = [] } = Astro.props;
 
 const site = business.domain;
 const canonical = new URL(path, site).href;
@@ -72,10 +74,9 @@ const jsonLd = [localBusiness, ...schema];
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#0E3A43" />
+    <meta name="theme-color" content="#143C5F" />
 
     <!-- Meta (Facebook) domain verification -->
     <meta name="facebook-domain-verification" content="8zrjyichrrj6lnq35wtywblwto0x6s" />
@@ -94,11 +95,12 @@ const jsonLd = [localBusiness, ...schema];
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- Fonts -->
+    <!-- Fonts — Wellbrook "The Ridgeline": Bricolage Grotesque (display) +
+         Source Sans 3 (body), with Bitter as the approved slab alternate. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&family=Bitter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 

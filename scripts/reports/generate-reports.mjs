@@ -105,7 +105,7 @@ const esc = (s) =>
 
 const LOGO = `<svg viewBox="0 0 44 44" width="40" height="40" aria-hidden="true">
   <path d="M22 4 C22 4 8 19 8 28 a14 14 0 0 0 28 0 C36 19 22 4 22 4 Z" fill="#ffffff"/>
-  <path d="M9.2 30 a12.8 12.8 0 0 0 25.6 0 a30 30 0 0 1-25.6 0 Z" fill="#3DB8C6"/>
+  <path d="M9.2 30 a12.8 12.8 0 0 0 25.6 0 a30 30 0 0 1-25.6 0 Z" fill="#7DBEE6"/>
 </svg>`;
 
 function rowHTML([level, label, value, desc]) {
@@ -122,38 +122,38 @@ function renderHTML(r) {
   return `<!doctype html><html><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   @page { size: Letter; margin: 0; }
   * { box-sizing: border-box; }
   html,body { margin:0; padding:0; }
-  body { font-family:'Newsreader',Georgia,serif; color:#11272C; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .sans { font-family:'Inter',Arial,sans-serif; }
+  body { font-family:'Bricolage Grotesque',system-ui,sans-serif; color:#16232C; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .sans { font-family:'Source Sans 3',Arial,sans-serif; }
   .page { width:8.5in; min-height:11in; display:flex; flex-direction:column; }
-  .header { background:#0E3A43; padding:24px 48px; display:flex; align-items:center; justify-content:space-between; }
+  .header { background:#143C5F; padding:24px 48px; display:flex; align-items:center; justify-content:space-between; }
   .brand { display:flex; align-items:center; gap:13px; }
   .word { color:#fff; font-size:30px; font-weight:600; line-height:1; }
-  .wtag { color:#9fd3e2; font-size:8.5px; letter-spacing:3px; font-weight:600; margin-top:3px; }
-  .snap { color:#9fd3e2; font-size:12.5px; letter-spacing:2px; font-weight:700; }
+  .wtag { color:#7DBEE6; font-size:8.5px; letter-spacing:3px; font-weight:600; margin-top:3px; }
+  .snap { color:#7DBEE6; font-size:12.5px; letter-spacing:2px; font-weight:700; }
   .main { padding:26px 48px 0; flex:1; }
-  h1 { font-size:38px; line-height:1.05; margin:0; color:#0E3A43; font-weight:700; }
-  h1 .tag { color:#15919B; }
-  .prepared { color:#8aa0a6; font-size:12.5px; margin:5px 0 0; }
-  .provider { color:#5E7177; font-size:13.5px; line-height:1.4; margin:9px 0 0; }
+  h1 { font-size:38px; line-height:1.05; margin:0; color:#143C5F; font-weight:700; }
+  h1 .tag { color:#2278B5; }
+  .prepared { color:#A9C2D6; font-size:12.5px; margin:5px 0 0; }
+  .provider { color:#51606C; font-size:13.5px; line-height:1.4; margin:9px 0 0; }
   .intro { font-size:14.5px; line-height:1.5; margin:13px 0 0; }
-  .sectionh { font-size:18px; font-weight:700; color:#0E3A43; margin:20px 0 0; }
-  .rule { height:2px; background:#15919B; margin:7px 0 2px; }
+  .sectionh { font-size:18px; font-weight:700; color:#143C5F; margin:20px 0 0; }
+  .rule { height:2px; background:#2278B5; margin:7px 0 2px; }
   .row { display:grid; grid-template-columns:218px 142px 1fr; gap:16px; padding:13px 0; border-bottom:1px solid #e7eef0; align-items:start; }
-  .label { font-weight:700; font-size:14px; color:#0E3A43; display:flex; gap:9px; line-height:1.25; }
+  .label { font-weight:700; font-size:14px; color:#143C5F; display:flex; gap:9px; line-height:1.25; }
   .dot { width:11px; height:11px; border-radius:50%; margin-top:4px; flex:none; }
   .value { font-weight:700; font-size:13.5px; line-height:1.3; }
-  .desc { font-size:12.5px; line-height:1.45; color:#5E7177; }
-  .cta { background:#0E3A43; border-radius:14px; margin:22px 48px 0; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:26px; }
+  .desc { font-size:12.5px; line-height:1.45; color:#51606C; }
+  .cta { background:#143C5F; border-radius:14px; margin:22px 48px 0; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:26px; }
   .cta-text h3 { color:#fff; font-size:20px; margin:0 0 6px; font-weight:700; }
   .cta-text p { color:#cfe3e6; font-size:13px; line-height:1.45; margin:0; }
   .cta-act { text-align:center; flex:none; }
-  .cta-pre { color:#9fd3e2; font-size:11px; letter-spacing:.4px; margin-bottom:7px; }
-  .cta-phone { display:inline-block; background:#15919B; color:#fff; text-decoration:none; font-weight:700; font-size:19px; padding:14px 24px; border-radius:10px; white-space:nowrap; }
+  .cta-pre { color:#7DBEE6; font-size:11px; letter-spacing:.4px; margin-bottom:7px; }
+  .cta-phone { display:inline-block; background:#2278B5; color:#fff; text-decoration:none; font-weight:700; font-size:19px; padding:14px 24px; border-radius:10px; white-space:nowrap; }
   .sources { padding:14px 48px 20px; color:#9aa9ad; font-size:9px; line-height:1.45; }
 </style></head>
 <body><div class="page">

@@ -1,47 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="The complete Wellbrook home water system: whole-home filter tank, water softener, and under-sink reverse osmosis">
   <defs>
-    <linearGradient id="fbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cde6e8"/><stop offset="1" stop-color="#e9e1d2"/></linearGradient>
-    <linearGradient id="fw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd3dc"/><stop offset="1" stop-color="#15919b"/></linearGradient>
+    <linearGradient id="fbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf3f9"/><stop offset="1" stop-color="#f0eae0"/></linearGradient>
+    <linearGradient id="fw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7dbee6"/><stop offset="1" stop-color="#2278b5"/></linearGradient>
   </defs>
   <rect width="900" height="520" fill="url(#fbg)" rx="18"/>
   <!-- floor + wall line -->
-  <path d="M60 400 H840" stroke="#0e3a43" stroke-width="4" opacity="0.18"/>
+  <path d="M60 400 H840" stroke="#143c5f" stroke-width="4" opacity="0.18"/>
   <!-- main supply pipe linking the whole-home units -->
-  <path d="M150 360 H470" stroke="#5e7177" stroke-width="12" stroke-linecap="round"/>
+  <path d="M150 360 H470" stroke="#51606c" stroke-width="12" stroke-linecap="round"/>
   <!-- Filtration tank -->
   <g>
-    <rect x="120" y="170" width="110" height="200" rx="46" fill="#fff" stroke="#0e3a43" stroke-width="6"/>
+    <rect x="120" y="170" width="110" height="200" rx="46" fill="#fff" stroke="#143c5f" stroke-width="6"/>
     <clipPath id="ft2"><rect x="120" y="170" width="110" height="200" rx="46"/></clipPath>
     <g clip-path="url(#ft2)"><rect x="120" y="250" width="110" height="120" fill="url(#fw)" opacity="0.9"/><circle cx="152" cy="296" r="6" fill="#fff" opacity="0.5"/></g>
-    <rect x="142" y="144" width="66" height="36" rx="9" fill="#0e3a43"/><circle cx="175" cy="162" r="7" fill="#3db8c6"/>
-    <text x="175" y="404" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0e3a43" text-anchor="middle">FILTER</text>
+    <rect x="142" y="144" width="66" height="36" rx="9" fill="#143c5f"/><circle cx="175" cy="162" r="7" fill="#7dbee6"/>
+    <text x="175" y="404" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#143c5f" text-anchor="middle">FILTER</text>
   </g>
   <!-- Softener + brine -->
   <g>
-    <rect x="300" y="190" width="96" height="180" rx="40" fill="#fff" stroke="#0e3a43" stroke-width="6"/>
+    <rect x="300" y="190" width="96" height="180" rx="40" fill="#fff" stroke="#143c5f" stroke-width="6"/>
     <clipPath id="st2"><rect x="300" y="190" width="96" height="180" rx="40"/></clipPath>
     <g clip-path="url(#st2)"><rect x="300" y="262" width="96" height="108" fill="url(#fw)" opacity="0.85"/></g>
-    <rect x="320" y="166" width="56" height="32" rx="8" fill="#0e3a43"/><circle cx="348" cy="182" r="6" fill="#3db8c6"/>
-    <rect x="408" y="286" width="78" height="84" rx="14" fill="#fff" stroke="#0e3a43" stroke-width="6"/>
-    <g fill="#fff" stroke="#5e7177" stroke-width="2"><circle cx="430" cy="320" r="7"/><circle cx="452" cy="332" r="8"/><circle cx="468" cy="318" r="6"/></g>
-    <text x="348" y="404" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0e3a43" text-anchor="middle">SOFTENER</text>
+    <rect x="320" y="166" width="56" height="32" rx="8" fill="#143c5f"/><circle cx="348" cy="182" r="6" fill="#7dbee6"/>
+    <rect x="408" y="286" width="78" height="84" rx="14" fill="#fff" stroke="#143c5f" stroke-width="6"/>
+    <g fill="#fff" stroke="#51606c" stroke-width="2"><circle cx="430" cy="320" r="7"/><circle cx="452" cy="332" r="8"/><circle cx="468" cy="318" r="6"/></g>
+    <text x="348" y="404" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#143c5f" text-anchor="middle">SOFTENER</text>
   </g>
   <!-- Under-sink RO (kitchen) -->
   <g>
-    <rect x="560" y="250" width="260" height="14" fill="#0e3a43" opacity="0.85"/>
-    <path d="M610 250 V214 a26 26 0 0 1 26 -26 h40" fill="none" stroke="#0e3a43" stroke-width="10" stroke-linecap="round"/>
+    <rect x="560" y="250" width="260" height="14" fill="#143c5f" opacity="0.85"/>
+    <path d="M610 250 V214 a26 26 0 0 1 26 -26 h40" fill="none" stroke="#143c5f" stroke-width="10" stroke-linecap="round"/>
     <path d="M610 264 v24" stroke="url(#fw)" stroke-width="5" stroke-linecap="round"/>
     <g>
-      <rect x="610" y="300" width="34" height="86" rx="16" fill="#fff" stroke="#0e3a43" stroke-width="5"/>
-      <rect x="650" y="300" width="34" height="86" rx="16" fill="#fff" stroke="#0e3a43" stroke-width="5"/>
-      <rect x="690" y="300" width="34" height="86" rx="16" fill="#fff" stroke="#0e3a43" stroke-width="5"/>
-      <circle cx="627" cy="338" r="7" fill="#7fd3dc"/><circle cx="667" cy="338" r="7" fill="#3db8c6"/><circle cx="707" cy="338" r="7" fill="#15919b"/>
+      <rect x="610" y="300" width="34" height="86" rx="16" fill="#fff" stroke="#143c5f" stroke-width="5"/>
+      <rect x="650" y="300" width="34" height="86" rx="16" fill="#fff" stroke="#143c5f" stroke-width="5"/>
+      <rect x="690" y="300" width="34" height="86" rx="16" fill="#fff" stroke="#143c5f" stroke-width="5"/>
+      <circle cx="627" cy="338" r="7" fill="#7dbee6"/><circle cx="667" cy="338" r="7" fill="#7dbee6"/><circle cx="707" cy="338" r="7" fill="#2278b5"/>
     </g>
-    <rect x="742" y="318" width="74" height="46" rx="22" fill="#fff" stroke="#0e3a43" stroke-width="5"/>
-    <text x="779" y="348" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#15919b" text-anchor="middle">RO</text>
-    <text x="690" y="408" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#0e3a43" text-anchor="middle">DRINKING WATER</text>
+    <rect x="742" y="318" width="74" height="46" rx="22" fill="#fff" stroke="#143c5f" stroke-width="5"/>
+    <text x="779" y="348" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#2278b5" text-anchor="middle">RO</text>
+    <text x="690" y="408" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#143c5f" text-anchor="middle">DRINKING WATER</text>
   </g>
   <!-- droplet badge -->
-  <path d="M804 96 C 804 96 778 128 778 150 a26 26 0 1 0 52 0 C 830 128 804 96 804 96 Z" fill="#15919b"/>
+  <path d="M804 96 C 804 96 778 128 778 150 a26 26 0 1 0 52 0 C 830 128 804 96 804 96 Z" fill="#2278b5"/>
   <path d="M795 150 q 9 -9 18 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
 </svg>

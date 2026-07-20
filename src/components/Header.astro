@@ -11,14 +11,14 @@ import Logo from "./Logo.astro";
       <div class="nav-links" style="display:flex;align-items:center;gap:17px">
         <!-- Services mega-menu -->
         <div class="has-mega">
-          <a class="nav-link" href="/#services" style="font:600 14px/1 var(--font-body);color:#0e3a43;display:flex;align-items:center;gap:5px">
-            Services <span style="display:flex;color:#5e7177"><Icon name="chevron" size={14} /></span>
+          <a class="nav-link" href="/#services" style="font:600 14px/1 var(--font-body);color:#143c5f;display:flex;align-items:center;gap:5px">
+            Services <span style="display:flex;color:#51606c"><Icon name="chevron" size={14} /></span>
           </a>
           <div class="mega">
             {services.map((s) => (
               <div style="margin-bottom:6px">
                 <a href={`/services/${s.slug}`} class="mega-item" style="border-bottom:1px solid rgba(20,30,50,.06);border-radius:9px 9px 0 0">
-                  <strong style="color:#15919b">{s.name}</strong>
+                  <strong style="color:#1a5e91">{s.name}</strong>
                   <span>{s.short}</span>
                 </a>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px 8px;padding:6px 4px 10px">
@@ -33,23 +33,25 @@ import Logo from "./Logo.astro";
           </div>
         </div>
 
-        <a class="nav-link" href="/service-areas" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Service Areas</a>
-        {ENABLE_REVIEWS && <a class="nav-link" href="/#reviews" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Reviews</a>}
-        <a class="nav-link" href="/learn" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Learn</a>
-        <a class="nav-link" href="/care-plan" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Care Plan</a>
-        <a class="nav-link" href="/about" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">About</a>
-        <a class="nav-link" href="/contact" style="font:600 14px/1 var(--font-body);color:#0e3a43;white-space:nowrap">Contact</a>
+        <a class="nav-link" href="/service-areas" style="font:600 14px/1 var(--font-body);color:#143c5f;white-space:nowrap">Service Areas</a>
+        {ENABLE_REVIEWS && <a class="nav-link" href="/#reviews" style="font:600 14px/1 var(--font-body);color:#143c5f;white-space:nowrap">Reviews</a>}
+        <a class="nav-link" href="/learn" style="font:600 14px/1 var(--font-body);color:#143c5f;white-space:nowrap">Learn</a>
+        <a class="nav-link" href="/care-plan" style="font:600 14px/1 var(--font-body);color:#143c5f;white-space:nowrap">Care Plan</a>
+        <a class="nav-link" href="/about" style="font:600 14px/1 var(--font-body);color:#143c5f;white-space:nowrap">About</a>
+        <a class="nav-link" href="/contact" style="font:600 14px/1 var(--font-body);color:#143c5f;white-space:nowrap">Contact</a>
 
-        <a href={business.phoneHref} style="font:700 15px/1 var(--font-display);letter-spacing:.03em;color:#0e3a43;text-decoration:none;display:flex;align-items:center;gap:7px;white-space:nowrap">
-          <span style="color:#15919b;display:flex"><Icon name="phone" size={16} /></span>
+        <!-- Phone = Service Copper per brand. #9C5526 is the AA-safe copper for
+             text on light backgrounds (the #C4703A fill tone is not). -->
+        <a href={business.phoneHref} style="font:700 15px/1 var(--font-display);letter-spacing:.03em;color:#9c5526;text-decoration:none;display:flex;align-items:center;gap:7px;white-space:nowrap">
+          <span style="color:#9c5526;display:flex"><Icon name="phone" size={16} /></span>
           {business.phoneDisplay}
         </a>
       </div>
 
-      <a class="btn btn-primary" href="/free-report" style="font:700 14px/1 var(--font-body);padding:12px 18px;letter-spacing:.02em;white-space:nowrap">Free Water Report</a>
+      <a class="btn btn-cta" href="/free-report" style="font:700 14px/1 var(--font-body);padding:12px 18px;letter-spacing:.02em;white-space:nowrap">Free Water Report</a>
 
       <!-- Mobile toggle -->
-      <button id="navToggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;color:#0e3a43;padding:4px">
+      <button id="navToggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;color:#143c5f;padding:4px">
         <Icon name="menu" size={26} />
       </button>
     </nav>
@@ -59,15 +61,15 @@ import Logo from "./Logo.astro";
   <div id="mobileMenu" style="display:none;border-top:1px solid rgba(20,30,50,.08);background:#fff">
     <div class="wrap" style="padding-top:14px;padding-bottom:18px;display:flex;flex-direction:column;gap:4px">
       {services.map((s) => (
-        <a href={`/services/${s.slug}`} style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">{s.name}</a>
+        <a href={`/services/${s.slug}`} style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">{s.name}</a>
       ))}
-      <a href="/service-areas" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Service Areas</a>
-      {ENABLE_REVIEWS && <a href="/#reviews" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Reviews</a>}
-      <a href="/learn" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Learn</a>
-      <a href="/care-plan" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Care Plan</a>
-      <a href="/about" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">About</a>
-      <a href="/contact" style="font:600 15px/1 var(--font-body);color:#0e3a43;text-decoration:none;padding:11px 4px">Contact</a>
-      <a href="/free-report" class="btn btn-primary" style="font:700 15px/1 var(--font-body);padding:14px;justify-content:center;margin-top:10px">Get Your Free Water Report</a>
+      <a href="/service-areas" style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Service Areas</a>
+      {ENABLE_REVIEWS && <a href="/#reviews" style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Reviews</a>}
+      <a href="/learn" style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Learn</a>
+      <a href="/care-plan" style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">Care Plan</a>
+      <a href="/about" style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px;border-bottom:1px solid rgba(20,30,50,.06)">About</a>
+      <a href="/contact" style="font:600 15px/1 var(--font-body);color:#143c5f;text-decoration:none;padding:11px 4px">Contact</a>
+      <a href="/free-report" class="btn btn-cta" style="font:700 15px/1 var(--font-body);padding:14px;justify-content:center;margin-top:10px">Get Your Free Water Report</a>
       <a href={business.phoneHref} class="btn btn-navy" style="font:700 15px/1 var(--font-body);padding:14px;justify-content:center;margin-top:6px">Call {business.phoneDisplay}</a>
     </div>
   </div>

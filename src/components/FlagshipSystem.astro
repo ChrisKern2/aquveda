@@ -2,34 +2,34 @@
 import { flagship, business } from "../data/site";
 import Icon from "./Icon.astro";
 ---
-<section id="flagship" style="background:#e9e1d2">
+<section id="flagship" style="background:#f0eae0">
   <div class="wrap" style="padding-top:78px;padding-bottom:78px">
     <div style="text-align:center;max-width:640px;margin:0 auto 36px">
-      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#15919b;margin-bottom:12px">{flagship.eyebrow}</div>
-      <h2 style="font:700 42px/1.04 var(--font-display);letter-spacing:.01em;color:#0e3a43;text-wrap:balance">Everything your home needs, in one install</h2>
+      <div style="font:600 12.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#1a5e91;margin-bottom:12px">{flagship.eyebrow}</div>
+      <h2 style="font:700 42px/1.04 var(--font-display);letter-spacing:.01em;color:#143c5f;text-wrap:balance">Everything your home needs, in one install</h2>
     </div>
 
-    <div class="card hero-grid" style="display:grid;grid-template-columns:1.05fr 1fr;gap:0;overflow:hidden;box-shadow:0 30px 70px rgba(14,58,67,.20);border:none;border-radius:20px">
+    <div class="card hero-grid" style="display:grid;grid-template-columns:1.05fr 1fr;gap:0;overflow:hidden;box-shadow:0 30px 70px rgba(20, 60, 95,.20);border:none;border-radius:20px">
       <!-- Image -->
-      <div style="position:relative;background:linear-gradient(160deg,#ffffff,#eaf4f4);display:flex;align-items:center;justify-content:center;padding:34px">
-        <span style="position:absolute;top:20px;left:20px;font:700 12px/1 var(--font-body);letter-spacing:.04em;color:#0e3a43;background:#7fd3dc;padding:8px 13px;border-radius:100px">Save $3,299</span>
+      <div style="position:relative;background:linear-gradient(160deg,#ffffff,#eaf3f9);display:flex;align-items:center;justify-content:center;padding:34px">
+        <span style="position:absolute;top:20px;left:20px;font:700 12px/1 var(--font-body);letter-spacing:.04em;color:#143c5f;background:#7dbee6;padding:8px 13px;border-radius:100px">Save $3,299</span>
         <img src={flagship.image} alt={flagship.imageAlt} width="900" height="900" loading="lazy" style="width:100%;height:auto"/>
       </div>
       <!-- Content -->
       <div style="padding:44px 44px 40px;display:flex;flex-direction:column;gap:16px;background:#fff">
-        <h3 style="font:700 32px/1.06 var(--font-display);letter-spacing:.01em;color:#0e3a43;text-wrap:balance">{flagship.name}</h3>
-        <p style="font:400 16.5px/1.6 var(--font-body);color:#42505f">{flagship.tagline}</p>
+        <h3 style="font:700 32px/1.06 var(--font-display);letter-spacing:.01em;color:#143c5f;text-wrap:balance">{flagship.name}</h3>
+        <p style="font:400 16.5px/1.6 var(--font-body);color:#16232c">{flagship.tagline}</p>
 
         <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:2px">
-          <span style="font:700 38px/1 var(--font-display);color:#0e3a43">{flagship.price}</span>
+          <span style="font:700 38px/1 var(--font-display);color:#143c5f">{flagship.price}</span>
           <span style="font:500 18px/1 var(--font-body);color:#9aa9ad;text-decoration:line-through">{flagship.priceRegular}</span>
-          <span style="font:600 14px/1 var(--font-body);color:#15919b">{flagship.priceUnit}</span>
+          <span style="font:600 14px/1 var(--font-body);color:#1a5e91">{flagship.priceUnit}</span>
         </div>
-        <p style="font:500 14px/1.5 var(--font-body);color:#5e7177;margin-top:-4px">{flagship.priceNote}</p>
+        <p style="font:500 14px/1.5 var(--font-body);color:#51606c;margin-top:-4px">{flagship.priceNote}</p>
 
         <ul style="list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:10px">
           {flagship.features.map((f) => (
-            <li style="display:flex;align-items:flex-start;gap:10px"><span style="color:#1f8a5b;margin-top:1px;flex:none"><Icon name="check" size={18} /></span><span style="font:500 14.5px/1.5 var(--font-body);color:#0e3a43">{f}</span></li>
+            <li style="display:flex;align-items:flex-start;gap:10px"><span style="color:#1f8a5b;margin-top:1px;flex:none"><Icon name="check" size={18} /></span><span style="font:500 14.5px/1.5 var(--font-body);color:#143c5f">{f}</span></li>
           ))}
         </ul>
 
