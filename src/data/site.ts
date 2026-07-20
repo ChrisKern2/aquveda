@@ -16,8 +16,9 @@ export const business = {
   foundedYear: 2026,
   priceRange: "$$$",
   tagline: "Water, perfected.",
+  // PA Home Improvement Contractor registration. Stored verbatim as issued.
+  hicNumber: "PA220445",
   // Placeholders, do not invent. Fill in when known (see README checklist).
-  hicNumber: "{{HIC_NUMBER}}",
   address: "{{ADDRESS}}",
   reviewCount: "{{REVIEW_COUNT}}",
   // Office hours, edit to your real availability.

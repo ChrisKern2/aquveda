@@ -16,7 +16,10 @@ const social = [
       <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
         <Logo variant="light" size={30} />
         <p style="font:400 14px/1.6 var(--font-body);color:#a9c2d6;max-width:280px">Whole-home filtration, reverse osmosis, well water treatment, and specialty systems across Greater Philadelphia, focused on the western suburbs. Locally owned, licensed, and fully insured.</p>
-        <p style="font:600 12.5px/1.5 var(--font-body);color:#7d899a">Licensed &amp; Insured &middot; PA HIC #{`{{HIC_NUMBER}}`}</p>
+        <!-- Reads from site.ts so the registration number has one source of
+             truth. The number itself already carries the "PA" prefix, so the
+             label is "HIC #" rather than "PA HIC #". -->
+        <p style="font:600 12.5px/1.5 var(--font-body);color:#7d899a">Licensed &amp; Insured &middot; HIC #{business.hicNumber}</p>
         <div style="display:flex;gap:10px">
           {social.map((s) => (
             <a href={s.url} aria-label={s.name} target="_blank" rel="noopener noreferrer" class="foot-link" style="width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:#d7e7f3">
