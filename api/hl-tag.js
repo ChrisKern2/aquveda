@@ -24,7 +24,16 @@ import { classifyZip } from "./_data/serviceArea.js";
 
 const HL_BASE = "https://services.leadconnectorhq.com";
 const HL_VERSION = "2021-07-28";
-const LOCATION_ID = process.env.HL_LOCATION_ID || "1GISJlacwjrTTrHeKPO3";
+
+// The location that owns the Free Water Report form (embed RMaiQcWNgPCGwWVfnEiY).
+// A form's submissions create contacts in the form's OWN location, and a Private
+// Integration Token is scoped to a single location — so this must match the form
+// or every tag write returns 403 "does not have access to this location".
+//
+// NOTE (2026-07-21): this is deliberately NOT the same location as the quote-form
+// webhooks in api/free-report.js, which post to 1GISJlacwjrTTrHeKPO3. Two live
+// sub-accounts are in play; see "Two locations" in the handoff notes.
+const LOCATION_ID = process.env.HL_LOCATION_ID || "h083Sct2YuECDbsldX8U";
 
 // Exact tags the HighLevel workflow branches on. Lowercase, with spaces.
 //
