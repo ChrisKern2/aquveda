@@ -1,0 +1,128 @@
+---
+// Post-submission page for the HighLevel "Free Water Report Form".
+//
+// HighLevel's form redirects here after a successful submit. This page is the
+// website's half of the contract (see Main/HighLevel Form Migration Handoff):
+//
+//   1. Fire the Meta "Lead" conversion — browser Pixel + server CAPI sharing one
+//      event id so Meta de-duplicates them into a single Lead. This is the only
+//      place a Lead can fire now that the form lives in a cross-origin iframe.
+//   2. Hand the ZIP to /api/hl-tag, which decides in-area vs out-of-area against
+//      the 576-ZIP list and tags the HighLevel contact `out of area` if needed.
+//
+// noindex + excluded from the sitemap: it must never be a search entry point,
+// because loading it fires a conversion.
+import Layout from "../layouts/Layout.astro";
+import TopBar from "../components/TopBar.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Icon from "../components/Icon.astro";
+import { business } from "../data/site";
+---
+<Layout
+  title="Thank you | Wellbrook Water"
+  description="Your free water report request is in. We'll be in touch shortly."
+  path="/thank-you"
+  noindex={true}
+>
+  <TopBar />
+  <Header />
+
+  <section style="background:#eaf3f9">
+    <div class="wrap" style="padding:76px 0 84px">
+      <div class="card" style="max-width:620px;margin:0 auto;padding:44px 40px;background:#fff;border:none;border-radius:16px;box-shadow:0 20px 50px rgba(20,60,95,.12);text-align:center">
+        <div style="width:64px;height:64px;border-radius:50%;background:#eaf3f9;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;color:#1f8a5b">
+          <Icon name="check" size={32} />
+        </div>
+
+        <h1 style="font:700 34px/1.1 var(--font-display);letter-spacing:-.5px;color:#143c5f;margin-bottom:14px;text-wrap:balance">
+          We got it. Check your email.
+        </h1>
+
+        <p style="font:400 17px/1.65 var(--font-body);color:#16232c;margin-bottom:10px">
+          Your free water report is on its way and should land in the next minute or two.
+          If you don't see it, check your spam folder.
+        </p>
+        <p style="font:400 16px/1.65 var(--font-body);color:#51606c;margin-bottom:28px">
+          We'll also give you a quick call to go over what the results mean for your home and
+          put together a free, no-obligation quote. No pressure, and no salesperson at your table.
+        </p>
+
+        <div class="stack-sm" style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
+          <a class="btn btn-cta" href={business.phoneHref} style="font:700 15px/1 var(--font-body);padding:16px 26px">
+            <Icon name="phone" size={16} /> Call {business.phoneDisplay}
+          </a>
+          <a class="btn btn-navy" href="/learn" style="font:700 15px/1 var(--font-body);padding:16px 24px">
+            Read about your water <Icon name="arrow" size={16} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+  (function () {
+    // ---- Read the visitor's details off the redirect URL ------------------
+    // HighLevel's redirect param names aren't fixed, so accept the common
+    // spellings rather than depending on one exact key.
+    var q = new URLSearchParams(window.location.search);
+    function pick() {
+      for (var i = 0; i < arguments.length; i++) {
+        var v = q.get(arguments[i]);
+        if (v && v.trim()) return v.trim();
+      }
+      return "";
+    }
+
+    var zip = pick("zip", "postal_code", "postalCode", "postal", "ZIP", "zipcode", "zip_code");
+    var email = pick("email", "contact_email", "contactEmail");
+    var phone = pick("phone", "contact_phone", "contactPhone");
+    var contactId = pick("contact_id", "contactId", "contactID", "id");
+
+    // ---- Fire the Meta Lead exactly once ---------------------------------
+    // A refresh would otherwise mint a new event id and double-count the
+    // conversion (Meta only de-dupes matching event ids). Key the guard on the
+    // contact/email so a genuinely different lead in the same tab still counts.
+    var guardKey = "wb_lead_fired:" + (contactId || email || zip || "anon");
+    var alreadyFired = false;
+    try { alreadyFired = sessionStorage.getItem(guardKey) === "1"; } catch (e) {}
+
+    if (!alreadyFired) {
+      try { sessionStorage.setItem(guardKey, "1"); } catch (e) {}
+
+      var eventId = "lead_" + Date.now() + "_" + Math.random().toString(36).slice(2);
+
+      // 1) Browser event (Pixel)
+      if (window.fbq) window.fbq("track", "Lead", {}, { eventID: eventId });
+
+      // 2) Server event (Conversions API), same event id -> de-duplicated.
+      fetch("/api/meta-capi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          eventId: eventId,
+          email: email,
+          phone: phone,
+          zip: zip,
+          eventSourceUrl: window.location.href,
+        }),
+        keepalive: true,
+      }).catch(function () {});
+    }
+
+    // ---- Hand the ZIP to the server for the in/out-of-area decision -------
+    // Runs on every load (it is idempotent — re-tagging is a no-op) so a
+    // refresh can still recover a tag that failed the first time.
+    if (zip || email || phone || contactId) {
+      fetch("/api/hl-tag", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ zip: zip, email: email, phone: phone, contactId: contactId }),
+        keepalive: true,
+      }).catch(function () {});
+    }
+  })();
+</script>

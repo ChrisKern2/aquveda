@@ -8,7 +8,10 @@ export default defineConfig({
   site: 'https://wellbrookwater.com',
   output: 'static',
   trailingSlash: 'ignore',
-  integrations: [sitemap()],
+  // /thank-you is a post-conversion page: keep it out of the sitemap so it
+  // never gets indexed or surfaced as an entry point (it also fires the Meta
+  // Lead event, which should only happen after a real submission).
+  integrations: [sitemap({ filter: (page) => !page.includes('/thank-you') })],
   vite: {
     plugins: [tailwindcss()],
   },

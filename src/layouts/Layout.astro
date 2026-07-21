@@ -10,11 +10,13 @@ interface Props {
   image?: string;
   /** Extra JSON-LD objects (Service, FAQPage, town LocalBusiness, etc.). */
   schema?: object[];
+  /** Keep the page out of search results (post-conversion pages, utility pages). */
+  noindex?: boolean;
 }
 
 // Default social/OG image is the brand stacked lockup (PNG — most social
 // platforms won't render an SVG OG image).
-const { title, description, path = "/", image = "/brand/wellbrook-og.png", schema = [] } = Astro.props;
+const { title, description, path = "/", image = "/brand/wellbrook-og.png", schema = [], noindex = false } = Astro.props;
 
 const site = business.domain;
 const canonical = new URL(path, site).href;
@@ -73,6 +75,7 @@ const jsonLd = [localBusiness, ...schema];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
