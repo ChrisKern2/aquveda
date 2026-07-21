@@ -26,13 +26,20 @@ const HL_BASE = "https://services.leadconnectorhq.com";
 const HL_VERSION = "2021-07-28";
 const LOCATION_ID = process.env.HL_LOCATION_ID || "1GISJlacwjrTTrHeKPO3";
 
-// Exact tag the HighLevel workflow branches on. Lowercase, with spaces.
+// Exact tags the HighLevel workflow branches on. Lowercase, with spaces.
+//
+// FAIL-SAFE TAGGING (Chris's decision, 2026-07-21): tag BOTH outcomes, and let
+// HighLevel branch on the PRESENCE of a tag rather than the absence of one.
+//
+// Why it matters: this tag is applied by the thank-you page. If a visitor never
+// lands there (tab closed, JS blocked, mobile drops the redirect) no tag is
+// written. Branching on "no `out of area` tag" would then read as in-area and
+// send a report for somewhere we may not serve. Branching on an explicit tag
+// means an unclassified lead falls into HighLevel's third branch and gets
+// flagged for manual review instead of quietly getting the wrong treatment.
 const OUT_OF_AREA_TAG = "out of area";
-// The contract says in-area needs no tag. Flip to true to also tag `in area`
-// (recommended if the workflow ever branches on presence-of-in-area instead,
-// which fails safe when a visitor never reaches the thank-you page).
-const ALSO_TAG_IN_AREA = false;
 const IN_AREA_TAG = "in area";
+const ALSO_TAG_IN_AREA = true;
 
 function hlHeaders(token) {
   return {
@@ -82,7 +89,10 @@ export default async function handler(req, res) {
     const cls = classifyZip(zip);
     const area = cls.ok ? "in" : cls.reason === "invalid" ? "invalid" : "out";
 
-    // Nothing to do unless it's out of area (or in-area tagging is enabled).
+    // in -> "in area", out -> "out of area", invalid/missing ZIP -> no tag at
+    // all, which is deliberate: an untagged contact drops into HighLevel's
+    // third branch ("couldn't classify, check manually") rather than being
+    // guessed into the wrong treatment.
     const tagToApply =
       area === "out" ? OUT_OF_AREA_TAG : area === "in" && ALSO_TAG_IN_AREA ? IN_AREA_TAG : null;
 
