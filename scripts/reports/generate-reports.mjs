@@ -9,9 +9,19 @@
 //   msedge --headless --print-to-pdf=public/reports/<slug>.pdf <slug>.html
 // ============================================================
 
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 
-const PREPARED = "Prepared June 2026";
+const HERE = dirname(fileURLToPath(import.meta.url));
+
+// Stamped on every report. Derived from the clock rather than hardcoded: the
+// month a report was *prepared* is exactly the month it was generated, and a
+// hardcoded string silently goes stale (it read "June 2026" into late July).
+// Override with REPORT_PREPARED to reprint an older run verbatim.
+const PREPARED =
+  process.env.REPORT_PREPARED ||
+  `Prepared ${new Date().toLocaleString("en-US", { month: "long", year: "numeric" })}`;
 
 // level -> color (dot + value). warn=amber, alert=red, ok=green.
 const COLOR = { warn: "#C0860E", alert: "#C0392B", ok: "#1F8A5B" };
@@ -103,10 +113,25 @@ const reports = [
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-const LOGO = `<svg viewBox="0 0 44 44" width="40" height="40" aria-hidden="true">
-  <path d="M22 4 C22 4 8 19 8 28 a14 14 0 0 0 28 0 C36 19 22 4 22 4 Z" fill="#ffffff"/>
-  <path d="M9.2 30 a12.8 12.8 0 0 0 25.6 0 a30 30 0 0 1-25.6 0 Z" fill="#7DBEE6"/>
-</svg>`;
+// The real brand asset, inlined as a data URI. Two reasons it's the reversed
+// (white) lockup and not the primary one: the header bar is navy #143C5F, and
+// the primary lockup's wordmark is navy — it would be invisible. Inlining also
+// keeps each generated .html self-contained, so the headless-print step works
+// from any temp directory without resolving a relative path into /public.
+//
+// This is the horizontal lockup, not the stacked one: a stacked (near-square)
+// mark would force the navy header band roughly twice as tall to keep the
+// wordmark legible, pushing the whole first page down.
+const LOGO_FILE = join(HERE, "../../public/brand/wellbrook-logo-horizontal-white.png");
+const LOGO_W = 1382;
+const LOGO_H = 424; // native pixels — height below is derived so it can't distort
+const LOGO_RENDER_H = 46;
+const LOGO_SRC = `data:image/png;base64,${readFileSync(LOGO_FILE).toString("base64")}`;
+
+// The lockup already contains the words "Wellbrook Water", so it replaces the
+// old mark AND the wordmark/tagline text block that used to sit beside it.
+const LOGO = `<img src="${LOGO_SRC}" alt="Wellbrook Water"
+  width="${Math.round(LOGO_RENDER_H * (LOGO_W / LOGO_H))}" height="${LOGO_RENDER_H}">`;
 
 function rowHTML([level, label, value, desc]) {
   const c = COLOR[level];
@@ -131,14 +156,16 @@ function renderHTML(r) {
   .sans { font-family:'Source Sans 3',Arial,sans-serif; }
   .page { width:8.5in; min-height:11in; display:flex; flex-direction:column; }
   .header { background:#143C5F; padding:24px 48px; display:flex; align-items:center; justify-content:space-between; }
-  .brand { display:flex; align-items:center; gap:13px; }
-  .word { color:#fff; font-size:30px; font-weight:600; line-height:1; }
-  .wtag { color:#7DBEE6; font-size:8.5px; letter-spacing:3px; font-weight:600; margin-top:3px; }
+  .brand { display:flex; align-items:center; }
+  .brand img { display:block; height:${LOGO_RENDER_H}px; width:auto; }
   .snap { color:#7DBEE6; font-size:12.5px; letter-spacing:2px; font-weight:700; }
   .main { padding:26px 48px 0; flex:1; }
   h1 { font-size:38px; line-height:1.05; margin:0; color:#143C5F; font-weight:700; }
   h1 .tag { color:#2278B5; }
-  .prepared { color:#A9C2D6; font-size:12.5px; margin:5px 0 0; }
+  /* Was #A9C2D6 — a header-bar tint that had been used on the white body,
+     leaving this line at ~1.85:1 against white and effectively unreadable.
+     #51606C is the body slate already used for .provider/.desc (~7:1). */
+  .prepared { color:#51606C; font-size:12.5px; margin:5px 0 0; }
   .provider { color:#51606C; font-size:13.5px; line-height:1.4; margin:9px 0 0; }
   .intro { font-size:14.5px; line-height:1.5; margin:13px 0 0; }
   .sectionh { font-size:18px; font-weight:700; color:#143C5F; margin:20px 0 0; }
@@ -158,7 +185,7 @@ function renderHTML(r) {
 </style></head>
 <body><div class="page">
   <div class="header">
-    <div class="brand">${LOGO}<div><div class="word">Wellbrook</div><div class="wtag sans">WATER, PERFECTED</div></div></div>
+    <div class="brand">${LOGO}</div>
     <div class="snap sans">WATER QUALITY SNAPSHOT</div>
   </div>
   <div class="main">
