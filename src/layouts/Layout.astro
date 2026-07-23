@@ -141,13 +141,11 @@ const jsonLd = [localBusiness, ...schema];
          homepage MUST carry the widget — HighLevel's checker crawls the root
          domain — which is why its quote form moved to /contact. If a phone
          form is ever added to another page, add its path here. -->
+    {/* Kept on ONE line, attributes in HighLevel's original order — their
+        compliance crawler may match the tag with a naive regex that a
+        multi-line tag defeats. Do not reformat. */}
     {!["/contact", "/free-report"].includes(path) && (
-      <script
-        is:inline
-        src="https://widgets.leadconnectorhq.com/loader.js"
-        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="6a6224d602d958a92e70c237"
-        data-source="WEB_USER"></script>
+      <script is:inline src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a6224d602d958a92e70c237" data-source="WEB_USER"></script>
     )}
   </body>
 </html>
