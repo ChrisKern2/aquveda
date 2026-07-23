@@ -132,5 +132,14 @@ const jsonLd = [localBusiness, ...schema];
   </head>
   <body>
     <slot />
+
+    <!-- HighLevel chat widget (A2P 10DLC compliance) — is:inline so Astro
+         doesn't bundle/defer it and strip the data-* attributes it reads. -->
+    <script
+      is:inline
+      src="https://widgets.leadconnectorhq.com/loader.js"
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="6a6224d602d958a92e70c237"
+      data-source="WEB_USER"></script>
   </body>
 </html>
