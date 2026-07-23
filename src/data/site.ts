@@ -21,8 +21,7 @@ export const business = {
   // Placeholders, do not invent. Fill in when known (see README checklist).
   // Chris's call (2026-07-21): the street address is published ONLY in the
   // privacy policy's Contact section; everywhere else (footer pin) says
-  // "Serving Greater Philadelphia, PA". Mailing address: 1919 Market Street,
-  // Philadelphia, PA.
+  // "Serving Greater Philadelphia, PA". Registered address: 608 Riviera Drive.
   address: "Serving Greater Philadelphia, PA",
   reviewCount: "{{REVIEW_COUNT}}",
   // Office hours, edit to your real availability.

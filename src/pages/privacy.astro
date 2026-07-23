@@ -3,8 +3,8 @@
 // (Chris's docx, 2026-07-21). Deviations from the doc, all deliberate:
 //  - The business address appears ONLY in the closing Contact section
 //    (per Chris: address on the last page only, nowhere else on the site).
-//    The doc's opening line carried a different address (608 Riviera Drive);
-//    Chris supplied 1919 Market Street as the one to publish.
+//    608 Riviera Drive is the registered address, confirmed by Chris
+//    2026-07-21 — it matches the doc's opening line.
 //  - "[united states]" template bracket resolved to "United States".
 //  - "in writing to you" corrected to "in writing to us" (template typo).
 //  - The UK regulator (ICO) swapped for the FTC — the doc was built on a
@@ -50,7 +50,7 @@ import { business } from "../data/site";
 
       <p><strong>Changes to our privacy policy.</strong> Any changes we may make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail. Please check back frequently to see any updates or changes to our privacy policy.</p>
 
-      <p><strong>Contact.</strong> Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to <a href={`mailto:${business.email}`} style="color:#1a5e91;font-weight:600;text-decoration:none">{business.email}</a>, by phone at {business.phoneDisplay}, or by mail to Wellbrook Water, 1919 Market Street, Philadelphia, PA.</p>
+      <p><strong>Contact.</strong> Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to <a href={`mailto:${business.email}`} style="color:#1a5e91;font-weight:600;text-decoration:none">{business.email}</a>, by phone at {business.phoneDisplay}, or by mail to Wellbrook Water, 608 Riviera Drive.</p>
     </div>
   </section>
   <Footer />
