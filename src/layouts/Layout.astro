@@ -129,23 +129,24 @@ const jsonLd = [localBusiness, ...schema];
       src="https://www.facebook.com/tr?id=1025841546937119&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-  </head>
-  <body>
-    <slot />
 
     <!-- HighLevel chat widget (A2P 10DLC compliance) — is:inline so Astro
          doesn't bundle/defer it and strip the data-* attributes it reads.
+         In <head> because HighLevel's compliance crawler failed to detect it
+         at the end of <body>; their instructions say head or body, and a
+         parser-based checker may only scan head. Kept on ONE line in their
+         original attribute order — a naive regex may match the exact tag.
          NOT rendered on pages with a phone-collecting form (/contact,
          /free-report): carriers reject registrations where the widget shares
          a page with another opt-in source ("Multiple Opt-ins" check). The
-         homepage MUST carry the widget — HighLevel's checker crawls the root
-         domain — which is why its quote form moved to /contact. If a phone
-         form is ever added to another page, add its path here. -->
-    {/* Kept on ONE line, attributes in HighLevel's original order — their
-        compliance crawler may match the tag with a naive regex that a
-        multi-line tag defeats. Do not reformat. */}
+         homepage MUST carry the widget — the crawler checks the root domain —
+         which is why its quote form moved to /contact. If a phone form is
+         ever added to another page, add its path here. -->
     {!["/contact", "/free-report"].includes(path) && (
       <script is:inline src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a6224d602d958a92e70c237" data-source="WEB_USER"></script>
     )}
+  </head>
+  <body>
+    <slot />
   </body>
 </html>
