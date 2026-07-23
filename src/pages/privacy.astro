@@ -1,4 +1,14 @@
 ---
+// Policy language transplanted from "Home Service Blueprint Privacy Policy"
+// (Chris's docx, 2026-07-21). Deviations from the doc, all deliberate:
+//  - The business address appears ONLY in the closing Contact section
+//    (per Chris: address on the last page only, nowhere else on the site).
+//    The doc's opening line carried a different address (608 Riviera Drive);
+//    Chris supplied 1919 Market Street as the one to publish.
+//  - "[united states]" template bracket resolved to "United States".
+//  - "in writing to you" corrected to "in writing to us" (template typo).
+//  - The UK regulator (ICO) swapped for the FTC — the doc was built on a
+//    UK template; a UK complaints body is inapplicable to a PA business.
 import Layout from "../layouts/Layout.astro";
 import TopBar from "../components/TopBar.astro";
 import Header from "../components/Header.astro";
@@ -12,11 +22,35 @@ import { business } from "../data/site";
   <PageHero eyebrow="Legal" title="Privacy Policy" crumbs={[{ label: "Home", href: "/" }, { label: "Privacy" }]} />
   <section style="background:#fff">
     <div class="wrap prose" style="padding-top:56px;padding-bottom:70px;max-width:760px">
-      <p><strong>Last updated:</strong> {`{{LAST_UPDATED_DATE}}`}</p>
-      <p>Wellbrook ("we," "us") respects your privacy. This page explains what we collect and how we use it. {`{{REVIEW_WITH_COUNSEL, replace this placeholder policy with your finalized terms.}}`}</p>
-      <p><strong>Information we collect.</strong> When you request a quote or contact us, we collect the details you provide, such as your name, phone number, email, address, and the services you're interested in, through our quote form (powered by Jobber) and by phone or email.</p>
-      <p><strong>How we use it.</strong> We use your information solely to respond to your request, provide and schedule services, and follow up about your project. We do not sell your personal information.</p>
-      <p><strong>Contact.</strong> Questions about this policy? Email us at <a href={`mailto:${business.email}`} style="color:#1a5e91;font-weight:600;text-decoration:none">{business.email}</a> or call {business.phoneDisplay}.</p>
+      <p><strong>Last updated:</strong> July 21, 2026</p>
+
+      <p>This Privacy Policy is prepared by Wellbrook Water ("We"). We are committed to protecting and preserving the privacy of our visitors when visiting our site or communicating electronically with us.</p>
+
+      <p>This policy sets out how we process any personal data we collect from you or that you provide to us through our website and social media sites. We confirm that we will keep your information secure and that we will comply fully with all applicable United States data protection legislation and regulations. Please read the following carefully to understand what happens to personal data that you choose to provide to us, or that we collect from you when you visit our sites. By submitting information you are accepting and consenting to the practices described in this policy.</p>
+
+      <p><strong>Types of information we may collect from you.</strong> We may collect, store and use the following kinds of personal information about individuals who visit and use our website and social media sites:</p>
+
+      <p><em>Information you supply to us.</em> You may supply us with information about you by filling in forms on our website or social media. This includes information you provide when you submit a contact/enquiry form. The information you give us may include, but is not limited to, your name, address, e-mail address and phone number.</p>
+
+      <p><strong>How we may use the information we collect.</strong> We use the information in the following ways:</p>
+      <ul>
+        <li>to provide you with information and/or services that you request from us;</li>
+        <li>to contact you to provide the information requested.</li>
+      </ul>
+
+      <p><strong>Disclosure of your information.</strong> Any information you provide to us will either be emailed directly to us or may be stored on a secure server.</p>
+
+      <p>We do not rent, sell or share personal information about you with other people or non-affiliated companies.</p>
+
+      <p>We will use all reasonable efforts to ensure that your personal data is not disclosed to regional/national institutions and authorities, unless required by law or other regulations.</p>
+
+      <p>Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorized access.</p>
+
+      <p><strong>Your rights &mdash; access to your personal data.</strong> You have the right to ensure that your personal data is being processed lawfully ("Subject Access Right"). Your subject access right can be exercised in accordance with data protection laws and regulations. Any subject access request must be made in writing to us. We will provide your personal data to you within the statutory time frames. To enable us to trace any of your personal data that we may be holding, we may need to request further information from you. If you have a complaint about how we have used your information, you have the right to complain to the Federal Trade Commission (FTC).</p>
+
+      <p><strong>Changes to our privacy policy.</strong> Any changes we may make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail. Please check back frequently to see any updates or changes to our privacy policy.</p>
+
+      <p><strong>Contact.</strong> Questions, comments and requests regarding this privacy policy are welcomed and should be addressed to <a href={`mailto:${business.email}`} style="color:#1a5e91;font-weight:600;text-decoration:none">{business.email}</a>, by phone at {business.phoneDisplay}, or by mail to Wellbrook Water, 1919 Market Street, Philadelphia, PA.</p>
     </div>
   </section>
   <Footer />

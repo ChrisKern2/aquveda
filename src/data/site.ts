@@ -19,7 +19,11 @@ export const business = {
   // PA Home Improvement Contractor registration. Stored verbatim as issued.
   hicNumber: "PA220445",
   // Placeholders, do not invent. Fill in when known (see README checklist).
-  address: "{{ADDRESS}}",
+  // Chris's call (2026-07-21): the street address is published ONLY in the
+  // privacy policy's Contact section; everywhere else (footer pin) says
+  // "Serving Greater Philadelphia, PA". Mailing address: 1919 Market Street,
+  // Philadelphia, PA.
+  address: "Serving Greater Philadelphia, PA",
   reviewCount: "{{REVIEW_COUNT}}",
   // Office hours, edit to your real availability.
   hours: [
