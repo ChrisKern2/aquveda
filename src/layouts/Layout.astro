@@ -134,12 +134,18 @@ const jsonLd = [localBusiness, ...schema];
     <slot />
 
     <!-- HighLevel chat widget (A2P 10DLC compliance) — is:inline so Astro
-         doesn't bundle/defer it and strip the data-* attributes it reads. -->
-    <script
-      is:inline
-      src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id="6a6224d602d958a92e70c237"
-      data-source="WEB_USER"></script>
+         doesn't bundle/defer it and strip the data-* attributes it reads.
+         NOT rendered on pages with a phone-collecting form (home, /contact,
+         /free-report): carriers reject registrations where the widget shares
+         a page with another opt-in source ("Multiple Opt-ins" check). If a
+         phone form is ever added to another page, add its path here. -->
+    {!["/", "/contact", "/free-report"].includes(path) && (
+      <script
+        is:inline
+        src="https://widgets.leadconnectorhq.com/loader.js"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="6a6224d602d958a92e70c237"
+        data-source="WEB_USER"></script>
+    )}
   </body>
 </html>
