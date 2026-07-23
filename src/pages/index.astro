@@ -18,7 +18,6 @@ import Testimonials from "../components/Testimonials.astro";
 import LearnPreview from "../components/LearnPreview.astro";
 import HomeFaq from "../components/HomeFaq.astro";
 import ServiceAreaList from "../components/ServiceAreaList.astro";
-import QuoteForm from "../components/QuoteForm.astro";
 import Footer from "../components/Footer.astro";
 import Icon from "../components/Icon.astro";
 import { business, flagship, homeFaqs, ENABLE_REVIEWS } from "../data/site";
@@ -86,7 +85,25 @@ const faqSchema = {
           ))}
         </div>
       </div>
-      <QuoteForm />
+      <!-- Was an inline <QuoteForm />. Moved to /contact for A2P compliance:
+           HighLevel's checker crawls the ROOT domain, and it requires the chat
+           widget on the page it crawls with no phone-collecting form beside
+           it. The homepage therefore carries the widget; the form lives on
+           /contact (which carries no widget). Don't re-add a phone form here
+           without removing the widget from this page. -->
+      <div class="card" style="padding:40px 34px;box-shadow:0 20px 50px rgba(20,30,50,.12);border:none;border-radius:16px;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;text-align:center">
+        <h2 style="margin:0;color:#143c5f;font-size:26px;font-weight:800">Request your free quote</h2>
+        <p style="margin:0;color:#51606c;font-size:15px;line-height:1.55">
+          Two minutes of questions, one clear number. We'll call you with a
+          no-obligation quote, often the same day.
+        </p>
+        <a href="/contact" class="btn btn-cta" style="font:800 16px/1 var(--font-body);padding:17px 28px;border-radius:30px;justify-content:center">
+          Start my quote <Icon name="arrow" size={17} />
+        </a>
+        <p style="margin:0;color:#51606c;font-size:13.5px">
+          Prefer to talk? Call <a href={business.phoneHref} style="color:#1a5e91;font-weight:700;text-decoration:none">{business.phoneDisplay}</a>
+        </p>
+      </div>
     </div>
   </section>
 
